@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * MasterSchool huisstijl.
+ * Drie hoofdkleuren: navy, wit/off-white en grijs. Geen accentkleur,
+ * geen gradients, geen glassmorphism.
+ */
+@theme {
+  --color-navy: #03193c;
+  --color-navy-hover: #071f47;
+  --color-ink: #0f172a;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  /* Rand met >= 3:1 contrast op wit, voor invoervelden en omlijnde knoppen. */
+  --color-line-strong: #7a8699;
+  --color-offwhite: #f8fafc;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+
+  --radius-card: 10px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* Voorkomt dat de sticky header ankerdoelen afdekt. */
+  scroll-padding-top: 5.5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: var(--color-ink);
+  /* Voorkomt dat een lang woord buiten het scherm valt, ook bij grote
+     tekstinstellingen. "anywhere" telt ook mee in de berekening van de
+     minimale breedte, "break-word" niet. */
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Zichtbare focus voor toetsenbordgebruikers, op elke ondergrond. */
+:focus-visible {
+  outline: 3px solid var(--color-navy);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.on-navy :focus-visible {
+  outline-color: #ffffff;
+}
+
+/* Subtiel verschijnen bij scrollen. Inhoud is altijd leesbaar,
+   ook wanneer JavaScript niet draait: zonder .reveal-init blijft
+   alles gewoon zichtbaar. */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+  }
 }
