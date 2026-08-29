@@ -228,8 +228,8 @@ export default function Home() {
                   <Image
                     src="/img/oskar-portret.jpg"
                     alt="Oskar van Zadelhoff, oprichter van MasterSchool"
-                    width={350}
-                    height={468}
+                    width={650}
+                    height={900}
                     priority
                     sizes="(max-width: 1024px) 55vw, 320px"
                     className="h-auto w-full"
