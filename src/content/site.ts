@@ -12,7 +12,7 @@ export const site = {
   rol: "studiecoach, bijlesdocent en ex-leerling",
 
   // Contact
-  telefoon: "06 28 92 68 43",
+  telefoon: "0628926843",
   telefoonHref: "tel:+31628926843",
   email: "bijlesvanoskar@gmail.com",
   whatsapp: "https://wa.me/message/CZG5BQHETJ6FI1",

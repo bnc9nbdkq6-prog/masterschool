@@ -2,7 +2,9 @@
 
 Datum: 28 augustus 2026
 Opgeleverd door: Claude (Anthropic), in opdracht van Oskar van Zadelhoff
-Versie: 1.0
+Versie: 1.1 — tekstronde verwerkt: scherpere pijnsectie, verkopender
+Leersysteem-pagina met de resultaatafspraak bovenaan, en de kleine correcties
+van Oskar
 
 Dit document hoort bij de opleverchecklist. Het beschrijft wat er is gebouwd,
 wat er is getest, wat er bewust is uitgesteld en welke punten nog een besluit of
@@ -118,7 +120,7 @@ Alle tests zijn uitgevoerd op de productiebuild (`npm run build` gevolgd door
 
 | Breedte | Resultaat |
 | --- | --- |
-| 320 px (kleine telefoon) | Geen horizontaal scrollen op alle elf pagina's |
+| 320 px (kleine telefoon) | Geen horizontaal scrollen op alle elf pagina's, ook bij een tekstinstelling van 200% |
 | 390 px (moderne telefoon) | Geen horizontaal scrollen; menu, formulier en knoppen werken |
 | 768 px (tablet) | Geen horizontaal scrollen |
 | 1280 px (desktop) | Volledige indeling, alle secties gecontroleerd |
@@ -238,25 +240,22 @@ vermelding dat prijzen indicatief en nog niet definitief zijn.
    op de site staat "van eind februari tot begin juni". Graag het jaartal
    aanvullen.
 7. **Leerjaar van Finlay.** De review vermeldt vwo 4, de case vwo 3. Op de site
-   staat de review als "leerling vwo" en de case als "vwo 3 (leerjaar tijdens de
-   begeleiding)". Klopt dat?
+   staat de review als "leerling vwo" en de case als "vwo 3". Klopt dat?
 8. **Review van Caro.** Haar review bevatte de zin dat er "licht ASS speelt" bij
    haar zoon. Dat is een gezondheidsgegeven van een minderjarige. Die zin is
    **niet** geplaatst; de rest van de review staat er wel. Wilt u dat anders,
    laat het weten — daar is dan aparte, uitdrukkelijke toestemming voor nodig.
-9. **Review van Robin.** Hij is uw broer en zegt dat zelf in zijn review. Op de
-   site staat dat er transparant bij ("broer van Oskar"). Bevestigen graag.
 
 ### Aanbevelingen
 
-10. **Een scherpere portretfoto.** De aangeleverde foto is 350 × 468 pixels. Dat
+9. **Een scherpere portretfoto.** De aangeleverde foto is 350 × 468 pixels. Dat
     is net genoeg voor de huidige weergave, maar op een scherm met hoge
     resolutie oogt hij iets zachter dan ideaal. Een foto van minstens
     1000 pixels breed zou de hero — het belangrijkste vertrouwenselement van
     de site — merkbaar verbeteren.
-11. **De banner bijwerken** met de definitieve kernzin, zodat hij alsnog
+10. **De banner bijwerken** met de definitieve kernzin, zodat hij alsnog
     gebruikt kan worden.
-12. **Zelf even kijken in Safari op de iPhone** en in Firefox, zie het
+11. **Zelf even kijken in Safari op de iPhone** en in Firefox, zie het
     testverslag.
 
 ### Al ingevuld, geen actie nodig
@@ -277,7 +276,8 @@ op school. Minder stress."*
   `.gitignore` en is niet meegecommit; sleutels horen alleen in Vercel.
 - Er staan **geen persoonsgegevens van leerlingen** op de site anders dan de
   reviews en cases waarvoor Oskar heeft bevestigd dat er toestemming is. Er
-  staan geen foto's van leerlingen op de site.
+  staan geen foto's van leerlingen op de site. Op verzoek van Oskar staat bij
+  de review van Robin niet vermeld dat hij zijn broer is.
 - Er staat **geen onafgemaakte inhoud** op de site: geen lege secties, geen
   voorbeeldteksten, geen dode links, geen knoppen die nergens heen gaan.
 - Er wordt **geen cijfergarantie** gegeven bij bijles. De resultaatafspraak bij

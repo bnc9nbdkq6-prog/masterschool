@@ -26,7 +26,7 @@ export function Logo({
   const kleur = variant === "wit" ? "text-white" : "text-navy";
   return (
     <span
-      className={`inline-flex min-w-0 items-center gap-2 sm:gap-2.5 ${kleur} ${className}`}
+      className={`inline-flex min-w-0 max-w-full items-center gap-2 sm:gap-2.5 ${kleur} ${className}`}
     >
       <LogoMark className="h-7 w-7 shrink-0 sm:h-8 sm:w-8" />
       <span className="truncate text-lg font-bold tracking-tight sm:text-[1.35rem]">

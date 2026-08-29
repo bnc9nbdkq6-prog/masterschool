@@ -30,11 +30,11 @@ export const diensten: Dienst[] = [
     slug: "leersysteem",
     naam: "MasterSchool Leersysteem",
     kort:
-      "Samen bouwen we een persoonlijk leersysteem: hoe uw kind plant, leert en zich voorbereidt op elke toets, voor elk vak.",
+      "Samen bouwen we een persoonlijk leersysteem: hoe uw kind plant, leert en zich voorbereidt op elke toets, voor elk vak. Met een resultaatafspraak op papier.",
     prijs: "€249 eenmalig",
     prijsToelichting: "inclusief btw",
     voorWie:
-      "Voor leerlingen die hard werken maar weinig resultaat zien, of die structuur en een aanpak missen die wél werkt.",
+      "Voor leerlingen die niet weten hoe ze moeten leren: die uitstellen, te laat beginnen en daardoor onder hun niveau presteren.",
     href: "/diensten/leersysteem",
   },
 ];

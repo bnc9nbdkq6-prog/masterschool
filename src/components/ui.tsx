@@ -9,7 +9,11 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8 ${className}`}>
+    // Vaste marges in pixels: de zijmarge hoort niet mee te groeien wanneer
+    // de bezoeker een grotere tekstinstelling gebruikt.
+    <div
+      className={`mx-auto w-full max-w-6xl px-[20px] sm:px-[24px] lg:px-[32px] ${className}`}
+    >
       {children}
     </div>
   );

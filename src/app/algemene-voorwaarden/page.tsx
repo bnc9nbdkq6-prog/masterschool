@@ -132,7 +132,9 @@ export default function VoorwaardenPagina() {
             resultaatafspraak vast: om welke vakken en welke rapportcijfers het
             gaat, en wanneer we evalueren. Het uitgangspunt is een verbetering van
             minimaal 1,0 punt ten opzichte van het huidige rapportcijfer bij de
-            eerstvolgende toets voor dat vak.
+            eerstvolgende toets voor dat vak. De afspraak geldt voor{" "}
+            <strong>elk vak</strong> waarin het rapportcijfer te laag is, niet
+            voor één enkel vak.
           </p>
           <p>Aan die afspraak zijn voorwaarden verbonden:</p>
           <ul>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Kaart, KnopLink, Section, SectionKop } from "@/components/ui";
+import { ShieldCheck } from "lucide-react";
+import { Container, Kaart, KnopLink, Section, SectionKop } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { PaginaKop, SlotCta, VerderLezen, Vink } from "@/components/blokken";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -56,6 +57,25 @@ export default function BijlesPagina() {
         titel="Bijles die verder gaat dan de volgende toets"
         intro="Individuele begeleiding in wiskunde A, economie, bedrijfseconomie en geschiedenis. Uw kind begrijpt de stof, weet hoe de toets is opgebouwd en leert onderweg een manier van leren die ook bij andere vakken werkt."
       />
+
+      {/* Geen-risico-belofte, meteen in beeld */}
+      <div className="border-b border-line bg-white">
+        <Container className="py-6">
+          <p className="flex items-start gap-3 text-lg leading-relaxed text-navy">
+            <ShieldCheck className="mt-1 h-5 w-5 shrink-0" aria-hidden="true" />
+            <span>
+              <strong className="font-semibold">
+                Vindt u de eerste bijles niet waardevol, dan betaalt u die les
+                niet.
+              </strong>{" "}
+              <span className="text-slate-600">
+                Zo kunt u het zonder risico proberen. Het kennismakingsgesprek
+                vooraf is sowieso gratis.
+              </span>
+            </span>
+          </p>
+        </Container>
+      </div>
 
       {/* Kerngegevens */}
       <Section>

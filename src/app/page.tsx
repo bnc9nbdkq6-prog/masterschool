@@ -44,37 +44,37 @@ const herkenning = [
     icon: TrendingDown,
     titel: "Een onvoldoende op het rapport",
     tekst:
-      "Het cijfer valt tegen en het is niet duidelijk waar het precies misgaat.",
+      "Het cijfer valt tegen, en niemand kan precies aanwijzen waar het misgaat. Uw kind zelf ook niet.",
   },
   {
     icon: Clock,
-    titel: "Uren leren, weinig resultaat",
+    titel: "Uren leren, en toch een vijf",
     tekst:
-      "Uw kind zit lang boven de boeken, maar dat is niet terug te zien in het cijfer.",
+      "De tijd gaat erin, maar er komt te weinig uit. Dat sloopt het zelfvertrouwen sneller dan een slecht cijfer.",
   },
   {
     icon: BookOpenCheck,
     titel: "Eén vak dat blijft haken",
     tekst:
-      "Wiskunde, economie of geschiedenis wil maar niet landen, hoe vaak het ook wordt uitgelegd.",
+      "Wiskunde, economie of geschiedenis wil maar niet landen — hoe vaak het op school ook wordt uitgelegd.",
   },
   {
     icon: CalendarClock,
-    titel: "Toetsweek of examen in zicht",
+    titel: "De toetsweek hangt boven het huis",
     tekst:
-      "De stof stapelt zich op, er is geen plan en de spanning loopt op.",
+      "Te veel stof, geen plan, korte lontjes. En daarna opluchting, tot de volgende periode begint.",
   },
   {
     icon: Target,
     titel: "Zorgen over overgaan of slagen",
     tekst:
-      "U vraagt zich af of het dit jaar nog goed komt en wanneer u moet ingrijpen.",
+      "U ligt er wakker van, uw kind zegt dat het wel goed komt. En u weet niet wanneer u moet ingrijpen.",
   },
   {
     icon: MessageSquare,
-    titel: "Steeds discussie thuis",
+    titel: "Elke week discussie over school",
     tekst:
-      "School is een terugkerend onderwerp van spanning tussen u en uw kind.",
+      "U wilt helpen, maar het gesprek loopt steeds uit op ruzie. Daar wordt thuis niemand blij van.",
   },
 ];
 
@@ -140,8 +140,9 @@ const keuzehulp = [
     label: "Bekijk bijles",
   },
   {
-    vraag: "Mijn kind leert veel, maar niet effectief",
-    antwoord: "Het MasterSchool Leersysteem: een persoonlijke aanpak voor álle vakken.",
+    vraag: "Mijn kind weet niet hoe het moet leren",
+    antwoord:
+      "Uitstellen, de avond ervoor beginnen, hopen dat het goed komt. Met het MasterSchool Leersysteem krijgt uw kind een aanpak die wél werkt — voor elk vak, de rest van de schooltijd.",
     href: "/diensten/leersysteem",
     label: "Bekijk het Leersysteem",
   },
@@ -253,7 +254,7 @@ export default function Home() {
           <SectionKop
             eyebrow="Herkent u dit?"
             titel="Waar ouders mij meestal voor bellen"
-            intro="Vaak is er niet één groot probleem, maar een optelsom van kleine dingen die niet meer lopen. Herkent u een van deze situaties, dan zit u hier goed."
+            intro="Meestal is er niet één groot probleem, maar een optelsom van dingen die niet meer lopen — en het gevoel dat u er als ouder weinig aan kunt doen. Herkent u een van deze situaties, dan zit u hier goed."
           />
         </Reveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -267,6 +268,15 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <p className="mt-10 max-w-3xl text-lg leading-relaxed text-slate-600">
+            Voor uw kind voelt het van binnenuit meestal anders dan het van
+            buitenaf lijkt. Niet weten waar je moet beginnen, het idee hebben dat
+            je gewoon te dom bent voor dit vak, en dan maar uitstellen tot het
+            niet meer kan. Dat zit er bijna altijd onder. Daar begin ik.
+          </p>
+        </Reveal>
       </Section>
 
       {/* Oplossing en voordelen */}
@@ -334,7 +344,8 @@ export default function Home() {
               </p>
               <p>
                 Tijdens die examenperiode hoorde ik van klasgenoten hoeveel stress
-                ze hadden en hoeveel tijd ze kwijt waren. Daar zat het verschil
+                ze hadden en hoeveel tijd ze kwijt waren aan leren. Daar zat
+                het verschil
                 niet in slimheid, maar in aanpak. Dat is precies wat ik nu
                 overdraag: MasterSchool bestaat zodat leerlingen de baas worden
                 over school, in plaats van andersom.

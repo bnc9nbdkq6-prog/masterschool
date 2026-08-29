@@ -1,43 +1,106 @@
 import type { Metadata } from "next";
-import { Info } from "lucide-react";
-import { Kaart, KnopLink, Section, SectionKop } from "@/components/ui";
+import {
+  AlarmClock,
+  CalendarX,
+  HeartCrack,
+  Info,
+  MessageSquareWarning,
+  Repeat,
+  ShieldCheck,
+  TrendingDown,
+} from "lucide-react";
+import { Container, Kaart, KnopLink, Section, SectionKop } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
-import { PaginaKop, SlotCta, VerderLezen, Vink } from "@/components/blokken";
+import {
+  CaseKaart,
+  PaginaKop,
+  ReviewKaart,
+  SlotCta,
+  VerderLezen,
+  Vink,
+} from "@/components/blokken";
 import { WhatsAppIcon } from "@/components/Icons";
 import { prijzen, site } from "@/content/site";
+import { cases, eigenResultaten, resultatenDisclaimer, reviews } from "@/content/bewijs";
 
 export const metadata: Metadata = {
-  title: "MasterSchool Leersysteem — een persoonlijke manier van leren",
+  title: "MasterSchool Leersysteem — leren dat wél blijft hangen",
   description:
-    "Een persoonlijk leersysteem voor uw kind: doelen, planning en leerstrategieën die aantoonbaar werken, voor elk vak. €249 eenmalig inclusief btw.",
+    "Uw kind leert niet te weinig, maar op de verkeerde manier. Het MasterSchool Leersysteem geeft een persoonlijke aanpak voor elk vak, met een resultaatafspraak vooraf. €249 eenmalig inclusief btw.",
   alternates: { canonical: "/diensten/leersysteem" },
 };
 
+const herkenning = [
+  {
+    icon: AlarmClock,
+    titel: "Het begint pas de avond ervoor",
+    tekst:
+      "Er wordt wel íéts gedaan voor school, maar altijd te laat en altijd te weinig om er nog iets van te maken.",
+  },
+  {
+    icon: MessageSquareWarning,
+    titel: "“Het komt wel goed”",
+    tekst:
+      "Uw kind zegt dat het onder controle is. De cijfers zeggen iets anders, en daar valt niet over te praten.",
+  },
+  {
+    icon: HeartCrack,
+    titel: "U weet niet of u moet ingrijpen",
+    tekst:
+      "Aandringen levert ruzie op, loslaten voelt onverantwoord. Wat u ook kiest, het voelt als de verkeerde keuze.",
+  },
+  {
+    icon: CalendarX,
+    titel: "Elke toetsweek dezelfde film",
+    tekst:
+      "Spanning, korte lontjes en nachtwerk. Daarna opluchting — tot de volgende periode weer begint.",
+  },
+  {
+    icon: TrendingDown,
+    titel: "De cijfers zakken langzaam",
+    tekst:
+      "Op één vak is het geen ramp. Bij elkaar opgeteld wordt het spannend richting overgaan of slagen.",
+  },
+  {
+    icon: Repeat,
+    titel: "U heeft al van alles geprobeerd",
+    tekst:
+      "Afspraken maken, de telefoon innemen, bijles voor één vak. Het helpt even, en daarna zakt het weer terug.",
+  },
+];
+
+const watVerandert = [
+  "Uw kind weet bij elk vak precies wat het moet doen om zich voor te bereiden — en begint daardoor eerder.",
+  "Leren kost minder tijd, omdat de tijd die erin gaat ook echt blijft hangen.",
+  "De planning komt van uw kind zelf, niet van u. Dat scheelt een hoop discussie thuis.",
+  "U hoeft niet meer te controleren of het gebeurt: aan het systeem ziet u of het loopt.",
+];
+
 const onderdelen = [
-  {
-    titel: "Doelen die concreet zijn",
-    tekst:
-      "Niet “beter worden in wiskunde”, maar bijvoorbeeld “van een 5,5 naar een 7,0 in periode 3”. Ouder en leerling bepalen die doelen samen met mij.",
-  },
-  {
-    titel: "Analyse van de huidige aanpak",
-    tekst:
-      "Hoe leert uw kind nu, hoeveel tijd kost dat en wat levert het op? Vaak zit hier de grootste winst: veel leerlingen herlezen en samenvatten, terwijl dat weinig blijft hangen.",
-  },
   {
     titel: "Een manier van voorbereiden per vak",
     tekst:
-      "Voor elk vak in het pakket: hoe pak je een toets aan, wat doe je wanneer, en hoe controleer je of je het écht kent.",
+      "Voor elk vak in het pakket: hoe pak je een toets aan, wat doe je wanneer, en hoe weet je zeker dat je het kent. Niet één vak — het hele rooster.",
   },
   {
     titel: "Een planning die uw kind volhoudt",
     tekst:
-      "Een planningsmethode die past bij de agenda, de concentratie en de motivatie van uw kind — niet een schema dat na een week sneuvelt.",
+      "Een planningsmethode die past bij de agenda, de concentratie en de motivatie van uw kind. Geen schema dat na een week sneuvelt.",
   },
   {
     titel: "Leertechnieken die werken",
     tekst:
-      "Onder andere actief ophalen met flashcards en oefenvragen, en spreiden in de tijd. Dezelfde technieken waarmee ik zelf van moeizaam naar cum laude ging.",
+      "Actief ophalen met flashcards en oefenvragen, en spreiden in de tijd. Precies de technieken waarmee ik zelf van moeizaam naar cum laude ging.",
+  },
+  {
+    titel: "Doelen die concreet zijn",
+    tekst:
+      "Niet “beter worden in wiskunde”, maar “van een 5,5 naar een 7,0 in periode 3”. Ouder en leerling bepalen die doelen samen met mij.",
+  },
+  {
+    titel: "Analyse van de huidige aanpak",
+    tekst:
+      "Hoe leert uw kind nu, hoeveel tijd kost dat en wat levert het op? Hier zit vaak de grootste winst: herlezen en samenvatten voelt als leren, maar blijft nauwelijks hangen.",
   },
   {
     titel: "WhatsApp-support en opvolging",
@@ -55,12 +118,12 @@ const traject = [
   {
     titel: "Kort intakegesprek (ongeveer 20 minuten, telefonisch)",
     tekst:
-      "We lopen de vragenlijst door en ik controleer of het Leersysteem past bij wat uw kind nodig heeft.",
+      "We lopen de vragenlijst door en ik controleer of het Leersysteem past bij wat uw kind nodig heeft. Zo niet, dan zeg ik dat.",
   },
   {
     titel: "Startgesprek van een uur (ouder en leerling)",
     tekst:
-      "Doelen vastleggen, pijnpunten doorspreken en samen bepalen waar het mis zou kunnen gaan. In dit gesprek doet uw kind meteen een eerste oefening met een leertechniek, zodat het verschil direct voelbaar is. We leggen ook de afspraken en een evaluatiemoment vast.",
+      "Doelen vastleggen, pijnpunten doorspreken en samen bepalen waar het mis zou kunnen gaan. In dit gesprek doet uw kind meteen een eerste oefening met een leertechniek, zodat het verschil direct voelbaar is. We leggen ook de resultaatafspraak en een evaluatiemoment vast.",
   },
   {
     titel: "Het systeem bouwen",
@@ -74,70 +137,84 @@ const traject = [
   },
 ];
 
+/** Gianni werd met deze methode begeleid; zijn review en case horen hier. */
+const gianniReview = reviews.find((r) => r.id === "gianni")!;
+const gianniCase = cases.find((c) => c.id === "case-002")!;
+
 export default function LeersysteemPagina() {
   return (
     <>
       <PaginaKop
         eyebrow="Dienst · MasterSchool Leersysteem"
-        titel="Een manier van leren die bij uw kind past — voor elk vak"
-        intro="Bijles lost één vak op. Het Leersysteem lost de manier van leren op. Samen bouwen we een persoonlijk systeem waarmee uw kind elke toets en elk examen zelfstandig kan aanpakken."
+        titel="Elke toetsweek dezelfde stress? Dat komt niet door luiheid."
+        intro="Het komt er bijna altijd op neer dat niemand uw kind ooit heeft geleerd hóé je leert. Het MasterSchool Leersysteem lost precies dat op: een persoonlijke aanpak voor elk vak, met een resultaatafspraak die we vooraf samen op papier zetten."
       />
 
-      {/* Eerlijkheid over de status van de dienst */}
-      <Section className="!pb-0">
+      {/* Resultaatafspraak, meteen in beeld */}
+      <div className="border-b border-line bg-white">
+        <Container className="py-6">
+          <p className="flex items-start gap-3 text-lg leading-relaxed text-navy">
+            <ShieldCheck className="mt-1 h-5 w-5 shrink-0" aria-hidden="true" />
+            <span>
+              <strong className="font-semibold">
+                Haalt uw kind de afgesproken verbetering niet, dan begeleid ik
+                kosteloos door tot die er wel is.
+              </strong>{" "}
+              <span className="text-slate-600">
+                De afspraak geldt voor élk vak dat te laag staat.{" "}
+                <a
+                  href="#resultaatafspraak"
+                  className="font-medium text-navy underline underline-offset-4"
+                >
+                  Lees de voorwaarden
+                </a>
+                .
+              </span>
+            </span>
+          </p>
+        </Container>
+      </div>
+
+      {/* Herkenning */}
+      <Section>
         <Reveal>
-          <div className="flex gap-4 rounded-[10px] border border-line bg-offwhite p-6">
-            <Info className="mt-0.5 h-5 w-5 shrink-0 text-navy" aria-hidden="true" />
-            <div>
-              <h2 className="font-semibold text-navy">
-                Eerlijk gezegd: dit is een nieuwe dienst
-              </h2>
-              <p className="mt-2 max-w-3xl leading-relaxed text-slate-600">
-                Het MasterSchool Leersysteem is gebaseerd op de aanpak waarmee ik
-                zelf cum laude slaagde en waarmee ik een vriend door zijn
-                eindexamens heb geholpen. Als losse dienst is het nieuw: ik ben
-                het nu in de praktijk aan het uitvoeren en aanscherpen. Dat
-                betekent dat de opzet hieronder klopt, maar dat de precieze duur
-                en indeling per leerling nog kunnen verschillen. Ik zeg dat liever
-                vooraf dan achteraf.
-              </p>
-            </div>
-          </div>
+          <SectionKop
+            eyebrow="Herkent u dit?"
+            titel="Het probleem is zelden de intelligentie"
+            intro="De meeste leerlingen die ik zie zijn slim genoeg. Ze doen ook wel iets voor school — een avond blokken, een samenvatting overschrijven. Alleen levert dat nauwelijks iets op, en dat weten ze zelf ook. Dan is uitstellen logischer dan het lijkt."
+          />
         </Reveal>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {herkenning.map((item, i) => (
+            <Reveal key={item.titel} delay={i * 45}>
+              <Kaart className="h-full">
+                <item.icon className="h-6 w-6 text-navy" aria-hidden="true" />
+                <h3 className="mt-4 font-semibold text-navy">{item.titel}</h3>
+                <p className="mt-2 leading-relaxed text-slate-600">{item.tekst}</p>
+              </Kaart>
+            </Reveal>
+          ))}
+        </div>
       </Section>
 
-      {/* Voor wie */}
-      <Section>
-        <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr]">
+      {/* Belofte */}
+      <Section tint="offwhite">
+        <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr]">
           <Reveal>
-            <SectionKop titel="Voor wie is het Leersysteem?" />
-            <div className="mt-5 space-y-4 text-lg leading-relaxed text-slate-600">
-              <p>
-                Voor leerlingen die niet effectief studeren — om wat voor reden
-                dan ook. Vaak zijn dat leerlingen die wél hun best doen: uren
-                boven de boeken, en toch een tegenvallend cijfer. Of leerlingen
-                die niet weten waar ze moeten beginnen en daardoor uitstellen.
-              </p>
-              <p>
-                Minder geschikt is het voor leerlingen die geen enkele motivatie
-                hebben om te leren, en voor leerlingen die al goede cijfers halen
-                met een aanpak die voor hen werkt.
-              </p>
-            </div>
-
-            <h3 className="mt-10 text-lg font-semibold text-navy">
-              Wat uw kind eraan overhoudt
-            </h3>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              <Vink>Een aanpak voor elk vak, niet voor één toets</Vink>
-              <Vink>Minder tijd kwijt aan leren, met meer effect</Vink>
-              <Vink>Zelfstandig een toetsweek of examenperiode kunnen plannen</Vink>
-              <Vink>Een vaardigheid die de rest van de schooltijd meegaat</Vink>
+            <SectionKop
+              eyebrow="Wat er verandert"
+              titel="Van hopen dat het goed komt naar weten dat het goed komt"
+              intro="In ongeveer zes uur bouwen we samen een systeem dat uw kind zelfstandig kan uitvoeren. Geen strenger schema en geen extra uren leren — een andere manier van werken, die minder tijd kost en meer oplevert."
+            />
+            <ul className="mt-8 grid gap-3">
+              {watVerandert.map((punt) => (
+                <Vink key={punt}>{punt}</Vink>
+              ))}
             </ul>
           </Reveal>
 
           <Reveal delay={60}>
-            <Kaart className="lg:sticky lg:top-24">
+            <Kaart className="h-full">
               <h2 className="text-xl font-bold text-navy">In het kort</h2>
               <dl className="mt-5 space-y-4 text-sm">
                 {[
@@ -176,6 +253,190 @@ export default function LeersysteemPagina() {
         </div>
       </Section>
 
+      {/* Resultaatafspraak */}
+      <Section id="resultaatafspraak">
+        <Reveal>
+          <div className="max-w-3xl">
+            <SectionKop
+              eyebrow="Resultaatafspraak"
+              titel="Ik zet vooraf op papier wat het moet opleveren"
+              intro="Voordat we beginnen leggen we samen vast welk resultaat we afspreken. Die afspraak is per leerling anders, omdat de startsituatie per leerling anders is — maar hij staat er wel, zwart op wit."
+            />
+            <div className="mt-6 rounded-[10px] border border-line bg-offwhite p-6 sm:p-7">
+              <h3 className="font-semibold text-navy">Het uitgangspunt</h3>
+              <p className="mt-2 leading-relaxed text-slate-600">
+                Voor <strong className="font-semibold text-navy">elk vak</strong>{" "}
+                waarin het rapportcijfer te laag is, gaan we uit van een
+                verbetering van minimaal 1,0 punt bij de eerstvolgende toets voor
+                dat vak. Niet één vak dus, maar alle vakken die te laag staan.
+                Staat uw kind een 5 voor geschiedenis en een 4,5 voor wiskunde,
+                dan is de afspraak minimaal een 6 en een 5,5.
+              </p>
+
+              <h3 className="mt-6 font-semibold text-navy">
+                Wat daarvoor nodig is
+              </h3>
+              <ul className="mt-3 space-y-3">
+                <Vink>
+                  Uw kind voert het afgesproken leersysteem uit en laat dat zien
+                  met foto&apos;s als bewijs. Dat houdt de afspraak controleerbaar
+                  en helpt uw kind om vol te houden.
+                </Vink>
+                <Vink>
+                  De afgesproken momenten worden nagekomen: het startgesprek, de
+                  sessies en de follow-up.
+                </Vink>
+                <Vink>
+                  We leggen vooraf samen vast om welke vakken en welke cijfers het
+                  gaat, en wanneer we evalueren.
+                </Vink>
+              </ul>
+
+              <h3 className="mt-6 font-semibold text-navy">
+                Wordt de afspraak niet gehaald?
+              </h3>
+              <p className="mt-2 leading-relaxed text-slate-600">
+                Dan blijf ik kosteloos begeleiden tot de afgesproken verbetering
+                er wel is. U betaalt daar niets extra&apos;s voor.
+              </p>
+
+              <h3 className="mt-6 font-semibold text-navy">Wat ik niet beloof</h3>
+              <p className="mt-2 leading-relaxed text-slate-600">
+                Ik beloof geen vaste eindcijfers en geen verbetering op cijfers
+                die al goed zijn — van een 9 een 10 maken kan ik niet garanderen.
+                De exacte afspraak, inclusief vakken en voorwaarden, leggen we
+                daarom persoonlijk vast vóór de start. Zo weet u precies waar u
+                aan toe bent.
+              </p>
+            </div>
+            <div className="mt-8">
+              <VerderLezen
+                links={[
+                  { href: "/algemene-voorwaarden", label: "Lees de voorwaarden" },
+                ]}
+              />
+            </div>
+          </div>
+        </Reveal>
+      </Section>
+
+      {/* Bewijs */}
+      <Section tint="offwhite">
+        <Reveal>
+          <SectionKop
+            eyebrow="Waarom ik dit durf af te spreken"
+            titel="Deze aanpak heeft zich al bewezen — op mijzelf en op anderen"
+            intro="Het Leersysteem als dienst is nieuw, maar de methode erachter niet. Ik heb er zelf mee gewerkt en ik heb er iemand mee door zijn eindexamens geholpen."
+          />
+        </Reveal>
+
+        <Reveal>
+          <dl className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {eigenResultaten.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-[10px] border border-line bg-white p-5 text-center"
+              >
+                <dt className="sr-only">{item.label}</dt>
+                <dd>
+                  <span className="block text-3xl font-bold text-navy">
+                    {item.cijfer}
+                  </span>
+                  <span className="mt-1 block text-sm text-slate-600">
+                    {item.label}
+                  </span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-3 text-sm text-muted">
+            Mijn eigen eindexamenresultaten, vwo 2026 — behaald met precies de
+            technieken die in het Leersysteem zitten, na een schoolloopbaan die
+            begon met de wens om ermee te stoppen.
+          </p>
+        </Reveal>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <Reveal>
+            <ReviewKaart review={gianniReview} />
+          </Reveal>
+          <Reveal delay={60}>
+            <CaseKaart item={gianniCase} />
+          </Reveal>
+        </div>
+
+        <Reveal>
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-muted">
+            {resultatenDisclaimer}
+          </p>
+          <div className="mt-6">
+            <VerderLezen
+              links={[
+                { href: "/resultaten", label: "Bekijk alle resultaten en reviews" },
+                { href: "/over-mij", label: "Lees mijn eigen verhaal" },
+              ]}
+            />
+          </div>
+        </Reveal>
+      </Section>
+
+      {/* Eerlijkheid over de status van de dienst */}
+      <Section className="!pb-0">
+        <Reveal>
+          <div className="flex gap-4 rounded-[10px] border border-line bg-offwhite p-6">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-navy" aria-hidden="true" />
+            <div>
+              <h2 className="font-semibold text-navy">
+                Eerlijk gezegd: dit is een nieuwe dienst
+              </h2>
+              <p className="mt-2 max-w-3xl leading-relaxed text-slate-600">
+                Als losse dienst is het Leersysteem nieuw: ik ben het nu in de
+                praktijk aan het uitvoeren en aanscherpen. De opzet hieronder
+                klopt, maar de precieze duur en indeling kunnen per leerling nog
+                verschillen. Ik zeg dat liever vooraf dan achteraf — en de
+                resultaatafspraak hierboven staat er juist om die onzekerheid
+                bij mij te leggen in plaats van bij u.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </Section>
+
+      {/* Voor wie */}
+      <Section>
+        <Reveal>
+          <div className="max-w-3xl">
+            <SectionKop titel="Voor wie is het Leersysteem?" />
+            <div className="mt-5 space-y-4 text-lg leading-relaxed text-slate-600">
+              <p>
+                Voor leerlingen die niet effectief studeren. Vaak zijn dat
+                leerlingen die wel íéts doen voor school, maar geen idee hebben
+                of het werkt — en die daardoor onder hun niveau presteren. Soms
+                zijn het leerlingen die juist veel te lang boven de boeken zitten
+                en er te weinig voor terugkrijgen.
+              </p>
+              <p>
+                Minder geschikt is het voor leerlingen die geen enkele motivatie
+                hebben om te leren, en voor leerlingen die al goede cijfers halen
+                met een aanpak die voor hen werkt.
+              </p>
+            </div>
+
+            <h3 className="mt-10 text-lg font-semibold text-navy">
+              Wat uw kind eraan overhoudt
+            </h3>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              <Vink>Een aanpak voor elk vak, niet voor één toets</Vink>
+              <Vink>Minder tijd kwijt aan leren, met meer effect</Vink>
+              <Vink>Zelfstandig een toetsweek of examenperiode kunnen plannen</Vink>
+              <Vink>
+                Een vaardigheid die de rest van de schooltijd meegaat — en daarna
+              </Vink>
+            </ul>
+          </div>
+        </Reveal>
+      </Section>
+
       {/* Onderdelen */}
       <Section tint="offwhite">
         <Reveal>
@@ -197,9 +458,7 @@ export default function LeersysteemPagina() {
 
         <Reveal>
           <div className="mt-8 rounded-[10px] border border-line bg-white p-6 sm:p-7">
-            <h3 className="font-semibold text-navy">
-              Wat er (nog) niet bij zit
-            </h3>
+            <h3 className="font-semibold text-navy">Wat er (nog) niet bij zit</h3>
             <p className="mt-2 max-w-3xl leading-relaxed text-slate-600">
               U leest online vaak over bonussen als AI-hulpmiddelen voor planning
               en uitleg, feedback op verslagen of een e-book met leerstrategieën.
@@ -240,80 +499,14 @@ export default function LeersysteemPagina() {
             </Reveal>
           ))}
         </ol>
-      </Section>
-
-      {/* Resultaatafspraak */}
-      <Section tint="offwhite">
         <Reveal>
-          <div className="max-w-3xl">
-            <SectionKop
-              eyebrow="Resultaatafspraak"
-              titel="Wat ik met u afspreek over het resultaat"
-              intro="Bij het Leersysteem leg ik vóór de start met u vast wat we als resultaat afspreken. Die afspraak is per leerling anders, omdat de startsituatie per leerling anders is."
-            />
-            <div className="mt-6 rounded-[10px] border border-line bg-white p-6 sm:p-7">
-              <h3 className="font-semibold text-navy">Het uitgangspunt</h3>
-              <p className="mt-2 leading-relaxed text-slate-600">
-                Voor de rapportcijfers die te laag zijn, gaan we uit van een
-                verbetering van minimaal 1,0 punt bij de eerstvolgende toets voor
-                dat vak. Staat uw kind bijvoorbeeld een 5 voor geschiedenis, dan
-                is de afspraak minimaal een 6.
-              </p>
-
-              <h3 className="mt-6 font-semibold text-navy">
-                Wat daarvoor nodig is
-              </h3>
-              <ul className="mt-3 space-y-3">
-                <Vink>
-                  Uw kind voert het afgesproken leersysteem uit en laat dat zien
-                  met foto&apos;s als bewijs. Dat houdt de afspraak controleerbaar
-                  en helpt uw kind om vol te houden.
-                </Vink>
-                <Vink>
-                  De afgesproken momenten worden nagekomen: het startgesprek, de
-                  sessies en de follow-up.
-                </Vink>
-                <Vink>
-                  We leggen vooraf samen vast om welke vakken en welke cijfers het
-                  gaat, en wanneer we evalueren.
-                </Vink>
-              </ul>
-
-              <h3 className="mt-6 font-semibold text-navy">
-                Wordt de afspraak niet gehaald?
-              </h3>
-              <p className="mt-2 leading-relaxed text-slate-600">
-                Dan blijf ik kosteloos begeleiden tot de afgesproken verbetering
-                er wel is.
-              </p>
-
-              <h3 className="mt-6 font-semibold text-navy">
-                Wat ik niet beloof
-              </h3>
-              <p className="mt-2 leading-relaxed text-slate-600">
-                Ik beloof geen vaste eindcijfers en geen verbetering op cijfers
-                die al goed zijn — van een 9 een 10 maken kan ik niet garanderen.
-                De exacte afspraak, inclusief vakken en voorwaarden, leggen we
-                daarom persoonlijk vast vóór de start. Zo weet u precies waar u
-                aan toe bent.
-              </p>
-            </div>
-            <div className="mt-8">
-              <VerderLezen
-                links={[
-                  { href: "/algemene-voorwaarden", label: "Lees de voorwaarden" },
-                  { href: "/resultaten", label: "Bekijk resultaten van leerlingen" },
-                ]}
-              />
-            </div>
-            <p className="mt-6 text-sm text-muted">{prijzen.btwNotitie}</p>
-          </div>
+          <p className="mt-8 text-sm text-muted">{prijzen.btwNotitie}</p>
         </Reveal>
       </Section>
 
       <SlotCta
-        titel="Benieuwd of het Leersysteem past?"
-        tekst="Stuur een appje of plan een gratis kennismakingsgesprek van een kwartier. Ik vertel eerlijk of dit past bij uw kind of dat bijles op dit moment logischer is."
+        titel="Benieuwd of het Leersysteem bij uw kind past?"
+        tekst="Stuur een appje of plan een gratis kennismakingsgesprek van een kwartier. Ik vertel eerlijk of dit past of dat bijles op dit moment logischer is — en welke resultaatafspraak in uw situatie realistisch is."
       />
     </>
   );

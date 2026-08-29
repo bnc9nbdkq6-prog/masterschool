@@ -79,7 +79,7 @@ export const reviews: Review[] = [
   {
     id: "robin",
     naam: "Robin",
-    rol: "leerling vwo 3 — broer van Oskar",
+    rol: "leerling vwo 3",
     quote:
       "Oskar heeft me meerdere keren geholpen, met veel succes. Ik vind wiskunde best moeilijk, maar met zijn hulp snapte ik het heel goed. En door hem weet ik nu goed hoe ik moet leren zonder hulp van docenten, want ik vind zelfstandig werken veel fijner.",
     toestemming: true,
@@ -118,7 +118,7 @@ export const cases: Case[] = [
     id: "case-001",
     naam: "Finlay",
     vak: "Wiskunde",
-    niveau: "vwo 3 (leerjaar tijdens de begeleiding)",
+    niveau: "vwo 3",
     beginsituatie: "“Ik begrijp niks van dit hoofdstuk.”",
     aanpak: "Uitleg bij de stof en oefenvragen maken onder begeleiding.",
     inzetLeerling: "Zelf de oefenvragen gemaakt.",

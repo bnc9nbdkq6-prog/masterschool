@@ -9,7 +9,10 @@ export function Footer() {
   return (
     <footer className="on-navy border-t border-navy-hover bg-navy text-white">
       <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-3">
+        {/* min-w-0 op de kolommen: anders houdt het woordmerk, dat niet
+            afbreekt, de kolom breder dan het scherm bij een grote
+            tekstinstelling. */}
+        <div className="grid gap-10 [&>*]:min-w-0 md:grid-cols-3">
           <div>
             <Logo variant="wit" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/75">
@@ -22,14 +25,16 @@ export function Footer() {
             <h2 className="text-sm font-semibold tracking-wide uppercase text-white/70">
               Pagina&apos;s
             </h2>
-            <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm">
-              <li>
+            {/* Loopt met flex-wrap netjes over, ook bij een grote
+                tekstinstelling waar twee vaste kolommen niet meer passen. */}
+            <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2.5 text-sm">
+              <li className="min-w-[7ch]">
                 <Link href="/" className="text-white/85 hover:text-white hover:underline">
                   Home
                 </Link>
               </li>
               {nav.map((item) => (
-                <li key={item.href}>
+                <li key={item.href} className="min-w-[7ch]">
                   <Link
                     href={item.href}
                     className="text-white/85 hover:text-white hover:underline"
