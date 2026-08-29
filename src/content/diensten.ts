@@ -30,7 +30,7 @@ export const diensten: Dienst[] = [
     slug: "leersysteem",
     naam: "MasterSchool Leersysteem",
     kort:
-      "Samen bouwen we een persoonlijk leersysteem: hoe uw kind plant, leert en zich voorbereidt op elke toets, voor elk vak. Met een resultaatafspraak op papier.",
+      "Samen bouwen we een persoonlijk leersysteem: hoe uw kind zelfstandig plant, leert en zich voorbereidt op elke toets en op het examen, voor elk vak. Met een resultaatafspraak op papier.",
     prijs: "€249 eenmalig",
     prijsToelichting: "inclusief btw",
     voorWie:

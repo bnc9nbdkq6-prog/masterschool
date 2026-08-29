@@ -26,7 +26,7 @@ import { cases, eigenResultaten, resultatenDisclaimer, reviews } from "@/content
 export const metadata: Metadata = {
   title: "MasterSchool Leersysteem — leren dat wél blijft hangen",
   description:
-    "Uw kind leert niet te weinig, maar op de verkeerde manier. Het MasterSchool Leersysteem geeft een persoonlijke aanpak voor elk vak, met een resultaatafspraak vooraf. €249 eenmalig inclusief btw.",
+    "Een persoonlijke aanpak voor elk vak, voor toetsweken én het eindexamen. Uw kind leert zelfstandig plannen en studeren, met een resultaatafspraak vooraf. €249 eenmalig inclusief btw.",
   alternates: { canonical: "/diensten/leersysteem" },
 };
 
@@ -53,7 +53,7 @@ const herkenning = [
     icon: CalendarX,
     titel: "Elke toetsweek dezelfde film",
     tekst:
-      "Spanning, korte lontjes en nachtwerk. Daarna opluchting — tot de volgende periode weer begint.",
+      "Spanning, korte lontjes en nachtwerk. Daarna opluchting — tot de volgende periode begint. En het examenjaar komt er ook nog aan.",
   },
   {
     icon: TrendingDown,
@@ -70,10 +70,10 @@ const herkenning = [
 ];
 
 const watVerandert = [
-  "Uw kind weet bij elk vak precies wat het moet doen om zich voor te bereiden — en begint daardoor eerder.",
+  "Uw kind weet bij elk vak wat het moet doen om zich voor te bereiden — op een gewone toets net zo goed als op het centraal examen — en begint daardoor eerder.",
   "Leren kost minder tijd, omdat de tijd die erin gaat ook echt blijft hangen.",
-  "De planning komt van uw kind zelf, niet van u. Dat scheelt een hoop discussie thuis.",
-  "U hoeft niet meer te controleren of het gebeurt: aan het systeem ziet u of het loopt.",
+  "Uw kind doet het zelf. De planning komt van hem of haar, niet van u. Dat scheelt een hoop discussie thuis.",
+  "En uw kind staat er niet alleen voor: ik houd via WhatsApp bij of het systeem daadwerkelijk wordt uitgevoerd, zodat u dat niet hoeft te controleren.",
 ];
 
 const onderdelen = [
@@ -81,6 +81,11 @@ const onderdelen = [
     titel: "Een manier van voorbereiden per vak",
     tekst:
       "Voor elk vak in het pakket: hoe pak je een toets aan, wat doe je wanneer, en hoe weet je zeker dat je het kent. Niet één vak — het hele rooster.",
+  },
+  {
+    titel: "Ook voor toetsweken en examens",
+    tekst:
+      "Hetzelfde systeem schaalt mee van één toets naar een hele toetsweek en naar het centraal examen: hoe je maanden vooruit plant, wanneer je begint met herhalen en hoe je oefenexamens inzet in plaats van alleen doorlezen.",
   },
   {
     titel: "Een planning die uw kind volhoudt",
@@ -103,9 +108,19 @@ const onderdelen = [
       "Hoe leert uw kind nu en hoeveel tijd kost dat? Hier valt vaak de meeste winst te halen: herlezen en samenvatten voelen als hard werken, terwijl oefenen met vragen aantoonbaar beter beklijft.",
   },
   {
-    titel: "WhatsApp-support en opvolging",
+    titel: "Zelfstandigheid als doel",
     tekst:
-      "Vragen tussendoor kunnen altijd via WhatsApp. Daarnaast houden we bij of het systeem echt wordt uitgevoerd, met foto's als bewijs — dat helpt uw kind om vol te houden.",
+      "Het systeem is niet van mij, het is van uw kind. Aan het eind kan het zonder mij vooruit: zelf bepalen wat er moet gebeuren, zelf plannen en zelf zien of het klopt. Dat is precies het punt.",
+  },
+  {
+    titel: "Iemand die het bijhoudt",
+    tekst:
+      "Zelfstandig betekent niet in je eentje. Uw kind stuurt mij foto's als bewijs dat het systeem is uitgevoerd. Dat werkt: je doet het nu eenmaal eerder als iemand meekijkt — en die iemand ben ik, niet u.",
+  },
+  {
+    titel: "WhatsApp-support",
+    tekst:
+      "Loopt uw kind ergens tegenaan, dan kan een appje altijd. Ik antwoord gemiddeld binnen drie uur, ook op een vraag over één opgave.",
   },
 ];
 
@@ -113,7 +128,7 @@ const traject = [
   {
     titel: "Vragenlijst vooraf",
     tekst:
-      "Leerling en ouder vullen apart een korte vragenlijst in: vakken, cijfers, huidige leermethode, tijdsbesteding, aankomende toetsen en wat tot nu toe het meest frustreert. Eerlijk antwoorden is belangrijker dan mooi antwoorden — ik oordeel niet.",
+      "Leerling en ouder vullen apart een korte vragenlijst in: vakken, cijfers, huidige leermethode, tijdsbesteding, aankomende toetsen en examens, en wat tot nu toe het meest frustreert. Eerlijk antwoorden is belangrijker dan mooi antwoorden — ik oordeel niet.",
   },
   {
     titel: "Kort intakegesprek (ongeveer 20 minuten, telefonisch)",
@@ -147,7 +162,7 @@ export default function LeersysteemPagina() {
       <PaginaKop
         eyebrow="Dienst · MasterSchool Leersysteem"
         titel="Elke toetsweek dezelfde stress? Dat komt niet door luiheid."
-        intro="Het komt er bijna altijd op neer dat niemand uw kind ooit heeft geleerd hóé je leert. Het MasterSchool Leersysteem lost precies dat op: een persoonlijke aanpak voor elk vak, met een resultaatafspraak die we vooraf samen op papier zetten."
+        intro="Het komt er bijna altijd op neer dat niemand uw kind ooit heeft geleerd hóé je leert. Het MasterSchool Leersysteem lost precies dat op: een persoonlijke aanpak waarmee uw kind zelfstandig elk vak aanpakt — van een gewone toets tot het centraal examen. Met een resultaatafspraak die we vooraf samen op papier zetten."
       />
 
       {/* Resultaatafspraak, meteen in beeld */}
@@ -229,6 +244,10 @@ export default function LeersysteemPagina() {
                   ],
                   ["Betrokkenen", "Oskar, de leerling en de ouder(s)"],
                   ["Vakken", "Niet vakgebonden — werkt voor het hele vakkenpakket"],
+                  [
+                    "Geschikt voor",
+                    "Alle leerjaren, van de eerste toetsweek tot het examenjaar",
+                  ],
                   ["Vorm", "Online of fysiek in Monnickendam en omgeving"],
                   [
                     "WhatsApp-support",
@@ -271,6 +290,12 @@ export default function LeersysteemPagina() {
                 dat vak. Niet één vak dus, maar alle vakken die te laag staan.
                 Staat uw kind een 5 voor geschiedenis en een 4,5 voor wiskunde,
                 dan is de afspraak minimaal een 6 en een 5,5.
+              </p>
+
+              <p className="mt-3 leading-relaxed text-slate-600">
+                Zit uw kind in het examenjaar, dan stemmen we de afspraak daarop
+                af: dan gaat het over de schoolexamens en de voorbereiding op het
+                centraal examen in plaats van over de eerstvolgende toets.
               </p>
 
               <h3 className="mt-6 font-semibold text-navy">
@@ -416,6 +441,13 @@ export default function LeersysteemPagina() {
                 en er te weinig voor terugkrijgen.
               </p>
               <p>
+                Zit uw kind in het examenjaar, dan is dit misschien wel het beste
+                moment. Een examenperiode is te groot om te overzien zonder
+                systeem: veel vakken, maanden vooruit plannen en stof die
+                teruggaat tot leerjaar vier. Precies daarvoor is deze aanpak
+                bedoeld.
+              </p>
+              <p>
                 Minder geschikt is het voor leerlingen die geen enkele motivatie
                 hebben om te leren, en voor leerlingen die al goede cijfers halen
                 met een aanpak die voor hen werkt.
@@ -426,9 +458,21 @@ export default function LeersysteemPagina() {
               Wat uw kind eraan overhoudt
             </h3>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              <Vink>Een aanpak voor elk vak, niet voor één toets</Vink>
+              <Vink>
+                Een aanpak voor elk vak — van een gewone toets tot het centraal
+                examen
+              </Vink>
               <Vink>Minder tijd kwijt aan leren, met meer effect</Vink>
-              <Vink>Zelfstandig een toetsweek of examenperiode kunnen plannen</Vink>
+              <Vink>
+                Zelfstandigheid: uw kind plant en leert zonder dat u erbovenop
+                hoeft te zitten
+              </Vink>
+              <Vink>
+                Een toetsweek of examenperiode die uw kind zelf kan overzien
+              </Vink>
+              <Vink>
+                Iemand die meekijkt of het gebeurt, zodat het ook echt gebeurt
+              </Vink>
               <Vink>
                 Een vaardigheid die de rest van de schooltijd meegaat — en daarna
               </Vink>
@@ -506,7 +550,7 @@ export default function LeersysteemPagina() {
 
       <SlotCta
         titel="Benieuwd of het Leersysteem bij uw kind past?"
-        tekst="Stuur een appje of plan een gratis kennismakingsgesprek van een kwartier. Ik vertel eerlijk of dit past of dat bijles op dit moment logischer is — en welke resultaatafspraak in uw situatie realistisch is."
+        tekst="Stuur een appje of plan een gratis kennismakingsgesprek van een kwartier. Ik vertel eerlijk of dit past of dat bijles op dit moment logischer is, en welke resultaatafspraak in uw situatie realistisch is. Zit uw kind in het examenjaar, zeg dat er dan meteen bij."
       />
     </>
   );
