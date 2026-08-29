@@ -35,7 +35,7 @@ const herkenning = [
     icon: AlarmClock,
     titel: "Het begint pas de avond ervoor",
     tekst:
-      "Er wordt wel íéts gedaan voor school, maar altijd te laat en altijd te weinig om er nog iets van te maken.",
+      "Er wordt wel wat gedaan voor school, maar zo laat dat er weinig tijd overblijft om de stof echt te laten landen.",
   },
   {
     icon: MessageSquareWarning,
@@ -100,7 +100,7 @@ const onderdelen = [
   {
     titel: "Analyse van de huidige aanpak",
     tekst:
-      "Hoe leert uw kind nu, hoeveel tijd kost dat en wat levert het op? Hier zit vaak de grootste winst: herlezen en samenvatten voelt als leren, maar blijft nauwelijks hangen.",
+      "Hoe leert uw kind nu en hoeveel tijd kost dat? Hier valt vaak de meeste winst te halen: herlezen en samenvatten voelen als hard werken, terwijl oefenen met vragen aantoonbaar beter beklijft.",
   },
   {
     titel: "WhatsApp-support en opvolging",
@@ -180,8 +180,8 @@ export default function LeersysteemPagina() {
         <Reveal>
           <SectionKop
             eyebrow="Herkent u dit?"
-            titel="Het probleem is zelden de intelligentie"
-            intro="De meeste leerlingen die ik zie zijn slim genoeg. Ze doen ook wel iets voor school — een avond blokken, een samenvatting overschrijven. Alleen levert dat nauwelijks iets op, en dat weten ze zelf ook. Dan is uitstellen logischer dan het lijkt."
+            titel="Op school leert niemand je hóé je moet leren"
+            intro="Uw kind doet het dus met de methode die het ergens heeft opgepikt: doorlezen, een samenvatting maken, de avond ervoor alles nog een keer. Dat is geen onwil, en het zegt niets over hoe slim uw kind is. Er is alleen nooit iemand geweest die heeft laten zien dat het ook anders kan."
           />
         </Reveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
