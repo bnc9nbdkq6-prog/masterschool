@@ -190,9 +190,9 @@ export default function VoorwaardenPagina() {
           <h3>De Garantiesprint</h3>
           <p>
             Doet de leerling alle vier de sessies en maakt hij of zij de
-            opdrachten, maar staat er bij de eerstvolgende toetsweek toch geen
-            voldoende voor het betreffende vak? Dan zet ik de begeleiding
-            kosteloos voort tot die voldoende er wel is.
+            opdrachten, maar haalt hij of zij bij de eerstvolgende toets voor dat
+            vak toch geen voldoende? Dan zet ik de begeleiding kosteloos voort tot
+            die voldoende er wel is.
           </p>
           <p>Voorwaarden:</p>
           <ul>
@@ -200,13 +200,51 @@ export default function VoorwaardenPagina() {
             <li>De afgesproken opdrachten tussen de sessies zijn gemaakt.</li>
             <li>
               De afspraak geldt voor het vak waarvoor de sprint is afgenomen, bij
-              de eerstvolgende toetsweek na afloop van de sprint.
+              de eerstvolgende toets voor dat vak na afloop van de sprint.
             </li>
           </ul>
+          <h3>MasterSchool Examen Squad</h3>
           <p>
-            Omdat de startsituatie per leerling verschilt, kan de precieze
-            afspraak per leerling anders zijn. Wat we samen schriftelijk
-            vastleggen, gaat voor op de algemene omschrijving hierboven.
+            Ik neem alleen leerlingen aan van wie ik meen dat slagen haalbaar is;
+            dat beoordeel ik in het kennismakingsgesprek. Volgt de leerling alle
+            sessies en maakt hij of zij de afgesproken opdrachten, maar slaagt
+            hij of zij toch niet voor het eindexamen? Dan betaal ik het volledige
+            deelnamebedrag terug. Omdat begeleiding na de examens niet meer
+            zinvol is, bestaat de compensatie hier uit terugbetaling in plaats
+            van extra begeleiding.
+          </p>
+          <p>
+            Bij één gemiste sessie vervalt die sessie zonder restitutie en blijft
+            de afspraak staan. Bij meerdere gemiste sessies vervalt de afspraak.
+          </p>
+
+          <h3>MasterSchool Examen Doorbraak</h3>
+          <p>
+            Ik neem alleen leerlingen aan van wie ik meen dat slagen haalbaar is.
+            Bij betaling in termijnen is de tweede termijn pas verschuldigd nadat
+            een tweede meting op een vergelijkbaar oefenexamen een hoger cijfer
+            laat zien dan de nulmeting uit de eerste week. Zakt de leerling
+            ondanks nakoming van alle afspraken, dan zet ik de begeleiding
+            kosteloos voort tot en met het herexamen in het tweede tijdvak.
+          </p>
+
+          <h3>MasterSchool Overgangsboost</h3>
+          <p>
+            Ik neem alleen leerlingen aan van wie ik meen dat overgaan haalbaar
+            is. Bij betaling in termijnen geldt dezelfde regel over de tweede
+            meting als hierboven. Gaat de leerling ondanks nakoming van alle
+            afspraken toch niet over, dan begeleid ik de eerste twee maanden van
+            het overgedane schooljaar kosteloos.
+          </p>
+
+          <h3>Wat voor alle resultaatafspraken geldt</h3>
+          <p>
+            Onder nakoming van de afspraken versta ik: de afgesproken sessies en
+            belmomenten zijn gevolgd, het werk tussen de sessies is gedaan en
+            aantoonbaar, en het afgesproken leersysteem is uitgevoerd. Omdat de
+            startsituatie per leerling verschilt, kan de precieze afspraak per
+            leerling anders zijn. Wat we samen schriftelijk vastleggen, gaat voor
+            op de algemene omschrijvingen hierboven.
           </p>
 
           <h2>10. Wat ik wel en niet garandeer</h2>
