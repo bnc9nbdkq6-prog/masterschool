@@ -276,7 +276,7 @@ export const dienstenExamen: Dienst[] = [
     notitie:
       "Start begin maart, zodat er nog twee volledige periodes zijn om het tij te keren, en loopt tot de overgangsvergadering. Aanmelden kan nu al.",
     garantie:
-      "Ik neem alleen leerlingen aan van wie ik geloof dat overgaan haalbaar is. Gaat uw kind ondanks volledige medewerking toch niet over, dan begeleid ik de eerste twee maanden van het overgedane jaar kosteloos — zodat het opnieuw beginnen in elk geval goed begint.",
+      "Ik neem alleen leerlingen aan van wie ik geloof dat overgaan haalbaar is. Betaalt u in termijnen, dan is de tweede termijn pas verschuldigd nadat er een meetbare cijferverbetering is. En gaat uw kind ondanks volledige medewerking toch niet over, dan begeleid ik de eerste twee maanden van het overgedane jaar kosteloos.",
     garantieLabel: "Met vangnet",
     href: "/diensten/overgangsboost",
     detail: {
@@ -297,7 +297,7 @@ export const dienstenExamen: Dienst[] = [
         {
           titel: "Nulmeting",
           tekst:
-            "In de eerste week maakt uw kind een volledige oefentoets of oefenexamen. Dat cijfer is het vertrekpunt: het laat zien hoe groot het gat is en waar de punten precies blijven liggen. Zonder nulmeting is “het gaat beter” een gevoel in plaats van een feit.",
+            "In de eerste week maakt uw kind een oefentoets of oefenexamen. Dat cijfer is het vertrekpunt: het laat zien hoe groot het gat is en waar de punten precies blijven liggen. Zonder nulmeting is “het gaat beter” een gevoel in plaats van een feit.",
         },
         {
           titel: "Samen een leersysteem bouwen",
@@ -383,9 +383,9 @@ export const dienstenExamen: Dienst[] = [
             "Gratis en vrijblijvend. We bespreken hoe uw kind er nu voor staat, wat er al is geprobeerd en wat er nog moet gebeuren. Ik neem alleen leerlingen aan van wie ik geloof dat slagen haalbaar is — ziet u mij twijfelen, dan zeg ik dat.",
         },
         {
-          titel: "Nulmeting op een volledig oefenexamen",
+          titel: "Nulmeting",
           tekst:
-            "In de eerste week maakt uw kind een compleet oefenexamen. Dat cijfer is het vertrekpunt: het laat zien hoe groot het gat is en waar de punten precies blijven liggen. Zonder nulmeting is “het gaat beter” een gevoel in plaats van een feit.",
+            "In de eerste week maakt uw kind een oefenexamen. Dat cijfer is het vertrekpunt: het laat zien hoe groot het gat is en waar de punten precies blijven liggen. Zonder nulmeting is “het gaat beter” een gevoel in plaats van een feit.",
         },
         {
           titel: "Samen een leersysteem bouwen",
