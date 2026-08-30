@@ -168,9 +168,9 @@ export default function OverMijPagina() {
                 werkt averechts.
               </p>
               <p>
-                En een generieke aanpak. Wat voor de ene leerling werkt, werkt
-                voor de volgende niet. Daarom begint elke begeleiding met kijken
-                wat er in dít geval nodig is.
+                Ook een generieke aanpak wil ik voorkomen. Wat voor de ene
+                leerling werkt, werkt voor de volgende niet. Daarom begint elke
+                begeleiding met kijken wat er in dít geval nodig is.
               </p>
               <p>
                 Waar ik nu aan werk: nieuwe diensten ontwikkelen, mijn methodes
