@@ -125,7 +125,7 @@ const onderdelen = [
   {
     titel: "Een e-book om terug te lezen",
     tekst:
-      "Alles wat we tijdens de sessies behandelen over leren-leren staat ook op papier. Zo kan uw kind het later opnieuw opzoeken, zonder dat het van mijn geheugen of het hunne afhangt.",
+      "Alles wat we tijdens de sessies behandelen over leren-leren komt ook op papier, zodat uw kind het later opnieuw kan opzoeken. Dat e-book is nog in de maak; zodra het klaar is krijgt u het, zonder bijbetaling.",
   },
 ];
 
@@ -513,11 +513,17 @@ export default function LeersysteemPagina() {
 
         <Reveal>
           <div className="mt-8 rounded-[10px] border border-line bg-white p-6 sm:p-7">
-            <h3 className="font-semibold text-navy">Wat er (nog) niet bij zit</h3>
+            <h3 className="font-semibold text-navy">Wat er nog niet is</h3>
             <p className="mt-2 max-w-3xl leading-relaxed text-slate-600">
-              U leest online vaak over bonussen als AI-hulpmiddelen voor planning
-              en uitleg, of automatische feedback op verslagen. Die maak ik graag,
-              maar ze bestaan nog niet. Ze zijn dus{" "}
+              Het e-book hierboven schrijf ik op dit moment. Het hoort bij het
+              traject en u krijgt het zodra het af is, zonder bijbetaling — maar
+              op de dag dat u begint is het er nog niet. Dat zeg ik liever
+              vooraf.
+            </p>
+            <p className="mt-3 max-w-3xl leading-relaxed text-slate-600">
+              Verder leest u online vaak over bonussen als AI-hulpmiddelen voor
+              planning en uitleg, of automatische feedback op verslagen. Die maak
+              ik graag, maar ze bestaan nog niet. Ze zijn dus{" "}
               <strong className="font-semibold text-navy">niet inbegrepen</strong>{" "}
               en u betaalt er ook niet voor. Komen ze er, dan hoort u dat.
             </p>

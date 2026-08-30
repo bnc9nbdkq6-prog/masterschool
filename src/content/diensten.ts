@@ -94,7 +94,7 @@ export const dienstenJaar: Dienst[] = [
       "Persoonlijk gemaakt: houdt uw kind van zingen, dan schrijven we een liedje over de stof",
       "Ook wat eromheen zit: focus, concentratie en wanneer u het beste leert",
       "Afgestemd op wat uw kind daadwerkelijk bereid is te doen — een systeem dat niet wordt uitgevoerd is waardeloos",
-      "Een e-book met alles wat we behandelen, om later opnieuw op te zoeken",
+      "Een e-book met alles wat we behandelen, om later opnieuw op te zoeken. Dat e-book is nog in de maak; zodra het klaar is krijgt u het zonder bijbetaling",
       "Als eindresultaat een concreet plan voor elke toets, toetsweek en elk examen",
     ],
     garantie:
@@ -116,7 +116,8 @@ export const dienstenExamen: Dienst[] = [
       "Tien weken naar het diploma, in een vast groepje van maximaal vier leerlingen.",
     prijs: "€595",
     prijsDetail: "per leerling, inclusief btw",
-    duur: "10 weken · twee keer per week 90 minuten, tot aan de examens",
+    duur:
+      "10 weken · twee keer per week 90 minuten. Start half februari, tot aan de examens",
     voorWie:
       "Voor examenkandidaten die structuur en tempo missen, en die het prettig vinden om er niet alleen voor te staan.",
     bevat: [
@@ -126,10 +127,10 @@ export const dienstenExamen: Dienst[] = [
       "Oefenexamens maken terwijl ik meekijk en direct bijstuur",
       "Uw kind laat mij examens nakijken en krijgt te horen waar de punten blijven liggen",
       "Elke week samen een planning maken voor de dagen ertussen",
-      "Bijles in wiskunde A, economie of bedrijfseconomie wanneer dat nodig is",
+      "Bijles van mij in wiskunde A, economie, bedrijfseconomie of geschiedenis wanneer dat nodig is",
     ],
     notitie:
-      "Start half februari en loopt door tot de examens. Aanmelden kan nu al; de plaatsen zijn beperkt tot vier.",
+      "Start half februari en loopt door tot de examens. Aanmelden kan nu al; er is plek voor maximaal vier leerlingen.",
   },
   {
     slug: "overgangsboost",
@@ -139,7 +140,8 @@ export const dienstenExamen: Dienst[] = [
     prijs: "€1.290",
     prijsDetail: "inclusief btw",
     termijnen: "of drie termijnen van €447",
-    duur: "Doorlopend tot het einde van het schooljaar, zonder limiet op contact",
+    duur:
+      "Start begin maart en loopt tot het einde van het schooljaar, zonder limiet op contact",
     voorWie:
       "Voor de leerling die er op dit moment niet goed voor staat en waarbij overgaan echt spannend wordt.",
     bevat: [
@@ -148,9 +150,11 @@ export const dienstenExamen: Dienst[] = [
       "Een planning per week en per dag, in plaats van een vaag voornemen",
       "Elke relevante dag tien minuten bellen: hoe ging het vandaag en wat doen we morgen",
       "Altijd WhatsApp-support, ook voor één vraag over één opgave",
-      "Bijles in wiskunde A, economie of bedrijfseconomie",
+      "Bijles van mij in wiskunde A, economie, bedrijfseconomie of geschiedenis",
       "Aandacht voor wat eromheen zit: slaap, voeding en concentratie",
     ],
+    notitie:
+      "Start begin maart, zodat er nog twee volledige periodes zijn om het tij te keren, en loopt tot de overgangsvergadering. Aanmelden kan nu al.",
   },
   {
     slug: "examen-doorbraak",
@@ -160,7 +164,8 @@ export const dienstenExamen: Dienst[] = [
     prijs: "€1.790",
     prijsDetail: "inclusief btw",
     termijnen: "of drie termijnen van €597",
-    duur: "Doorlopend tot aan de examens, zonder limiet op contact",
+    duur:
+      "Start half februari en loopt tot het laatste centraal examen, zonder limiet op contact",
     voorWie:
       "Voor de examenkandidaat bij wie slagen op dit moment niet vanzelfsprekend is en waar geen tijd meer te verliezen valt.",
     bevat: [
@@ -169,16 +174,29 @@ export const dienstenExamen: Dienst[] = [
       "Een planning per week en per dag, tot aan het laatste examen",
       "Elke relevante dag tien minuten bellen: hoe ging het vandaag en wat doen we morgen",
       "Altijd WhatsApp-support, ook voor één vraag over één opgave",
-      "Bijles in wiskunde A, economie of bedrijfseconomie",
+      "Bijles van mij in wiskunde A, economie, bedrijfseconomie of geschiedenis",
       "Aandacht voor wat eromheen zit: slaap, voeding en concentratie",
     ],
     notitie:
-      "Betaalt u in termijnen, dan betaalt u de tweede termijn pas nadat de eerste meetbare cijferverbetering er is.",
+      "Start half februari en loopt tot het laatste centraal examen. Aanmelden kan nu al. Betaalt u in termijnen, dan betaalt u de tweede termijn pas nadat de eerste meetbare cijferverbetering is vastgesteld.",
     uitgelicht: true,
   },
 ];
 
 export const alleDiensten: Dienst[] = [...dienstenJaar, ...dienstenExamen];
+
+/**
+ * Diensten die er wel aankomen maar nog niet te boeken zijn. Toon ze
+ * uitsluitend als "binnenkort beschikbaar" en nooit met een definitieve prijs.
+ */
+export const toekomstigeDiensten = [
+  {
+    naam: "Groepsbijles",
+    beschrijving:
+      "Bijles in een vast groepje van maximaal vier leerlingen, op vaste tijden en een vaste locatie in Monnickendam. Dezelfde aanpak als individuele bijles, tegen een aanzienlijk lager tarief per leerling.",
+    indicatie: "verwachte prijs: €12 per uur per leerling",
+  },
+] as const;
 
 /** De drie diensten die op de homepage worden uitgelicht. */
 export const homeDiensten: Dienst[] = dienstenJaar;

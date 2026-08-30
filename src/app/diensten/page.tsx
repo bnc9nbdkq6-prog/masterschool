@@ -15,6 +15,7 @@ import {
 import {
   dienstenExamen,
   dienstenJaar,
+  toekomstigeDiensten,
   type Dienst,
 } from "@/content/diensten";
 import { niveaus, prijzen, site, vakken } from "@/content/site";
@@ -303,8 +304,47 @@ export default function DienstenPagina() {
         </div>
       </Section>
 
+      {/* In ontwikkeling */}
+      <Section tint="offwhite" id="binnenkort">
+        <Reveal>
+          <SectionKop
+            eyebrow="In ontwikkeling"
+            titel="Waar ik op dit moment aan werk"
+            intro="Nog niet te boeken. Ik noem het hier zodat u weet wat eraan komt; de prijs is een verwachting en nog niet definitief. Heeft u interesse, laat het weten — dan neem ik contact op zodra het beschikbaar is."
+          />
+        </Reveal>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+          {toekomstigeDiensten.map((dienst, i) => (
+            <Reveal key={dienst.naam} delay={i * 45}>
+              <Kaart className="h-full">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1 text-xs font-semibold text-muted">
+                  <Users className="h-3.5 w-3.5" aria-hidden="true" />
+                  Binnenkort beschikbaar
+                </span>
+                <h3 className="mt-4 text-lg font-semibold text-navy">
+                  {dienst.naam}
+                </h3>
+                <p className="mt-2 leading-relaxed text-slate-600">
+                  {dienst.beschrijving}
+                </p>
+                <p className="mt-3 text-sm text-muted">{dienst.indicatie}</p>
+                <div className="mt-5">
+                  <KnopLink
+                    href="/contact?interesse=binnenkort"
+                    variant="secundair"
+                  >
+                    Houd mij op de hoogte
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </KnopLink>
+                </div>
+              </Kaart>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
       {/* Bewijs */}
-      <Section tint="offwhite">
+      <Section>
         <Reveal>
           <SectionKop
             eyebrow="Resultaten"
@@ -343,9 +383,9 @@ export default function DienstenPagina() {
       </Section>
 
       {/* Vakken en praktisch */}
-      <Section>
+      <Section tint="offwhite">
         <Reveal>
-          <div className="grid gap-8 rounded-[10px] border border-line bg-offwhite p-6 sm:p-8 md:grid-cols-3">
+          <div className="grid gap-8 rounded-[10px] border border-line bg-white p-6 sm:p-8 md:grid-cols-3">
             <div>
               <h2 className="font-semibold text-navy">Vakken</h2>
               <ul className="mt-3 space-y-2 text-slate-600">
@@ -385,7 +425,7 @@ export default function DienstenPagina() {
       </Section>
 
       {/* Voorwaarden in het kort */}
-      <Section tint="offwhite">
+      <Section>
         <Reveal>
           <SectionKop
             eyebrow="Praktisch"
@@ -430,7 +470,7 @@ export default function DienstenPagina() {
       </Section>
 
       {/* Bezwaren */}
-      <Section>
+      <Section tint="offwhite">
         <Reveal>
           <SectionKop
             eyebrow="Twijfels"
