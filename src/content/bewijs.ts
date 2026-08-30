@@ -91,6 +91,13 @@ export type Case = {
   naam: string;
   vak: string;
   niveau: string;
+  /**
+   * Korte van/naar-weergave voor het cijferblok op de kaart. Vul dit alleen
+   * wanneer er een eerlijk beginpunt is; bij een leerling zonder startcijfer
+   * blijft het leeg en toont de kaart alleen het resultaat.
+   */
+  van?: string;
+  naar?: string;
   beginsituatie: string;
   aanpak: string;
   inzetLeerling: string;
@@ -106,6 +113,8 @@ export const cases: Case[] = [
     naam: "Valentijn",
     vak: "Wiskunde",
     niveau: "havo 2",
+    van: "2,6",
+    naar: "8,6",
     beginsituatie: "Een 2,6 voor de laatste toets.",
     aanpak: "Uitleg van de stof en samen oefenvragen maken onder begeleiding.",
     inzetLeerling: "Oefenvragen gemaakt en daarnaast zelfstandig geleerd.",
@@ -132,6 +141,8 @@ export const cases: Case[] = [
     naam: "Roan",
     vak: "Wiskunde",
     niveau: "mavo 4",
+    van: "4,6",
+    naar: "8,0",
     beginsituatie: "Een 4,6 gemiddeld voor wiskunde.",
     aanpak:
       "Uitleg van de stof, examens oefenen onder begeleiding en zelfstandig, oefentoetsen maken en gericht oefenen op eerder gemaakte fouten.",
@@ -147,6 +158,8 @@ export const cases: Case[] = [
     naam: "Gianni",
     vak: "Economie en bedrijfseconomie",
     niveau: "vwo 6, examenjaar",
+    van: "4, 5 en 5",
+    naar: "Geslaagd",
     beginsituatie: "Een 4 voor economie, een 5 voor bedrijfseconomie en een 5 voor Frans.",
     aanpak:
       "Eerst een uur uitleg over mijn eigen leermethode met flashcards en herhaling, inclusief mijn bestaande notities. Daarna twee keer een uur bijles over de examenstof die hij nog moeilijk vond.",

@@ -54,9 +54,8 @@ export function ReviewKaart({ review }: { review: Review }) {
 }
 
 export function CaseKaart({ item }: { item: Case }) {
+  // Vak en niveau staan al in de kop van de kaart.
   const regels = [
-    ["Vak", item.vak],
-    ["Niveau", item.niveau],
     ["Beginsituatie", item.beginsituatie],
     ["Aanpak", item.aanpak],
     ["Inzet van de leerling", item.inzetLeerling],
@@ -65,8 +64,34 @@ export function CaseKaart({ item }: { item: Case }) {
 
   return (
     <Kaart className="h-full">
-      <h3 className="text-xl font-bold text-navy">{item.naam}</h3>
-      <p className="mt-2 text-lg font-semibold text-navy">{item.resultaat}</p>
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <h3 className="text-xl font-bold text-navy">{item.naam}</h3>
+        <p className="text-sm text-muted">
+          {item.vak} · {item.niveau}
+        </p>
+      </div>
+
+      {item.van && item.naar ? (
+        <div className="mt-4 rounded-[10px] border border-line bg-offwhite px-5 py-4">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="text-2xl font-semibold text-muted tabular-nums">
+              {item.van}
+            </span>
+            <ArrowRight
+              className="h-6 w-6 shrink-0 text-navy/50"
+              aria-hidden="true"
+            />
+            <span className="text-4xl leading-none font-bold text-navy tabular-nums">
+              {item.naar}
+            </span>
+          </div>
+          <p className="mt-2.5 text-sm text-slate-600">
+            {item.sessies} · {item.periode}
+          </p>
+        </div>
+      ) : null}
+
+      <p className="mt-4 text-lg font-semibold text-navy">{item.resultaat}</p>
       <dl className="mt-5 space-y-3 text-sm">
         {regels.map(([label, waarde]) => (
           <div key={label} className="grid grid-cols-[9.5rem_1fr] gap-3 max-sm:grid-cols-1 max-sm:gap-0.5">
