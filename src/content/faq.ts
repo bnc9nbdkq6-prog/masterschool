@@ -75,7 +75,7 @@ export const faq: FaqCategorie[] = [
       {
         vraag: "Kunt u garanderen dat mijn kind hogere cijfers haalt?",
         antwoord:
-          "Nee, en dat wil ik ook niet beloven. Wat ik wél garandeer, is dat de leerling tijdens de les de stof uit het boek goed begrijpt. In verreweg de meeste gevallen leidt dat tot betere cijfers. Maar een leerling kan een black-out krijgen of een toets kan sterk afwijken van de stof in het boek. Daar kan ik geen garantie tegenover zetten. Voor het MasterSchool Leersysteem maak ik vooraf wél een concrete resultaatafspraak met u.",
+          "Bij losse bijles niet, en dat wil ik ook niet beloven. Wat ik daar wél garandeer, is dat de leerling tijdens de les de stof uit het boek goed begrijpt. In verreweg de meeste gevallen leidt dat tot betere cijfers, maar een leerling kan een black-out krijgen of een toets kan sterk afwijken van het boek. Bij de Garantiesprint en het MasterSchool Leersysteem ligt dat anders: daar spreken we vooraf een resultaat af, en haalt uw kind dat niet terwijl het zich wel aan de afspraken houdt, dan begeleid ik kosteloos door tot het wél lukt.",
         opHome: true,
       },
       {
@@ -135,7 +135,7 @@ export const faq: FaqCategorie[] = [
       {
         vraag: "Wat kost het MasterSchool Leersysteem?",
         antwoord:
-          "€249 eenmalig, inclusief btw. Daarvoor bouwen we samen het complete leersysteem, inclusief intake, startgesprek en een follow-up. Aanvullende begeleiding daarna kost €25 per uur.",
+          "€349 eenmalig, inclusief btw. Daarvoor bouwen we in zes sessies samen het complete leersysteem, inclusief intakegesprek en een e-book om later terug te lezen. Loopt een sessie uit, dan kost dat niets extra. Wilt u daarna doorlopende WhatsApp- en belsupport, dan kan dat voor €15 per maand — maandelijks opzegbaar.",
         opHome: true,
       },
       {

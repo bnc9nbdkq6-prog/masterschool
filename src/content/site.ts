@@ -40,8 +40,10 @@ export const site = {
 export const prijzen = {
   bijlesPerUur: 25,
   bijlesPerUurLabel: "€25 per uur",
-  leersysteem: 249,
-  leersysteemLabel: "€249 eenmalig",
+  leersysteem: 349,
+  leersysteemLabel: "€349 eenmalig",
+  leersysteemSupport: 15,
+  leersysteemSupportLabel: "€15 per maand",
   btwNotitie: "Alle genoemde prijzen zijn inclusief btw.",
 } as const;
 

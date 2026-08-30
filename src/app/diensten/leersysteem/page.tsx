@@ -26,7 +26,7 @@ import { cases, eigenResultaten, resultatenDisclaimer, reviews } from "@/content
 export const metadata: Metadata = {
   title: "MasterSchool Leersysteem — leren dat wél blijft hangen",
   description:
-    "Een persoonlijke aanpak voor elk vak, voor toetsweken én het eindexamen. Uw kind leert zelfstandig plannen en studeren, met een resultaatafspraak vooraf. €249 eenmalig inclusief btw.",
+    "Een persoonlijke aanpak voor elk vak, voor toetsweken én het eindexamen. Uw kind leert zelfstandig plannen en studeren, met een resultaatafspraak vooraf. €349 eenmalig inclusief btw.",
   alternates: { canonical: "/diensten/leersysteem" },
 };
 
@@ -120,7 +120,12 @@ const onderdelen = [
   {
     titel: "WhatsApp-support",
     tekst:
-      "Loopt uw kind ergens tegenaan, dan kan een appje altijd. Ik antwoord gemiddeld binnen drie uur, ook op een vraag over één opgave.",
+      "Loopt uw kind ergens tegenaan, dan kan een appje altijd. Ik antwoord gemiddeld binnen drie uur, ook op een vraag over één opgave. Na het traject kan dat doorlopen voor €15 per maand.",
+  },
+  {
+    titel: "Een e-book om terug te lezen",
+    tekst:
+      "Alles wat we tijdens de sessies behandelen over leren-leren staat ook op papier. Zo kan uw kind het later opnieuw opzoeken, zonder dat het van mijn geheugen of het hunne afhangt.",
   },
 ];
 
@@ -233,10 +238,10 @@ export default function LeersysteemPagina() {
               <h2 className="text-xl font-bold text-navy">In het kort</h2>
               <dl className="mt-5 space-y-4 text-sm">
                 {[
-                  ["Prijs", "€249 eenmalig, inclusief btw"],
+                  ["Prijs", "€349 eenmalig, inclusief btw"],
                   [
                     "Omvang",
-                    "Naar verwachting ongeveer zes uur in totaal, inclusief intake, startgesprek en follow-up",
+                    "Zes sessies van ongeveer een uur. Loopt een sessie uit, dan kost dat niets extra",
                   ],
                   [
                     "Verdeling",
@@ -250,10 +255,14 @@ export default function LeersysteemPagina() {
                   ],
                   ["Vorm", "Online of fysiek in Monnickendam en omgeving"],
                   [
-                    "WhatsApp-support",
-                    "Inbegrepen, voorlopig zonder einddatum. Antwoord gemiddeld binnen drie uur",
+                    "Tijdens het traject",
+                    "WhatsApp-support inbegrepen. Antwoord gemiddeld binnen drie uur",
                   ],
-                  ["Aanvullende begeleiding", "€25 per uur, altijd optioneel"],
+                  [
+                    "Daarna optioneel",
+                    "Doorlopende WhatsApp- en belsupport voor €15 per maand, maandelijks opzegbaar",
+                  ],
+                  ["Extra bijles", "€25 per uur, altijd optioneel"],
                 ].map(([label, waarde]) => (
                   <div key={label}>
                     <dt className="font-medium text-muted">{label}</dt>
@@ -284,12 +293,12 @@ export default function LeersysteemPagina() {
             <div className="mt-6 rounded-[10px] border border-line bg-offwhite p-6 sm:p-7">
               <h3 className="font-semibold text-navy">Het uitgangspunt</h3>
               <p className="mt-2 leading-relaxed text-slate-600">
-                Voor <strong className="font-semibold text-navy">elk vak</strong>{" "}
-                waarin het rapportcijfer te laag is, gaan we uit van een
-                verbetering van minimaal 1,0 punt bij de eerstvolgende toets voor
-                dat vak. Niet één vak dus, maar alle vakken die te laag staan.
-                Staat uw kind een 5 voor geschiedenis en een 4,5 voor wiskunde,
-                dan is de afspraak minimaal een 6 en een 5,5.
+                Levert uw kind bewijs dat het systeem wordt uitgevoerd en blijven
+                de onvoldoendes staan? Dan begeleid ik{" "}
+                <strong className="font-semibold text-navy">kosteloos door</strong>{" "}
+                tot er wél voldoendes worden gehaald. Dat geldt voor{" "}
+                <strong className="font-semibold text-navy">elk vak</strong> dat
+                onvoldoende staat, niet voor één enkel vak.
               </p>
 
               <p className="mt-3 leading-relaxed text-slate-600">
@@ -318,20 +327,22 @@ export default function LeersysteemPagina() {
               </ul>
 
               <h3 className="mt-6 font-semibold text-navy">
-                Wordt de afspraak niet gehaald?
+                Wat dat concreet betekent
               </h3>
               <p className="mt-2 leading-relaxed text-slate-600">
-                Dan blijf ik kosteloos begeleiden tot de afgesproken verbetering
-                er wel is. U betaalt daar niets extra&apos;s voor.
+                Ik blijf begeleiden tot de voldoendes er staan, zonder dat u
+                daar iets extra&apos;s voor betaalt. Geen aantal sessies dat
+                afloopt, geen nieuwe factuur.
               </p>
 
               <h3 className="mt-6 font-semibold text-navy">Wat ik niet beloof</h3>
               <p className="mt-2 leading-relaxed text-slate-600">
-                Ik beloof geen vaste eindcijfers en geen verbetering op cijfers
-                die al goed zijn — van een 9 een 10 maken kan ik niet garanderen.
-                De exacte afspraak, inclusief vakken en voorwaarden, leggen we
-                daarom persoonlijk vast vóór de start. Zo weet u precies waar u
-                aan toe bent.
+                Ik beloof geen specifieke eindcijfers en geen verbetering op
+                vakken die al voldoende staan — van een 9 een 10 maken kan ik
+                niet garanderen. De afspraak gaat over onvoldoendes wegwerken.
+                Wat we precies afspreken, inclusief vakken en meetmoment, leggen
+                we vóór de start samen vast. Zo weet u precies waar u aan toe
+                bent.
               </p>
             </div>
             <div className="mt-8">
@@ -505,8 +516,8 @@ export default function LeersysteemPagina() {
             <h3 className="font-semibold text-navy">Wat er (nog) niet bij zit</h3>
             <p className="mt-2 max-w-3xl leading-relaxed text-slate-600">
               U leest online vaak over bonussen als AI-hulpmiddelen voor planning
-              en uitleg, feedback op verslagen of een e-book met leerstrategieën.
-              Die maak ik graag, maar ze bestaan nog niet. Ze zijn dus{" "}
+              en uitleg, of automatische feedback op verslagen. Die maak ik graag,
+              maar ze bestaan nog niet. Ze zijn dus{" "}
               <strong className="font-semibold text-navy">niet inbegrepen</strong>{" "}
               en u betaalt er ook niet voor. Komen ze er, dan hoort u dat.
             </p>

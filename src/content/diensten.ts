@@ -1,86 +1,187 @@
 /**
- * Diensten die MasterSchool nu daadwerkelijk aanbiedt, plus de diensten
- * die in ontwikkeling zijn. Alleen `beschikbaar: true` mag als leverbaar
- * worden gepresenteerd.
+ * De diensten die MasterSchool aanbiedt.
+ *
+ * Regels bij wijzigen:
+ *  1. Prijzen zijn altijd inclusief btw. Pas ook `prijzen` in site.ts aan.
+ *  2. Publiceer een garantie alleen mét de voorwaarden erbij.
+ *  3. Zet een dienst pas in deze lijst wanneer prijs, inhoud, duur en
+ *     voorwaarden definitief zijn.
  */
 
 export type Dienst = {
   slug: string;
   naam: string;
-  kort: string;
+  /** De uitkomst voor de ouder, in één zin. */
+  belofte: string;
   prijs: string;
-  prijsToelichting: string;
+  prijsDetail: string;
+  /** Optionele gespreide betaling. */
+  termijnen?: string;
+  duur: string;
   voorWie: string;
-  href: string;
+  bevat: string[];
+  /** Volledige garantie, inclusief voorwaarden. Weglaten als die er niet is. */
+  garantie?: string;
+  /** Kort label voor het garantie-badge. Alleen zinvol mét `garantie`. */
+  garantieLabel?: string;
+  /** Praktische kanttekening, bijvoorbeeld over de startdatum. */
+  notitie?: string;
+  /** Doorlink naar een detailpagina, als die bestaat. */
+  href?: string;
+  uitgelicht?: boolean;
 };
 
-export const diensten: Dienst[] = [
+/** Begeleiding die het hele schooljaar door loopt. */
+export const dienstenJaar: Dienst[] = [
   {
     slug: "bijles",
     naam: "Bijles",
-    kort:
-      "Individuele bijles in wiskunde A, economie, bedrijfseconomie en geschiedenis. Uw kind begrijpt de stof en weet hoe het de volgende toets aanpakt.",
-    prijs: "€25 per uur",
-    prijsToelichting: "inclusief btw, per werkelijk uur",
+    belofte:
+      "Uw kind begrijpt de stof weer en weet hoe de volgende toets in elkaar zit.",
+    prijs: "€25",
+    prijsDetail: "per uur, inclusief btw",
+    duur: "Per les, minimaal één uur. Meestal één tot anderhalf uur",
     voorWie:
-      "Voor leerlingen die vastlopen op één of twee vakken, of die zich gericht willen voorbereiden op een toets of examen.",
+      "Voor één vak dat blijft haken, of om gericht toe te werken naar een toetsweek. Wiskunde A, economie, bedrijfseconomie of geschiedenis.",
+    bevat: [
+      "Individuele les, online of fysiek in Monnickendam en omgeving",
+      "Uitleg net zolang tot het klopt — steeds op een andere manier",
+      "Oefenen met vragen in plaats van passief herlezen",
+      "Aandacht voor planning en aanpak, niet alleen voor de stof",
+      "Afrekening per werkelijk uur, geen abonnement",
+    ],
+    garantie:
+      "Vindt u de eerste bijles niet waardevol, dan betaalt u die les niet. Laat het binnen zeven dagen weten.",
+    garantieLabel: "Eerste les risicovrij",
     href: "/diensten/bijles",
+  },
+  {
+    slug: "garantiesprint",
+    naam: "De Garantiesprint",
+    belofte:
+      "Van onvoldoende naar voldoende bij de eerstvolgende toetsweek — of ik begeleid kosteloos door.",
+    prijs: "€249",
+    prijsDetail: "per sprint, per vak, inclusief btw",
+    duur: "4 weken · 1 uur intake plus vier sessies van 90 minuten",
+    voorWie:
+      "Voor één vak dat nu onvoldoende staat en snel omhoog moet. Beschikbaar voor wiskunde A, economie, bedrijfseconomie en geschiedenis.",
+    bevat: [
+      "Foutenanalyse-intake van een uur: waar gaat het precies mis en wat is het doel voor de volgende toetsweek",
+      "Vier sessies van 90 minuten, samen naar dat doel toe",
+      "Een studiemethode voor dat vak, zodat het ook zonder mij blijft werken",
+      "Bijles in het vak zelf, gericht op de stof die op de toets komt",
+    ],
+    garantie:
+      "Doet uw kind alle vier de sessies en maakt het de opdrachten, maar staat er bij de eerstvolgende toetsweek toch geen voldoende? Dan zet ik de begeleiding kosteloos voort tot het wél lukt.",
+    garantieLabel: "Met resultaatgarantie",
+    uitgelicht: true,
   },
   {
     slug: "leersysteem",
     naam: "MasterSchool Leersysteem",
-    kort:
-      "Samen bouwen we een persoonlijk leersysteem: hoe uw kind zelfstandig plant, leert en zich voorbereidt op elke toets en op het examen, voor elk vak. Met een resultaatafspraak op papier.",
-    prijs: "€249 eenmalig",
-    prijsToelichting: "inclusief btw",
+    belofte:
+      "Uw kind leert zelfstandig en effectief — voor elk vak, de rest van de schooltijd.",
+    prijs: "€349",
+    prijsDetail: "eenmalig, inclusief btw",
+    duur:
+      "6 sessies van ongeveer een uur. Loopt een sessie uit, dan kost dat niets extra",
     voorWie:
-      "Voor leerlingen die niet weten hoe ze moeten leren: die uitstellen, te laat beginnen en daardoor onder hun niveau presteren.",
+      "Voor de leerling die meer kan dan de cijfers laten zien: die uitstelt, te laat begint of veel tijd kwijt is zonder dat het loont. Niet vakgebonden — het werkt voor het hele vakkenpakket.",
+    bevat: [
+      "Intakegesprek van een uur met u én uw kind: wanneer bent u allebei tevreden over hoe het op school gaat",
+      "Ongeveer vijf uur samen bouwen aan een compleet leersysteem voor elk vak",
+      "Gebaseerd op technieken waarvan de werking goed onderbouwd is, zoals actief ophalen en spreiden in de tijd",
+      "Persoonlijk gemaakt: houdt uw kind van zingen, dan schrijven we een liedje over de stof",
+      "Ook wat eromheen zit: focus, concentratie en wanneer u het beste leert",
+      "Afgestemd op wat uw kind daadwerkelijk bereid is te doen — een systeem dat niet wordt uitgevoerd is waardeloos",
+      "Een e-book met alles wat we behandelen, om later opnieuw op te zoeken",
+      "Als eindresultaat een concreet plan voor elke toets, toetsweek en elk examen",
+    ],
+    garantie:
+      "Levert uw kind bewijs dat het systeem wordt uitgevoerd en blijven de onvoldoendes staan? Dan begeleid ik kosteloos door tot er wél voldoendes worden gehaald.",
+    garantieLabel: "Met resultaatgarantie",
+    notitie:
+      "Optioneel na afloop: doorlopende WhatsApp- en belsupport voor €15 per maand, maandelijks opzegbaar.",
     href: "/diensten/leersysteem",
+    uitgelicht: true,
   },
 ];
 
-/**
- * In ontwikkeling. Deze diensten worden uitsluitend als 'binnenkort
- * beschikbaar' getoond. Prijzen zijn indicatief en nog niet definitief.
- */
-export const toekomstigeDiensten = [
+/** Intensieve trajecten rond examens en overgaan. */
+export const dienstenExamen: Dienst[] = [
   {
-    naam: "Onvoldoende ophalen",
-    beschrijving:
-      "Een korte, gerichte sprint van vier lesuren om een onvoldoende voor wiskunde, economie, bedrijfseconomie of geschiedenis om te buigen naar een voldoende.",
-    indicatie: "indicatie: €249 per sprint, per vak",
-  },
-  {
+    slug: "examen-squad",
     naam: "MasterSchool Examen Squad",
-    beschrijving:
-      "Examenbegeleiding in een klein groepje van maximaal vier leerlingen: twee keer per week 90 minuten, van februari tot en met de examens. Met leersysteem, examentraining, planning en bijles.",
-    indicatie: "prijs nog niet vastgesteld",
+    belofte:
+      "Tien weken naar het diploma, in een vast groepje van maximaal vier leerlingen.",
+    prijs: "€595",
+    prijsDetail: "per leerling, inclusief btw",
+    duur: "10 weken · twee keer per week 90 minuten, tot aan de examens",
+    voorWie:
+      "Voor examenkandidaten die structuur en tempo missen, en die het prettig vinden om er niet alleen voor te staan.",
+    bevat: [
+      "Een vast groepje van maximaal vier leerlingen",
+      "Twee keer per week 90 minuten onder mijn begeleiding",
+      "Een eigen leersysteem, gebouwd in de eerste weken",
+      "Oefenexamens maken terwijl ik meekijk en direct bijstuur",
+      "Uw kind laat mij examens nakijken en krijgt te horen waar de punten blijven liggen",
+      "Elke week samen een planning maken voor de dagen ertussen",
+      "Bijles in wiskunde A, economie of bedrijfseconomie wanneer dat nodig is",
+    ],
+    notitie:
+      "Start half februari en loopt door tot de examens. Aanmelden kan nu al; de plaatsen zijn beperkt tot vier.",
   },
   {
+    slug: "overgangsboost",
+    naam: "MasterSchool Overgangsboost",
+    belofte:
+      "Voor de leerling die dreigt te blijven zitten. Alles op alles tot de overgang rond is.",
+    prijs: "€1.290",
+    prijsDetail: "inclusief btw",
+    termijnen: "of drie termijnen van €447",
+    duur: "Doorlopend tot het einde van het schooljaar, zonder limiet op contact",
+    voorWie:
+      "Voor de leerling die er op dit moment niet goed voor staat en waarbij overgaan echt spannend wordt.",
+    bevat: [
+      "Eén-op-één begeleiding, zonder limiet op het aantal contactmomenten",
+      "Samen een leersysteem bouwen dat past bij uw kind",
+      "Een planning per week en per dag, in plaats van een vaag voornemen",
+      "Elke relevante dag tien minuten bellen: hoe ging het vandaag en wat doen we morgen",
+      "Altijd WhatsApp-support, ook voor één vraag over één opgave",
+      "Bijles in wiskunde A, economie of bedrijfseconomie",
+      "Aandacht voor wat eromheen zit: slaap, voeding en concentratie",
+    ],
+  },
+  {
+    slug: "examen-doorbraak",
     naam: "MasterSchool Examen Doorbraak",
-    beschrijving:
-      "Intensieve één-op-één begeleiding richting het eindexamen: planning per dag, uitleg per vak, aandacht voor slaap en concentratie en dagelijks kort contact.",
-    indicatie: "prijs nog niet vastgesteld",
+    belofte:
+      "Voor de examenkandidaat die dreigt te zakken. Dagelijks contact tot het diploma binnen is.",
+    prijs: "€1.790",
+    prijsDetail: "inclusief btw",
+    termijnen: "of drie termijnen van €597",
+    duur: "Doorlopend tot aan de examens, zonder limiet op contact",
+    voorWie:
+      "Voor de examenkandidaat bij wie slagen op dit moment niet vanzelfsprekend is en waar geen tijd meer te verliezen valt.",
+    bevat: [
+      "Eén-op-één begeleiding, zonder limiet op het aantal contactmomenten",
+      "Samen een leersysteem bouwen dat past bij uw kind",
+      "Een planning per week en per dag, tot aan het laatste examen",
+      "Elke relevante dag tien minuten bellen: hoe ging het vandaag en wat doen we morgen",
+      "Altijd WhatsApp-support, ook voor één vraag over één opgave",
+      "Bijles in wiskunde A, economie of bedrijfseconomie",
+      "Aandacht voor wat eromheen zit: slaap, voeding en concentratie",
+    ],
+    notitie:
+      "Betaalt u in termijnen, dan betaalt u de tweede termijn pas nadat de eerste meetbare cijferverbetering er is.",
+    uitgelicht: true,
   },
-  {
-    naam: "Brugklas-overgangsbegeleiding",
-    beschrijving:
-      "Begeleiding voor leerlingen die net beginnen op de middelbare school, zodat ze meteen met een werkende aanpak starten.",
-    indicatie: "prijs nog niet vastgesteld",
-  },
-  {
-    naam: "Groepsbijles",
-    beschrijving:
-      "Bijles in een klein groepje, tegen een lager tarief per leerling dan individuele begeleiding.",
-    indicatie: "prijs nog niet vastgesteld",
-  },
-  {
-    naam: "Videocursussen en examengidsen",
-    beschrijving:
-      "Digitale cursussen over de start op de middelbare school en over leren-leren voor het examen, plus examengidsen per vak.",
-    indicatie: "indicatie: €12,99 tot €49,99",
-  },
-] as const;
+];
+
+export const alleDiensten: Dienst[] = [...dienstenJaar, ...dienstenExamen];
+
+/** De drie diensten die op de homepage worden uitgelicht. */
+export const homeDiensten: Dienst[] = dienstenJaar;
 
 /** Vakken waarin nu bijles wordt gegeven, met korte toelichting. */
 export const bijlesVakken = [

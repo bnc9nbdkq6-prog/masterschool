@@ -58,9 +58,33 @@ export default function VoorwaardenPagina() {
               minuten, dan betaalt u anderhalf uur.
             </li>
             <li>
-              <strong>MasterSchool Leersysteem:</strong> €249 eenmalig, inclusief
-              btw. Daarin zitten het intakegesprek, het startgesprek, het opstellen
-              van het leersysteem en de follow-up.
+              <strong>MasterSchool Leersysteem:</strong> €349 eenmalig, inclusief
+              btw. Daarin zitten het intakegesprek, zes sessies van ongeveer een
+              uur voor het opstellen van het leersysteem, en het e-book. Loopt een
+              sessie uit, dan wordt daarvoor niets extra in rekening gebracht.
+            </li>
+            <li>
+              <strong>De Garantiesprint:</strong> €249 per sprint, per vak,
+              inclusief btw. Daarin zitten de foutenanalyse-intake van een uur en
+              vier sessies van 90 minuten.
+            </li>
+            <li>
+              <strong>MasterSchool Examen Squad:</strong> €595 per leerling,
+              inclusief btw, voor het volledige traject van tien weken.
+            </li>
+            <li>
+              <strong>MasterSchool Overgangsboost:</strong> €1.290 inclusief btw,
+              of drie termijnen van €447.
+            </li>
+            <li>
+              <strong>MasterSchool Examen Doorbraak:</strong> €1.790 inclusief
+              btw, of drie termijnen van €597. Bij betaling in termijnen is de
+              tweede termijn pas verschuldigd nadat de eerste meetbare
+              cijferverbetering is vastgesteld.
+            </li>
+            <li>
+              <strong>Doorlopende support na het Leersysteem:</strong> €15 per
+              maand, inclusief btw, maandelijks opzegbaar.
             </li>
             <li>
               <strong>Aanvullende begeleiding na het Leersysteem:</strong> €25 per
@@ -126,42 +150,63 @@ export default function VoorwaardenPagina() {
             betaalt u die les niet. Laat dat binnen zeven dagen na de les weten.
           </p>
 
-          <h2>9. Resultaatafspraak bij het MasterSchool Leersysteem</h2>
+          <h2>9. Resultaatafspraken</h2>
           <p>
-            Bij het Leersysteem leggen we vóór de start samen een concrete
-            resultaatafspraak vast: om welke vakken en welke rapportcijfers het
-            gaat, en wanneer we evalueren. Het uitgangspunt is een verbetering van
-            minimaal 1,0 punt ten opzichte van het huidige rapportcijfer bij de
-            eerstvolgende toets voor dat vak. De afspraak geldt voor{" "}
-            <strong>elk vak</strong> waarin het rapportcijfer te laag is, niet
-            voor één enkel vak.
+            Bij twee diensten hoort een resultaatafspraak. Bij beide geldt: wordt
+            het afgesproken resultaat niet gehaald terwijl aan de voorwaarden is
+            voldaan, dan zet ik de begeleiding kosteloos voort tot het wél lukt.
+            Er vindt geen terugbetaling plaats; de compensatie bestaat uit extra
+            begeleiding.
           </p>
-          <p>Aan die afspraak zijn voorwaarden verbonden:</p>
+
+          <h3>MasterSchool Leersysteem</h3>
+          <p>
+            Levert de leerling bewijs dat het leersysteem wordt uitgevoerd en
+            blijven de onvoldoendes staan, dan begeleid ik kosteloos door tot er
+            wél voldoendes worden gehaald. Dit geldt voor{" "}
+            <strong>elk vak</strong> dat onvoldoende staat, niet voor één enkel
+            vak.
+          </p>
+          <p>Voorwaarden:</p>
           <ul>
             <li>
-              De leerling voert het afgesproken leersysteem uit en toont dat aan met
-              foto&apos;s als bewijs.
+              De leerling voert het afgesproken leersysteem uit en toont dat aan
+              met foto&apos;s als bewijs.
             </li>
             <li>
-              De afgesproken momenten worden nagekomen: het startgesprek, de sessies
-              en de follow-up.
+              De afgesproken momenten worden nagekomen: het intakegesprek en de
+              sessies.
             </li>
             <li>
-              De afspraak geldt voor de vakken en cijfers die we vooraf samen
-              hebben vastgelegd, en alleen voor cijfers die te laag zijn. Voor
-              cijfers die al voldoende of goed zijn, spreken we geen verbetering af.
+              We leggen vóór de start samen vast om welke vakken het gaat en
+              wanneer we evalueren.
+            </li>
+            <li>
+              De afspraak gaat over het wegwerken van onvoldoendes. Voor vakken
+              die al voldoende staan, spreek ik geen verbetering af.
+            </li>
+          </ul>
+
+          <h3>De Garantiesprint</h3>
+          <p>
+            Doet de leerling alle vier de sessies en maakt hij of zij de
+            opdrachten, maar staat er bij de eerstvolgende toetsweek toch geen
+            voldoende voor het betreffende vak? Dan zet ik de begeleiding
+            kosteloos voort tot die voldoende er wel is.
+          </p>
+          <p>Voorwaarden:</p>
+          <ul>
+            <li>Alle vier de sessies zijn gevolgd.</li>
+            <li>De afgesproken opdrachten tussen de sessies zijn gemaakt.</li>
+            <li>
+              De afspraak geldt voor het vak waarvoor de sprint is afgenomen, bij
+              de eerstvolgende toetsweek na afloop van de sprint.
             </li>
           </ul>
           <p>
-            Wordt de afgesproken verbetering niet gehaald terwijl aan deze
-            voorwaarden is voldaan, dan begeleid ik kosteloos door tot de
-            verbetering er wel is. Er vindt geen terugbetaling van het bedrag
-            plaats; de compensatie bestaat uit extra begeleiding.
-          </p>
-          <p>
-            Omdat de startsituatie per leerling verschilt, is de exacte
-            resultaatafspraak per leerling anders. Wat we samen vastleggen, gaat
-            voor op de algemene omschrijving hierboven.
+            Omdat de startsituatie per leerling verschilt, kan de precieze
+            afspraak per leerling anders zijn. Wat we samen schriftelijk
+            vastleggen, gaat voor op de algemene omschrijving hierboven.
           </p>
 
           <h2>10. Wat ik wel en niet garandeer</h2>

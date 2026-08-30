@@ -9,6 +9,7 @@ import {
   ClipboardList,
   Clock,
   Compass,
+  ShieldCheck,
   GraduationCap,
   HeartHandshake,
   Laptop,
@@ -28,7 +29,7 @@ import {
   Vink,
 } from "@/components/blokken";
 import { niveaus, site, vakken } from "@/content/site";
-import { diensten } from "@/content/diensten";
+import { dienstenExamen, homeDiensten } from "@/content/diensten";
 import { cases, eigenResultaten, resultatenDisclaimer, reviews } from "@/content/bewijs";
 import { faqPlat } from "@/content/faq";
 
@@ -365,29 +366,40 @@ export default function Home() {
         <Reveal>
           <SectionKop
             eyebrow="Wat ik aanbied"
-            titel="Twee manieren waarop ik uw kind help"
-            intro="Bijles voor een vak dat vastloopt, of een compleet leersysteem voor de manier waarop uw kind leert. Beide zijn persoonlijk en één op één."
+            titel="Drie manieren waarop ik uw kind help"
+            intro="Van losse bijles voor één vak tot een complete verandering in hoe uw kind leert. Bij twee ervan geldt: haalt uw kind het afgesproken resultaat niet, dan begeleid ik kosteloos door."
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {diensten.map((dienst, i) => (
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {homeDiensten.map((dienst, i) => (
             <Reveal key={dienst.slug} delay={i * 60}>
               <Kaart hover className="flex h-full flex-col">
-                <h3 className="text-2xl font-bold text-navy">{dienst.naam}</h3>
+                <h3 className="text-xl font-bold text-navy">{dienst.naam}</h3>
                 <p className="mt-1 font-semibold text-navy">
                   {dienst.prijs}{" "}
                   <span className="font-normal text-muted">
-                    — {dienst.prijsToelichting}
+                    {dienst.prijsDetail}
                   </span>
                 </p>
-                <p className="mt-4 leading-relaxed text-slate-600">{dienst.kort}</p>
                 <p className="mt-4 grow leading-relaxed text-slate-600">
-                  {dienst.voorWie}
+                  {dienst.belofte}
                 </p>
+                {dienst.garantieLabel ? (
+                  <p className="mt-4 flex gap-2 border-t border-line pt-4 text-sm text-slate-600">
+                    <ShieldCheck
+                      className="mt-0.5 h-4 w-4 shrink-0 text-navy"
+                      aria-hidden="true"
+                    />
+                    {dienst.garantieLabel}
+                  </p>
+                ) : null}
                 <div className="mt-6">
-                  <KnopLink href={dienst.href} variant="secundair">
-                    Meer over {dienst.naam}
+                  <KnopLink
+                    href={dienst.href ?? `/diensten#${dienst.slug}`}
+                    variant="secundair"
+                  >
+                    Meer hierover
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </KnopLink>
                 </div>
@@ -395,6 +407,23 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[10px] border border-line bg-white p-6">
+            <p className="max-w-xl leading-relaxed text-slate-600">
+              <strong className="font-semibold text-navy">
+                Staat er meer op het spel?
+              </strong>{" "}
+              Voor leerlingen die dreigen te blijven zitten of te zakken zijn er
+              intensieve trajecten:{" "}
+              {dienstenExamen.map((d) => d.naam.replace("MasterSchool ", "")).join(", ")}.
+            </p>
+            <KnopLink href="/diensten#examen-squad" variant="secundair">
+              Bekijk de examentrajecten
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </KnopLink>
+          </div>
+        </Reveal>
 
         <Reveal>
           <div className="mt-8 grid gap-5 rounded-[10px] border border-line bg-white p-6 sm:grid-cols-2 sm:p-7">
