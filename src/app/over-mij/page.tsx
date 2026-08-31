@@ -48,13 +48,13 @@ export default function OverMijPagina() {
                 Vwo 4: het ging om
               </h2>
               <p>
-                Ik weet niet precies waardoor het kwam, maar in vwo 4 veranderde
-                ik. Ik ging wél leren voor toetsen, en belangrijker nog: ik ging
-                me verdiepen in hoe leren eigenlijk werkt. Ik stapte over op
-                flashcards en oefenvragen in plaats van herlezen en samenvatten.
-                Ik maakte er een wedstrijd van om zo hoog mogelijke cijfers te
-                halen. Toen mijn docent Engels zei dat cum laude haalbaar was,
-                werd dat mijn doel.
+                In vwo 4 ben ik, met hulp van een paar leraren die in mij bleven
+                geloven, meer inspanning gaan tonen — en sloegen mijn cijfers om.
+                Ik ging me verdiepen in hoe leren eigenlijk werkt en stapte over
+                op flashcards en oefenvragen in plaats van herlezen en
+                samenvatten. Ik maakte er een wedstrijd van om zo hoog mogelijke
+                cijfers te halen. Toen mijn docent Engels zei dat cum laude
+                haalbaar was, werd dat mijn doel.
               </p>
               <p>
                 Op 1 juli 2026 haalde ik mijn vwo-diploma cum laude aan het

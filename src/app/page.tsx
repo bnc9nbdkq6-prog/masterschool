@@ -337,9 +337,11 @@ export default function Home() {
                 meer in mij dan ik op dat moment zelf.
               </p>
               <p>
-                In vwo 4 ging het om. Ik ben me gaan verdiepen in hoe leren
-                eigenlijk werkt, ik ging met flashcards en oefenvragen werken in
-                plaats van eindeloos herlezen, en de cijfers volgden. In juli 2026
+                In vwo 4 ben ik, met hulp van een paar leraren die in mij
+                bleven geloven, meer inspanning gaan tonen — en sloegen mijn
+                cijfers om. Ik ging me verdiepen in hoe leren eigenlijk werkt en
+                stapte over op flashcards en oefenvragen in plaats van eindeloos
+                herlezen. In juli 2026
                 slaagde ik cum laude voor mijn vwo aan het Copernicus SG in Hoorn,
                 met een 8,8 gemiddeld op het centraal eindexamen.
               </p>
