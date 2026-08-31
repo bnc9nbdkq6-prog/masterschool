@@ -29,10 +29,11 @@ export default function OverMijPagina() {
                 Vwo 1 tot en met 3: ik wilde weg
               </h2>
               <p>
-                De eerste drie jaar van het vwo gingen moeizaam. Ik vond school
-                niet leuk, ik was opstandig en luisterde slecht naar docenten. Ik
-                werd bijna dagelijks uit de les gestuurd en leren voor toetsen
-                deed ik niet.
+                De eerste drie jaar van het vwo gingen moeizaam. Ik zag het nut
+                van school niet, dus leren voor toetsen deed ik gewoon niet. Dat
+                zag je terug op mijn rapport: tientallen onvoldoendes, jaar na
+                jaar. Niet omdat het te moeilijk was, maar omdat ik er niets voor
+                deed.
               </p>
               <p>
                 In vwo 3 was ik er klaar mee. Ik geloofde niet meer in school, ik
@@ -48,12 +49,12 @@ export default function OverMijPagina() {
               </h2>
               <p>
                 Ik weet niet precies waardoor het kwam, maar in vwo 4 veranderde
-                ik. Ik maakte geen ruzie meer met docenten, ik ging leren voor
-                toetsen en ik ging me verdiepen in hoe leren eigenlijk werkt. Ik
-                stapte over op flashcards en oefenvragen in plaats van herlezen en
-                samenvatten. Ik maakte er een wedstrijd van om zo hoog mogelijke
-                cijfers te halen. Toen mijn docent Engels zei dat cum laude
-                haalbaar was, werd dat mijn doel.
+                ik. Ik ging wél leren voor toetsen, en belangrijker nog: ik ging
+                me verdiepen in hoe leren eigenlijk werkt. Ik stapte over op
+                flashcards en oefenvragen in plaats van herlezen en samenvatten.
+                Ik maakte er een wedstrijd van om zo hoog mogelijke cijfers te
+                halen. Toen mijn docent Engels zei dat cum laude haalbaar was,
+                werd dat mijn doel.
               </p>
               <p>
                 Op 1 juli 2026 haalde ik mijn vwo-diploma cum laude aan het

@@ -331,10 +331,10 @@ export default function Home() {
             />
             <div className="mt-5 space-y-4 text-lg leading-relaxed text-slate-600">
               <p>
-                In vwo 3 was ik er klaar mee. Ik zag het nut van school niet, ik
-                botste met docenten en ik wilde zo snel mogelijk weg naar het mbo.
-                Mijn afdelingsleidster praatte me daaruit: zij zag meer in mij dan
-                ik op dat moment zelf.
+                In vwo 3 was ik er klaar mee. Ik zag het nut van school niet,
+                verzamelde tientallen onvoldoendes en wilde zo snel mogelijk weg
+                naar het mbo. Mijn afdelingsleidster praatte me daaruit: zij zag
+                meer in mij dan ik op dat moment zelf.
               </p>
               <p>
                 In vwo 4 ging het om. Ik ben me gaan verdiepen in hoe leren
