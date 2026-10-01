@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { KeuzehulpPopup } from "@/components/KeuzehulpPopup";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -86,6 +87,7 @@ export default function RootLayout({
         <Header />
         <main id="hoofdinhoud">{children}</main>
         <Footer />
+        <KeuzehulpPopup />
         <script
           type="application/ld+json"
           // Vaste, door onszelf opgestelde data — geen invoer van bezoekers.

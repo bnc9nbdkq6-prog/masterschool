@@ -45,6 +45,17 @@ export default function PrivacyPagina() {
             fysieke begeleiding. Laat u een veld leeg, dan wordt er niets
             verzameld.
           </p>
+          <h3>Via de keuzehulp in het pop-upvenster</h3>
+          <p>
+            De keuzehulp vraagt wie de begeleiding zoekt, waar diegene hulp bij
+            wil en om het schoolniveau en leerjaar. De antwoorden blijven in uw
+            browser zolang u het venster gebruikt. Ze worden pas verstuurd als u
+            zelf kiest voor WhatsApp of e-mail en op de bijbehorende knop drukt.
+            Bij e-mail ontvangt MasterSchool uw antwoorden in de mailbox; de
+            bewaartermijn staat hieronder. Bij WhatsApp opent uw apparaat een
+            bericht dat u zelf nog moet verzenden. De keuzehulp bewaart uw
+            antwoorden niet op de website.
+          </p>
           <p>
             In uw eigen omschrijving van de hulpvraag kunt u gegevens over uw kind
             noemen, bijvoorbeeld cijfers of hoe het op school gaat. Deel niet meer
@@ -149,8 +160,11 @@ export default function PrivacyPagina() {
           <h2>Cookies en meten</h2>
           <p>
             Deze website plaatst <strong>geen cookies</strong>, gebruikt geen
-            analytics, geen trackingpixels en geen advertentienetwerken. Er is
-            daarom ook geen cookiebanner. Het lettertype wordt vanaf deze website
+            analytics, geen trackingpixels en geen advertentienetwerken. De
+            website gebruikt tijdelijk sessionStorage in uw browser om te
+            onthouden dat de keuzehulp in dit browsertabblad al is getoond. Deze
+            instelling bevat geen antwoorden of persoonsgegevens en verdwijnt
+            wanneer u het tabblad sluit. Het lettertype wordt vanaf deze website
             zelf geladen, dus er gaat geen verzoek naar een externe partij. De
             hostingpartij houdt wel standaard technische logbestanden bij die
             nodig zijn om de site te laten draaien.
@@ -159,10 +173,11 @@ export default function PrivacyPagina() {
           <h2>Gegevens van minderjarigen</h2>
           <p>
             De begeleiding is gericht op middelbare scholieren, van wie een deel
-            jonger is dan zestien jaar. Het contactformulier is bedoeld voor
-            ouders of verzorgers. Is de leerling jonger dan zestien, dan verwerk ik
-            zijn of haar gegevens alleen met medeweten en toestemming van een
-            ouder of verzorger.
+            jonger is dan zestien jaar. Ouders of verzorgers kunnen de
+            keuzehulp en het contactformulier invullen. Een leerling jonger dan
+            zestien kan de keuzehulp samen met een ouder of verzorger invullen;
+            ik verwerk de antwoorden van die leerling alleen met diens medeweten
+            en toestemming.
           </p>
           <p>
             Reviews, resultaten en foto&apos;s van leerlingen publiceer ik
