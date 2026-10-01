@@ -6,13 +6,20 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Clock3, X } from "lucide-react";
 import { site } from "@/content/site";
 import { WhatsAppIcon } from "./Icons";
 
-type Rol = "Leerling" | "Ouder/verzorger" | "Docent" | "Ik oriënteer me";
+type Rol =
+  | "Ik ben leerling"
+  | "Ik ben ouder/verzorger"
+  | "Ik ben docent"
+  | "Ik oriënteer me";
 type Hulpvraag =
-  | "Eén vak loopt vast"
-  | "Motivatie, planning of leren"
-  | "Meerdere vakken of school gaat breder moeizaam"
-  | "Er komt een toets of examen aan"
-  | "Ik wil eerst rustig rondkijken";
+  | "Ik zoek hulp bij één vak"
+  | "Eén vak staat onvoldoende en de volgende toets komt eraan"
+  | "Leren, plannen of motivatie gaat lastig"
+  | "Meerdere vakken lopen vast, maar overgaan is nog niet direct onzeker"
+  | "Overgaan is onzeker door meerdere vakken"
+  | "Ik doe eindexamen en zoek structuur in een kleine groep"
+  | "Ik doe eindexamen en zakken dreigt"
+  | "Ik weet nog niet welke hulp past";
 type Kanaal = "WhatsApp" | "E-mail";
 
 type Antwoorden = {
@@ -40,18 +47,21 @@ const leeg: Antwoorden = {
 };
 
 const rollen: Rol[] = [
-  "Leerling",
-  "Ouder/verzorger",
-  "Docent",
+  "Ik ben leerling",
+  "Ik ben ouder/verzorger",
+  "Ik ben docent",
   "Ik oriënteer me",
 ];
 
 const hulpvragen: Hulpvraag[] = [
-  "Eén vak loopt vast",
-  "Motivatie, planning of leren",
-  "Meerdere vakken of school gaat breder moeizaam",
-  "Er komt een toets of examen aan",
-  "Ik wil eerst rustig rondkijken",
+  "Ik zoek hulp bij één vak",
+  "Eén vak staat onvoldoende en de volgende toets komt eraan",
+  "Leren, plannen of motivatie gaat lastig",
+  "Meerdere vakken lopen vast, maar overgaan is nog niet direct onzeker",
+  "Overgaan is onzeker door meerdere vakken",
+  "Ik doe eindexamen en zoek structuur in een kleine groep",
+  "Ik doe eindexamen en zakken dreigt",
+  "Ik weet nog niet welke hulp past",
 ];
 
 const opties = {
@@ -71,56 +81,107 @@ const veldKlassen =
   "mt-2 w-full rounded-[10px] border border-line-strong bg-white px-4 py-3 text-base text-ink focus:border-navy";
 
 function adviesVoor(antwoorden: Antwoorden) {
-  if (antwoorden.hulpvraag === "Eén vak loopt vast") {
+  if (antwoorden.hulpvraag === "Ik zoek hulp bij één vak") {
     return {
-      titel: "Begin met gerichte bijles",
+      dienst: "Bijles",
+      href: "/diensten/bijles",
+      titel: "Aanbevolen dienst: Bijles",
       tekst:
-        "Eén-op-één bijles sluit hier waarschijnlijk het beste aan. We kijken eerst waar het precies vastloopt.",
-      prijs: "€25 per uur · gratis kennismaking van 15 minuten",
+        "Bijles past wanneer één vak blijft haken en persoonlijke uitleg en gerichte oefening nodig zijn.",
+      prijs: "€25 per uur, zonder abonnement",
     };
   }
 
-  if (antwoorden.hulpvraag === "Motivatie, planning of leren") {
+  if (
+    antwoorden.hulpvraag ===
+    "Eén vak staat onvoldoende en de volgende toets komt eraan"
+  ) {
     return {
-      titel: "Kijk naar het MasterSchool Leersysteem",
+      dienst: "De Garantiesprint",
+      href: "/diensten/garantiesprint",
+      titel: "Aanbevolen dienst: De Garantiesprint",
       tekst:
-        "Als vooral de aanpak, planning of het zelfstandig leren knelt, kan een vakoverstijgend leersysteem beter passen dan losse bijles.",
-      prijs: "€349 eenmalig · eerst vrijblijvend kennismaken",
+        "Deze vierweekse begeleiding is bedoeld voor één vak dat onvoldoende staat en snel omhoog moet: een intake en vier gerichte sessies.",
+      prijs: "€249 per vak, inclusief btw",
     };
   }
 
-  if (antwoorden.hulpvraag === "Er komt een toets of examen aan") {
+  if (
+    antwoorden.hulpvraag === "Leren, plannen of motivatie gaat lastig" ||
+    antwoorden.hulpvraag ===
+      "Meerdere vakken lopen vast, maar overgaan is nog niet direct onzeker"
+  ) {
     return {
-      titel: "Kies een aanpak die past bij de deadline",
+      dienst: "MasterSchool Leersysteem",
+      href: "/diensten/leersysteem",
+      titel: "Aanbevolen dienst: MasterSchool Leersysteem",
       tekst:
-        "Bij één onvoldoende vak kan de Garantiesprint passen. Bij een andere situatie bespreken we in de kennismaking wat haalbaar is.",
-      prijs: "Bijles vanaf €25 per uur · Garantiesprint €249",
+        "Dit traject richt zich op zelfstandig leren, plannen en een aanpak die werkt voor het hele vakkenpakket.",
+      prijs: "€349 eenmalig, inclusief btw · zes sessies",
+    };
+  }
+
+  if (antwoorden.hulpvraag === "Overgaan is onzeker door meerdere vakken") {
+    return {
+      dienst: "MasterSchool Overgangsboost",
+      href: "/diensten/overgangsboost",
+      titel: "Aanbevolen dienst: MasterSchool Overgangsboost",
+      tekst:
+        "Dit intensieve traject is bedoeld voor leerlingen bij wie overgaan echt spannend wordt en meerdere vakken aandacht vragen.",
+      prijs: "€1.290 tot het einde van het schooljaar, inclusief btw",
+    };
+  }
+
+  if (
+    antwoorden.hulpvraag ===
+    "Ik doe eindexamen en zoek structuur in een kleine groep"
+  ) {
+    return {
+      dienst: "MasterSchool Examen Squad",
+      href: "/diensten/examen-squad",
+      titel: "Aanbevolen dienst: MasterSchool Examen Squad",
+      tekst:
+        "Een examentraject met structuur en begeleiding in een vast groepje van maximaal vier leerlingen.",
+      prijs: "€595 per leerling, inclusief btw",
+    };
+  }
+
+  if (antwoorden.hulpvraag === "Ik doe eindexamen en zakken dreigt") {
+    return {
+      dienst: "MasterSchool Examen Doorbraak",
+      href: "/diensten/examen-doorbraak",
+      titel: "Aanbevolen dienst: MasterSchool Examen Doorbraak",
+      tekst:
+        "Deze intensieve één-op-één begeleiding is bedoeld voor examenkandidaten bij wie slagen onzeker is en dagelijks contact nodig kan zijn.",
+      prijs: "€1.790 tot het laatste centraal examen, inclusief btw",
     };
   }
 
   return {
-    titel: "Begin met een kort kennismakingsgesprek",
+    dienst: "Bijles",
+    href: "/diensten/bijles",
+    titel: "Aanbevolen start: Bijles",
     tekst:
-      "Bij meerdere vakken of als u nog oriënteert, is het verstandig eerst de situatie te bespreken. Dan kijken we samen of en welke begeleiding past.",
-    prijs: "Gratis en vrijblijvend · ongeveer 15 minuten",
+      "Omdat u nog twijfelt, is losse bijles de laagdrempeligste start: u betaalt per gegeven uur. In de gratis kennismaking bekijken we of dit ook inhoudelijk de juiste dienst is.",
+    prijs: "€25 per uur, zonder abonnement",
   };
 }
 
 function maakBericht(antwoorden: Antwoorden) {
   const advies = adviesVoor(antwoorden);
   return [
-    "Hoi Oskar, ik heb de keuzehulp op de website ingevuld.",
+    "Beste Oskar, ik heb de keuzehulp op de website ingevuld.",
     "",
-    `Ik ben: ${antwoorden.rol}`,
-    `Hulpvraag: ${antwoorden.hulpvraag}`,
+    `Ik vul dit in als: ${antwoorden.rol}`,
+    `Dit is mijn situatie: ${antwoorden.hulpvraag}`,
     `Niveau: ${antwoorden.niveau}`,
     `Leerjaar: ${antwoorden.leerjaar}`,
     `Vak: ${antwoorden.vak}`,
     `Mijn naam: ${antwoorden.naam}`,
     antwoorden.telefoon ? `Telefoon: ${antwoorden.telefoon}` : "",
     "",
-    `De keuzehulp adviseert: ${advies.titel.toLowerCase()}.`,
-    "Ik hoor graag wat een passende volgende stap is.",
+    `De keuzehulp beveelt aan: ${advies.dienst}.`,
+    "Ik hoor graag of dit passend is voor mijn situatie.",
   ]
     .filter(Boolean)
     .join("\n");
@@ -204,7 +265,7 @@ export function KeuzehulpPopup() {
       `Niveau: ${antwoorden.niveau}`,
       `Leerjaar: ${antwoorden.leerjaar}`,
       `Vak: ${antwoorden.vak || "Niet ingevuld"}`,
-      `Advies keuzehulp: ${advies.titel} — ${advies.tekst}`,
+      `Aanbevolen dienst: ${advies.dienst} — ${advies.tekst}`,
       `Prijsinformatie: ${advies.prijs}`,
     ].join("\n");
 
@@ -218,7 +279,7 @@ export function KeuzehulpPopup() {
           telefoon: antwoorden.telefoon.trim(),
           niveau: antwoorden.niveau,
           leerjaar: `Leerjaar ${antwoorden.leerjaar}`,
-          dienst: advies.titel,
+          dienst: advies.dienst,
           vak: antwoorden.vak || "Niet ingevuld",
           vorm: "Geen voorkeur",
           bericht: beschrijving,
@@ -303,7 +364,7 @@ export function KeuzehulpPopup() {
                   id="keuzehulp-titel"
                   className="mt-2 text-2xl font-bold tracking-tight text-navy sm:text-3xl"
                 >
-                  Welke hulp past bij jou?
+                  Welke begeleiding past bij uw situatie?
                 </h2>
               </div>
               <button
@@ -319,8 +380,8 @@ export function KeuzehulpPopup() {
             {!verzonden ? (
               <>
                 <p className="mt-3 leading-relaxed text-slate-600">
-                  Beantwoord een paar korte vragen. Je ziet meteen welke
-                  begeleiding mogelijk aansluit.
+                  Beantwoord een paar korte vragen. U ziet meteen welke dienst
+                  waarschijnlijk het beste aansluit.
                 </p>
                 <div className="mt-5" aria-label={`Stap ${stap + 1} van 4`}>
                   <div className="flex items-center justify-between text-xs font-medium text-muted">
@@ -345,7 +406,7 @@ export function KeuzehulpPopup() {
                 {stap === 0 ? (
                   <fieldset className="mt-6">
                     <legend className="text-lg font-semibold text-navy">
-                      Wie vult dit in?
+                      Voor wie zoekt u begeleiding?
                     </legend>
                     <div className="mt-3 grid gap-2 sm:grid-cols-2">
                       {rollen.map((rol) => (
@@ -364,7 +425,7 @@ export function KeuzehulpPopup() {
                 {stap === 1 ? (
                   <fieldset className="mt-6">
                     <legend className="text-lg font-semibold text-navy">
-                      Waar wil je hulp bij?
+                      Welke situatie past het beste?
                     </legend>
                     <div className="mt-3 grid gap-2">
                       {hulpvragen.map((hulpvraag) => (
@@ -385,7 +446,7 @@ export function KeuzehulpPopup() {
                 {stap === 2 ? (
                   <div className="mt-6 space-y-4">
                     <h3 className="text-lg font-semibold text-navy">
-                      Over wie gaat het?
+                      Over welke leerling gaat het?
                     </h3>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <label className="font-medium text-navy">
@@ -454,7 +515,7 @@ export function KeuzehulpPopup() {
                   <div className="mt-6 space-y-5">
                     <section className="rounded-[10px] border border-line bg-offwhite p-4" aria-live="polite">
                       <p className="text-xs font-semibold tracking-wide text-muted uppercase">
-                        Eerste inschatting
+                        Mijn aanbeveling
                       </p>
                       <h3 className="mt-1 text-lg font-bold text-navy">
                         {advies.titel}
@@ -465,25 +526,33 @@ export function KeuzehulpPopup() {
                       <p className="mt-2 text-sm font-semibold text-navy">
                         {advies.prijs}
                       </p>
+                      <Link
+                        href={advies.href}
+                        onClick={sluiten}
+                        className="mt-3 inline-flex min-h-10 items-center gap-2 font-semibold text-navy underline underline-offset-4 hover:text-navy-hover"
+                      >
+                        Bekijk {advies.dienst}
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
                     </section>
 
-                    {antwoorden.hulpvraag === "Ik wil eerst rustig rondkijken" ? (
+                    {antwoorden.rol === "Ik oriënteer me" ? (
                       <Link
                         href="/diensten"
                         onClick={sluiten}
                         className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border border-line-strong px-5 py-3 font-semibold text-navy hover:bg-offwhite"
                       >
-                        Bekijk diensten en prijzen
+                        Bekijk alle diensten en prijzen
                         <ArrowRight className="h-4 w-4" aria-hidden="true" />
                       </Link>
                     ) : null}
 
                     <div>
                       <p className="font-semibold text-navy">
-                        Wil je dit samen kort bespreken?
+                        Wilt u dit samen kort bespreken?
                       </p>
                       <p className="mt-1 text-sm text-slate-600">
-                        Oskar reageert gemiddeld binnen drie uur. Het gesprek is
+                        Ik reageer gemiddeld binnen drie uur. Het gesprek is
                         gratis en vrijblijvend.
                       </p>
                     </div>
@@ -491,7 +560,7 @@ export function KeuzehulpPopup() {
                     <form onSubmit={verzendEmail} className="space-y-4">
                       <fieldset>
                         <legend className="text-sm font-medium text-navy">
-                          Hoe neem je het liefst contact op?
+                          Hoe neemt u het liefst contact op?
                         </legend>
                         <div className="mt-2 grid grid-cols-2 gap-2">
                           {(["WhatsApp", "E-mail"] as Kanaal[]).map((kanaal) => (
@@ -603,21 +672,22 @@ export function KeuzehulpPopup() {
                       )}
                     </form>
                     <p className="text-xs leading-relaxed text-muted">
-                      Je antwoorden worden pas verstuurd als je op de knop drukt.
-                      Ik gebruik ze alleen om op je vraag te reageren. Lees de{" "}
+                      Uw antwoorden worden pas verstuurd als u op de knop drukt.
+                      Ik gebruik ze alleen om op uw vraag te reageren. Lees de{" "}
                       <Link
                         href="/privacyverklaring"
                         onClick={sluiten}
                         className="font-medium text-navy underline underline-offset-2"
                       >
-                      privacyverklaring
+                        privacyverklaring
                       </Link>
                       .
                     </p>
-                    {antwoorden.rol === "Leerling" ? (
+                    {antwoorden.rol === "Ik ben leerling" ? (
                       <p className="text-xs leading-relaxed text-muted">
-                        Ben je jonger dan 16? Vraag dan een ouder of verzorger om
-                        de antwoorden met je te bekijken en samen te versturen.
+                        Is de leerling jonger dan 16? Vraag dan een ouder of
+                        verzorger om de antwoorden samen te bekijken en te
+                        versturen.
                       </p>
                     ) : null}
                   </div>
@@ -664,11 +734,10 @@ export function KeuzehulpPopup() {
               <div className="py-10 text-center">
                 <CheckCircle2 className="mx-auto h-12 w-12 text-navy" aria-hidden="true" />
                 <h3 className="mt-4 text-2xl font-bold text-navy">
-                  Dank je, je bericht is verstuurd
+                  Dank u, uw bericht is verstuurd
                 </h3>
                 <p className="mt-3 text-slate-600">
-                  Oskar reageert {site.reactietijd}. Je kunt dit venster nu
-                  sluiten.
+                  Ik reageer {site.reactietijd}. U kunt dit venster nu sluiten.
                 </p>
                 <button
                   type="button"
