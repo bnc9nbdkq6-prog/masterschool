@@ -142,9 +142,7 @@ export default function ContactPagina() {
                 </h2>
                 <p className="mt-3 leading-relaxed text-slate-600">
                   Fysiek in Monnickendam: bij mij thuis, bij uw kind thuis of in
-                  de bibliotheek. Zonder reiskosten binnen Monnickendam en
-                  Katwoude; daarbuiten — bijvoorbeeld Edam, Volendam, Purmerend,
-                  Amsterdam of Hoorn — alleen de kosten van het openbaar vervoer.
+                  de bibliotheek. Zonder reiskosten binnen Monnickendam, Katwoude en Purmerend; daarbuiten — bijvoorbeeld Edam, Volendam, Amsterdam of Hoorn — alleen de kosten van het openbaar vervoer.
                 </p>
                 <p className="mt-3 leading-relaxed text-slate-600">
                   Online lessen kunnen overal en gaan meestal via videobellen in

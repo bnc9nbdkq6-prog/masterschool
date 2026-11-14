@@ -53,7 +53,7 @@ export default function VoorwaardenPagina() {
           <h2>4. Tarieven</h2>
           <ul>
             <li>
-              <strong>Bijles:</strong> €25 per uur, inclusief btw. Ik reken per
+              <strong>Bijles:</strong> €32 per uur, inclusief btw. Ik reken per
               werkelijk gegeven uur, met een minimum van één uur. Duurt een les 90
               minuten, dan betaalt u anderhalf uur.
             </li>
@@ -87,8 +87,7 @@ export default function VoorwaardenPagina() {
               maand, inclusief btw, maandelijks opzegbaar.
             </li>
             <li>
-              <strong>Aanvullende begeleiding na het Leersysteem:</strong> €25 per
-              uur, inclusief btw. Altijd optioneel.
+              <strong>Aanvullende begeleiding na het Leersysteem:</strong> €32 per uur, inclusief btw. Altijd optioneel.
             </li>
           </ul>
           <p>
@@ -99,7 +98,7 @@ export default function VoorwaardenPagina() {
 
           <h2>5. Reiskosten</h2>
           <p>
-            Binnen Monnickendam en Katwoude breng ik geen reiskosten in rekening.
+            Binnen Monnickendam, Katwoude en Purmerend breng ik geen reiskosten in rekening.
             Voor lessen daarbuiten betaalt u alleen de werkelijke kosten van het
             openbaar vervoer. Ik reken geen kilometervergoeding en geen uurtarief
             voor reistijd. Reiskosten spreken we vooraf af.

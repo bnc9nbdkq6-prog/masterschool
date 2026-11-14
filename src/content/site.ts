@@ -33,8 +33,8 @@ export const site = {
   actieveLeerlingen: 19,
 
   // Regio
-  regioZonderReiskosten: ["Monnickendam", "Katwoude"],
-  regioOverig: ["Amsterdam", "Edam", "Volendam", "Purmerend", "Hoorn"],
+  regioZonderReiskosten: ["Monnickendam", "Katwoude", "Purmerend"],
+  regioOverig: ["Amsterdam", "Edam", "Volendam", "Hoorn"],
 
   // Wordt gebruikt voor canonical URL's, sitemap en Open Graph.
   // Zet NEXT_PUBLIC_SITE_URL in Vercel zodra het domein bekend is.
@@ -42,8 +42,8 @@ export const site = {
 } as const;
 
 export const prijzen = {
-  bijlesPerUur: 25,
-  bijlesPerUurLabel: "€25 per uur",
+  bijlesPerUur: 32,
+  bijlesPerUurLabel: "€32 per uur",
   leersysteem: 349,
   leersysteemLabel: "€349 eenmalig",
   leersysteemSupport: 15,
@@ -51,17 +51,17 @@ export const prijzen = {
   btwNotitie: "Alle genoemde prijzen zijn inclusief btw.",
 } as const;
 
-export const vakken = [
+export const vakken: readonly {
+  naam: string;
+  beschikbaar: boolean;
+  notitie?: string;
+}[] = [
   { naam: "Wiskunde A", beschikbaar: true },
+  { naam: "Wiskunde B", beschikbaar: true },
   { naam: "Economie", beschikbaar: true },
   { naam: "Bedrijfseconomie", beschikbaar: true },
   { naam: "Geschiedenis", beschikbaar: true },
-  {
-    naam: "Wiskunde B",
-    beschikbaar: false,
-    notitie: "beschikbaar vanaf januari 2027",
-  },
-] as const;
+  ]; 
 
 export const niveaus =
   "Havo en vwo, alle leerjaren. Mavo-leerlingen kan ik in principe in dezelfde vakken helpen.";

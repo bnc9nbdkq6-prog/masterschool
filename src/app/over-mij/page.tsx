@@ -175,8 +175,7 @@ export default function OverMijPagina() {
               </p>
               <p>
                 Waar ik nu aan werk: nieuwe diensten ontwikkelen, mijn methodes
-                verbeteren en nieuwe vakken leren om in te kunnen begeleiden — om
-                te beginnen wiskunde B.
+                verbeteren en nieuwe vakken leren om in te kunnen begeleiden.
               </p>
             </div>
             <div className="mt-8">

@@ -24,7 +24,7 @@ import { cases, resultatenDisclaimer, reviews } from "@/content/bewijs";
 export const metadata: Metadata = {
   title: "Diensten en prijzen",
   description:
-    "Van bijles voor €25 per uur tot intensieve examenbegeleiding. Bij de Garantiesprint en het MasterSchool Leersysteem geldt: haalt uw kind het niet, dan begeleid ik kosteloos door.",
+    "Van bijles voor €32 per uur tot intensieve examenbegeleiding. Bij de Garantiesprint en het MasterSchool Leersysteem geldt: haalt uw kind het niet, dan begeleid ik kosteloos door.",
   alternates: { canonical: "/diensten" },
 };
 
@@ -414,8 +414,7 @@ export default function DienstenPagina() {
             <div>
               <h2 className="font-semibold text-navy">Waar</h2>
               <p className="mt-3 leading-relaxed text-slate-600">
-                Online via videobellen, of fysiek in Monnickendam. Binnen
-                Monnickendam en Katwoude zonder reiskosten; daarbuiten alleen
+                Online via videobellen, of fysiek in Monnickendam of Purmerend. Binnen Monnickendam, Katwoude en Purmerend zonder reiskosten; daarbuiten alleen
                 vergoeding van het openbaar vervoer.
               </p>
             </div>

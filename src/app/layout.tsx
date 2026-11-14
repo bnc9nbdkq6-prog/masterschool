@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | MasterSchool",
   },
   description:
-    "Persoonlijke bijles in wiskunde A, economie, bedrijfseconomie en geschiedenis voor havo- en vwo-leerlingen. In Monnickendam, de regio Waterland en online. €25 per uur, inclusief btw.",
+    "Persoonlijke bijles in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis voor havo- en vwo-leerlingen. In Monnickendam, de regio Waterland en online. €32 per uur, inclusief btw.",
   applicationName: "MasterSchool",
   authors: [{ name: site.eigenaar }],
   alternates: { canonical: "/" },
@@ -69,7 +69,7 @@ const bedrijfsSchema = {
     "Waterland",
   ].map((plaats) => ({ "@type": "Place", name: plaats })),
   description:
-    "Bijles en studiebegeleiding voor havo- en vwo-leerlingen in wiskunde A, economie, bedrijfseconomie en geschiedenis. Fysiek in Monnickendam en omgeving, en online.",
+    "Bijles en studiebegeleiding voor havo- en vwo-leerlingen in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Fysiek in Monnickendam en omgeving, en online.",
 };
 
 export default function RootLayout({

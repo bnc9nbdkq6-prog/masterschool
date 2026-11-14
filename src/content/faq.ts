@@ -39,13 +39,13 @@ export const faq: FaqCategorie[] = [
       {
         vraag: "Welke vakken geeft u precies?",
         antwoord:
-          "Bijles geef ik in wiskunde A, economie, bedrijfseconomie en geschiedenis. Het MasterSchool Leersysteem is niet vakgebonden: dat werkt voor het hele vakkenpakket.",
+          "Bijles geef ik in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Het MasterSchool Leersysteem is niet vakgebonden: dat werkt voor het hele vakkenpakket.",
         opHome: true,
       },
       {
-        vraag: "Geeft u ook wiskunde B? Vanaf wanneer?",
+        vraag: "Geeft u ook wiskunde B?",
         antwoord:
-          "Nog niet. Ik werk op dit moment aan een certificaat voor wiskunde B. Bijles in wiskunde B is beschikbaar vanaf januari 2027.",
+          "Ja. Bijles in wiskunde B is beschikbaar.",
       },
       {
         vraag: "Geeft u ook online bijles?",
@@ -129,7 +129,7 @@ export const faq: FaqCategorie[] = [
       {
         vraag: "Wat kost individuele bijles precies?",
         antwoord:
-          "€25 per uur, inclusief btw. Ik reken per werkelijk uur: duurt een les 90 minuten, dan betaalt u anderhalf uur. De minimale duur is één uur.",
+          "€32 per uur, inclusief btw. Ik reken per werkelijk uur: duurt een les 90 minuten, dan betaalt u anderhalf uur. De minimale duur is één uur.",
         opHome: true,
       },
       {
@@ -141,7 +141,7 @@ export const faq: FaqCategorie[] = [
       {
         vraag: "Zijn reiskosten inbegrepen?",
         antwoord:
-          "Binnen Monnickendam en Katwoude wel. Moet ik daarbuiten reizen, dan reken ik alleen de kosten van het openbaar vervoer door. Geen kilometervergoeding of uurtarief voor reistijd.",
+          "Binnen Monnickendam, Katwoude en Purmerend wel. Moet ik daarbuiten reizen, dan reken ik alleen de kosten van het openbaar vervoer door. Geen kilometervergoeding of uurtarief voor reistijd.",
       },
       {
         vraag: "Zijn er pakketten of kortingen?",
