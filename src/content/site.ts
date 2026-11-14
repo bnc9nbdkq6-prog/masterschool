@@ -27,6 +27,10 @@ export const site = {
   // Beloften die feitelijk kloppen en zijn bevestigd
   reactietijd: "gemiddeld binnen 3 uur",
   starttermijn: "doorgaans binnen een week",
+  
+  // Aantal leerlingen dat op dit moment actief wordt begeleid.
+  // Werk dit getal bij wanneer het verandert (laatst gecontroleerd: november 2026).
+  actieveLeerlingen: 19,
 
   // Regio
   regioZonderReiskosten: ["Monnickendam", "Katwoude"],
