@@ -1,0 +1,541 @@
+diff --git a/src/app/algemene-voorwaarden/page.tsx b/src/app/algemene-voorwaarden/page.tsx
+index 4e0378f..791336d 100644
+--- a/src/app/algemene-voorwaarden/page.tsx
++++ b/src/app/algemene-voorwaarden/page.tsx
+@@ -53,7 +53,7 @@ export default function VoorwaardenPagina() {
+           <h2>4. Tarieven</h2>
+           <ul>
+             <li>
+-              <strong>Bijles:</strong> €25 per uur, inclusief btw. Ik reken per
++              <strong>Bijles:</strong> €32 per uur, inclusief btw. Ik reken per
+               werkelijk gegeven uur, met een minimum van één uur. Duurt een les 90
+               minuten, dan betaalt u anderhalf uur.
+             </li>
+@@ -87,8 +87,7 @@ export default function VoorwaardenPagina() {
+               maand, inclusief btw, maandelijks opzegbaar.
+             </li>
+             <li>
+-              <strong>Aanvullende begeleiding na het Leersysteem:</strong> €25 per
+-              uur, inclusief btw. Altijd optioneel.
++              <strong>Aanvullende begeleiding na het Leersysteem:</strong> €32 per uur, inclusief btw. Altijd optioneel.
+             </li>
+           </ul>
+           <p>
+@@ -99,7 +98,7 @@ export default function VoorwaardenPagina() {
+ 
+           <h2>5. Reiskosten</h2>
+           <p>
+-            Binnen Monnickendam en Katwoude breng ik geen reiskosten in rekening.
++            Binnen Monnickendam, Katwoude en Purmerend breng ik geen reiskosten in rekening.
+             Voor lessen daarbuiten betaalt u alleen de werkelijke kosten van het
+             openbaar vervoer. Ik reken geen kilometervergoeding en geen uurtarief
+             voor reistijd. Reiskosten spreken we vooraf af.
+diff --git a/src/app/contact/page.tsx b/src/app/contact/page.tsx
+index c7a14c4..de194b4 100644
+--- a/src/app/contact/page.tsx
++++ b/src/app/contact/page.tsx
+@@ -141,10 +141,7 @@ export default function ContactPagina() {
+                   Waar ik lesgeef
+                 </h2>
+                 <p className="mt-3 leading-relaxed text-slate-600">
+-                  Fysiek in Monnickendam: bij mij thuis, bij uw kind thuis of in
+-                  de bibliotheek. Zonder reiskosten binnen Monnickendam en
+-                  Katwoude; daarbuiten — bijvoorbeeld Edam, Volendam, Purmerend,
+-                  Amsterdam of Hoorn — alleen de kosten van het openbaar vervoer.
++                  Fysiek in Monnickendam (bij mij thuis, bij uw kind thuis of in de bibliotheek) en in Purmerend. Zonder reiskosten binnen Monnickendam, Katwoude en Purmerend; daarbuiten — bijvoorbeeld Edam, Volendam, Amsterdam of Hoorn — alleen de kosten van het openbaar vervoer.
+                 </p>
+                 <p className="mt-3 leading-relaxed text-slate-600">
+                   Online lessen kunnen overal en gaan meestal via videobellen in
+diff --git a/src/app/diensten/bijles/page.tsx b/src/app/diensten/bijles/page.tsx
+index a1b1cfd..e53c635 100644
+--- a/src/app/diensten/bijles/page.tsx
++++ b/src/app/diensten/bijles/page.tsx
+@@ -6,13 +6,13 @@ import { PaginaKop, SlotCta, VerderLezen, Vink } from "@/components/blokken";
+ import { FaqAccordion } from "@/components/FaqAccordion";
+ import { WhatsAppIcon } from "@/components/Icons";
+ import { bijlesVakken } from "@/content/diensten";
+-import { niveaus, prijzen, site, vakken } from "@/content/site";
++import { niveaus, prijzen, site } from "@/content/site";
+ import { faqPlat } from "@/content/faq";
+ 
+ export const metadata: Metadata = {
+   title: "Bijles wiskunde, economie, bedrijfseconomie en geschiedenis",
+   description:
+-    "Individuele bijles voor havo- en vwo-leerlingen in wiskunde A, economie, bedrijfseconomie en geschiedenis. €25 per uur inclusief btw, in Monnickendam of online.",
++    "Individuele bijles voor havo- en vwo-leerlingen in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. €32 per uur inclusief btw, in Monnickendam, Purmerend of online.",
+   alternates: { canonical: "/diensten/bijles" },
+ };
+ 
+@@ -55,7 +55,7 @@ export default function BijlesPagina() {
+       <PaginaKop
+         eyebrow="Dienst · Bijles"
+         titel="Bijles die verder gaat dan de volgende toets"
+-        intro="Individuele begeleiding in wiskunde A, economie, bedrijfseconomie en geschiedenis. Uw kind begrijpt de stof, weet hoe de toets is opgebouwd en leert onderweg een manier van leren die ook bij andere vakken werkt."
++        intro="Individuele begeleiding in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Uw kind begrijpt de stof, weet hoe de toets is opgebouwd en leert onderweg een manier van leren die ook bij andere vakken werkt."
+       />
+ 
+       {/* Geen-risico-belofte, meteen in beeld */}
+@@ -110,7 +110,7 @@ export default function BijlesPagina() {
+               <h2 className="text-xl font-bold text-navy">In het kort</h2>
+               <dl className="mt-5 space-y-4 text-sm">
+                 {[
+-                  ["Prijs", "€25 per uur, inclusief btw"],
++                  ["Prijs", `${prijzen.bijlesPerUurLabel}, inclusief btw`],
+                   ["Afrekening", "Per werkelijk uur, minimaal één uur"],
+                   ["Gebruikelijke duur", "Eén tot anderhalf uur per les"],
+                   [
+@@ -122,11 +122,11 @@ export default function BijlesPagina() {
+                   ["Online", "Ja, meestal via videobellen in WhatsApp"],
+                   [
+                     "Fysiek",
+-                    "Bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek van Monnickendam",
++                    "In Monnickendam bij mij thuis, bij uw kind thuis of in de bibliotheek; ook fysiek in Purmerend",
+                   ],
+                   [
+                     "Reiskosten",
+-                    "Geen binnen Monnickendam en Katwoude; daarbuiten alleen de kosten van het openbaar vervoer",
++                    "Geen binnen Monnickendam, Katwoude en Purmerend; daarbuiten alleen de kosten van het openbaar vervoer",
+                   ],
+                   ["Starten", `Doorgaans binnen een week`],
+                 ].map(([label, waarde]) => (
+@@ -153,10 +153,10 @@ export default function BijlesPagina() {
+           <SectionKop
+             eyebrow="Vakken"
+             titel="Waarin ik lesgeef"
+-            intro="Dit zijn de vakken waarin ik zelf eindexamen deed en waarin ik nu bijles geef."
++            intro="Dit zijn de vakken waarin ik bijles geef."
+           />
+         </Reveal>
+-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
++        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+           {bijlesVakken.map((vak, i) => (
+             <Reveal key={vak.naam} delay={i * 45}>
+               <Kaart className="h-full">
+@@ -170,12 +170,7 @@ export default function BijlesPagina() {
+         </div>
+         <Reveal>
+           <p className="mt-6 max-w-3xl leading-relaxed text-slate-600">
+-            <strong className="font-semibold text-navy">Wiskunde B:</strong> ik
+-            werk op dit moment aan een certificaat voor wiskunde B.{" "}
+-            {vakken.find((v) => v.naam === "Wiskunde B")?.notitie
+-              ? "Bijles in wiskunde B is beschikbaar vanaf januari 2027."
+-              : null}{" "}
+-            Tot die tijd geef ik er geen bijles in.
++            <strong className="font-semibold text-navy">Wiskunde B:</strong> hier geef ik nu ook bijles in.
+           </p>
+         </Reveal>
+       </Section>
+diff --git a/src/app/diensten/leersysteem/page.tsx b/src/app/diensten/leersysteem/page.tsx
+index bd1d450..5f7abcb 100644
+--- a/src/app/diensten/leersysteem/page.tsx
++++ b/src/app/diensten/leersysteem/page.tsx
+@@ -253,7 +253,7 @@ export default function LeersysteemPagina() {
+                     "Geschikt voor",
+                     "Alle leerjaren, van de eerste toetsweek tot het examenjaar",
+                   ],
+-                  ["Vorm", "Online of fysiek in Monnickendam en omgeving"],
++                  ["Vorm", "Online of fysiek in Monnickendam, Purmerend en omgeving"],
+                   [
+                     "Tijdens het traject",
+                     "WhatsApp-support inbegrepen. Antwoord gemiddeld binnen drie uur",
+@@ -262,7 +262,7 @@ export default function LeersysteemPagina() {
+                     "Daarna optioneel",
+                     "Doorlopende WhatsApp- en belsupport voor €15 per maand, maandelijks opzegbaar",
+                   ],
+-                  ["Extra bijles", "€25 per uur, altijd optioneel"],
++                  ["Extra bijles", "€32 per uur, altijd optioneel"],
+                 ].map(([label, waarde]) => (
+                   <div key={label}>
+                     <dt className="font-medium text-muted">{label}</dt>
+diff --git a/src/app/diensten/page.tsx b/src/app/diensten/page.tsx
+index d09282d..10b2b77 100644
+--- a/src/app/diensten/page.tsx
++++ b/src/app/diensten/page.tsx
+@@ -24,7 +24,7 @@ import { cases, resultatenDisclaimer, reviews } from "@/content/bewijs";
+ export const metadata: Metadata = {
+   title: "Diensten en prijzen",
+   description:
+-    "Van bijles voor €25 per uur tot intensieve examenbegeleiding. Bij de Garantiesprint en het MasterSchool Leersysteem geldt: haalt uw kind het niet, dan begeleid ik kosteloos door.",
++    "Van bijles voor €32 per uur tot intensieve examenbegeleiding. Bij de Garantiesprint en het MasterSchool Leersysteem geldt: haalt uw kind het niet, dan begeleid ik kosteloos door.",
+   alternates: { canonical: "/diensten" },
+ };
+ 
+@@ -414,8 +414,7 @@ export default function DienstenPagina() {
+             <div>
+               <h2 className="font-semibold text-navy">Waar</h2>
+               <p className="mt-3 leading-relaxed text-slate-600">
+-                Online via videobellen, of fysiek in Monnickendam. Binnen
+-                Monnickendam en Katwoude zonder reiskosten; daarbuiten alleen
++                Online via videobellen, of fysiek in Monnickendam en Purmerend. Binnen Monnickendam, Katwoude en Purmerend zonder reiskosten; daarbuiten alleen
+                 vergoeding van het openbaar vervoer.
+               </p>
+             </div>
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index bbac4a2..b43b92b 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -21,7 +21,7 @@ export const metadata: Metadata = {
+     template: "%s | MasterSchool",
+   },
+   description:
+-    "Persoonlijke bijles in wiskunde A, economie, bedrijfseconomie en geschiedenis voor havo- en vwo-leerlingen. In Monnickendam, de regio Waterland en online. €25 per uur, inclusief btw.",
++    "Persoonlijke bijles in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis voor havo- en vwo-leerlingen. In Monnickendam, de regio Waterland en online. €32 per uur, inclusief btw.",
+   applicationName: "MasterSchool",
+   authors: [{ name: site.eigenaar }],
+   alternates: { canonical: "/" },
+@@ -69,7 +69,7 @@ const bedrijfsSchema = {
+     "Waterland",
+   ].map((plaats) => ({ "@type": "Place", name: plaats })),
+   description:
+-    "Bijles en studiebegeleiding voor havo- en vwo-leerlingen in wiskunde A, economie, bedrijfseconomie en geschiedenis. Fysiek in Monnickendam en omgeving, en online.",
++    "Bijles en studiebegeleiding voor havo- en vwo-leerlingen in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Fysiek in Monnickendam, Purmerend en omgeving, en online.",
+ };
+ 
+ export default function RootLayout({
+diff --git a/src/app/over-mij/page.tsx b/src/app/over-mij/page.tsx
+index 12c0653..fc7beba 100644
+--- a/src/app/over-mij/page.tsx
++++ b/src/app/over-mij/page.tsx
+@@ -175,8 +175,7 @@ export default function OverMijPagina() {
+               </p>
+               <p>
+                 Waar ik nu aan werk: nieuwe diensten ontwikkelen, mijn methodes
+-                verbeteren en nieuwe vakken leren om in te kunnen begeleiden — om
+-                te beginnen wiskunde B.
++                verbeteren en nieuwe vakken leren om in te kunnen begeleiden.
+               </p>
+             </div>
+             <div className="mt-8">
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 4da69f9..90df3c7 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -22,13 +22,14 @@ import { Reveal } from "@/components/Reveal";
+ import { WhatsAppIcon } from "@/components/Icons";
+ import { FaqAccordion } from "@/components/FaqAccordion";
+ import {
++  ActieveLeerlingen,
+   CaseKaart,
+   ReviewKaart,
+   SlotCta,
+   VerderLezen,
+   Vink,
+ } from "@/components/blokken";
+-import { niveaus, site, vakken } from "@/content/site";
++import { niveaus, prijzen, site, vakken } from "@/content/site";
+ import { dienstenExamen, homeDiensten } from "@/content/diensten";
+ import { cases, eigenResultaten, resultatenDisclaimer, reviews } from "@/content/bewijs";
+ import { faqPlat } from "@/content/faq";
+@@ -36,7 +37,7 @@ import { faqPlat } from "@/content/faq";
+ export const metadata: Metadata = {
+   title: "Bijles en studiebegeleiding in Monnickendam — MasterSchool",
+   description:
+-    "Betere cijfers en minder stress op de middelbare school. Persoonlijke bijles in wiskunde A, economie, bedrijfseconomie en geschiedenis voor havo en vwo. Monnickendam en online, €25 per uur inclusief btw.",
++    "Betere cijfers en minder stress op de middelbare school. Persoonlijke bijles in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis voor havo en vwo. Monnickendam, Purmerend en online, €32 per uur inclusief btw.",
+   alternates: { canonical: "/" },
+ };
+ 
+@@ -208,7 +209,7 @@ export default function Home() {
+               </div>
+ 
+               <ul className="mt-8 flex flex-col gap-y-2 text-sm text-slate-600 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-3">
+-                <li>€25 per uur, inclusief btw</li>
++                <li>{prijzen.bijlesPerUurLabel}, inclusief btw</li>
+                 <li
+                   aria-hidden="true"
+                   className="hidden h-4 w-px bg-line sm:block"
+@@ -219,6 +220,14 @@ export default function Home() {
+                   className="hidden h-4 w-px bg-line sm:block"
+                 />
+                 <li>Antwoord {site.reactietijd}</li>
++                <li
++                  aria-hidden="true"
++                  className="hidden h-4 w-px bg-line sm:block"
++                />
++                <li>
++                  Op dit moment {site.actieveLeerlingen} leerlingen in
++                  begeleiding
++                </li>
+               </ul>
+             </div>
+ 
+@@ -354,6 +363,7 @@ export default function Home() {
+                 over school, in plaats van andersom.
+               </p>
+             </div>
++            <ActieveLeerlingen className="mt-8" />
+             <div className="mt-8">
+               <VerderLezen
+                 links={[{ href: "/over-mij", label: "Lees mijn hele verhaal" }]}
+@@ -456,10 +466,7 @@ export default function Home() {
+                 Waar de lessen plaatsvinden
+               </h3>
+               <p className="mt-3 leading-relaxed text-slate-600">
+-                Online via videobellen, of fysiek bij mij thuis in Monnickendam,
+-                bij uw kind thuis of in de bibliotheek van Monnickendam. Binnen
+-                Monnickendam en Katwoude reken ik geen reiskosten; daarbuiten
+-                alleen de kosten van het openbaar vervoer.
++                Online via videobellen, of fysiek in Monnickendam en Purmerend: bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek van Monnickendam. Binnen Monnickendam, Katwoude en Purmerend reken ik geen reiskosten; daarbuiten alleen de kosten van het openbaar vervoer.
+               </p>
+             </div>
+           </div>
+@@ -534,6 +541,10 @@ export default function Home() {
+           </p>
+         </Reveal>
+ 
++        <Reveal>
++          <ActieveLeerlingen className="mt-10" />
++        </Reveal>
++
+         <div className="mt-10 grid gap-5 md:grid-cols-3">
+           {reviews.slice(0, 3).map((review, i) => (
+             <Reveal key={review.id} delay={i * 60}>
+diff --git a/src/app/werkwijze/page.tsx b/src/app/werkwijze/page.tsx
+index e48d183..719d79a 100644
+--- a/src/app/werkwijze/page.tsx
++++ b/src/app/werkwijze/page.tsx
+@@ -37,7 +37,7 @@ const stappen = [
+     tekst:
+       "We plannen een moment dat past, doorgaans binnen een week. Vooraf stuurt uw kind de stof op en legt de boeken klaar, zodat het lesuur volledig aan uitleg en oefenen opgaat.",
+     details: [
+-      "Online, bij mij thuis, bij u thuis of in de bibliotheek",
++      "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij u thuis of in de bibliotheek",
+       "Minimaal een uur, meestal een tot anderhalf uur",
+       "Bent u na de eerste bijles niet overtuigd, dan betaalt u die les niet",
+     ],
+@@ -141,7 +141,7 @@ export default function WerkwijzePagina() {
+               </p>
+               <p>
+                 <strong className="font-semibold text-navy">Reiskosten</strong>{" "}
+-                reken ik niet binnen Monnickendam en Katwoude. Moet ik daarbuiten
++                reken ik niet binnen Monnickendam, Katwoude en Purmerend. Moet ik daarbuiten
+                 reizen, dan betaalt u alleen de kosten van het openbaar vervoer.
+               </p>
+             </div>
+diff --git a/src/components/KeuzehulpPopup.tsx b/src/components/KeuzehulpPopup.tsx
+index a73ac18..6244ab7 100644
+--- a/src/components/KeuzehulpPopup.tsx
++++ b/src/components/KeuzehulpPopup.tsx
+@@ -88,7 +88,7 @@ function adviesVoor(antwoorden: Antwoorden) {
+       titel: "Aanbevolen dienst: Bijles",
+       tekst:
+         "Bijles past wanneer één vak blijft haken en persoonlijke uitleg en gerichte oefening nodig zijn.",
+-      prijs: "€25 per uur, zonder abonnement",
++      prijs: "€32 per uur, zonder abonnement",
+     };
+   }
+ 
+@@ -163,7 +163,7 @@ function adviesVoor(antwoorden: Antwoorden) {
+     titel: "Aanbevolen start: Bijles",
+     tekst:
+       "Omdat u nog twijfelt, is losse bijles de laagdrempeligste start: u betaalt per gegeven uur. In de gratis kennismaking bekijken we of dit ook inhoudelijk de juiste dienst is.",
+-    prijs: "€25 per uur, zonder abonnement",
++    prijs: "€32 per uur, zonder abonnement",
+   };
+ }
+ 
+diff --git a/src/components/blokken.tsx b/src/components/blokken.tsx
+index b20ccac..ba6698b 100644
+--- a/src/components/blokken.tsx
++++ b/src/components/blokken.tsx
+@@ -195,3 +195,32 @@ export function VerderLezen({
+     </nav>
+   );
+ }
++
++/**
++ * Groot uitgelicht aantal actieve leerlingen.
++ * Het getal staat in `site.actieveLeerlingen` (src/content/site.ts).
++ */
++export function ActieveLeerlingen({ className = "" }: { className?: string }) {
++  return (
++    <div
++      role="group"
++      aria-label={`Aantal actieve leerlingen: ${site.actieveLeerlingen}`}
++      className={`on-navy flex items-center gap-5 rounded-[10px] bg-navy p-6 text-white sm:gap-8 sm:p-8 ${className}`}
++    >
++      <span
++        aria-hidden="true"
++        className="text-6xl leading-none font-bold tracking-tight sm:text-7xl"
++      >
++        {site.actieveLeerlingen}
++      </span>
++      <div aria-hidden="true">
++        <p className="text-xl font-semibold sm:text-2xl">
++          Aantal actieve leerlingen
++        </p>
++        <p className="mt-1 text-sm text-white/70">
++          Op dit moment in begeleiding bij MasterSchool.
++        </p>
++      </div>
++    </div>
++  );
++}
+diff --git a/src/content/diensten.ts b/src/content/diensten.ts
+index 31d2d82..52ffe9e 100644
+--- a/src/content/diensten.ts
++++ b/src/content/diensten.ts
+@@ -59,13 +59,13 @@ export const dienstenJaar: Dienst[] = [
+     naam: "Bijles",
+     belofte:
+       "Uw kind begrijpt de stof weer en weet hoe de volgende toets in elkaar zit.",
+-    prijs: "€25",
++    prijs: "€32",
+     prijsDetail: "per uur, inclusief btw",
+     duur: "Per les, minimaal één uur. Meestal één tot anderhalf uur",
+     voorWie:
+-      "Voor één vak dat blijft haken, of om gericht toe te werken naar een toetsweek. Wiskunde A, economie, bedrijfseconomie of geschiedenis.",
++      "Voor één vak dat blijft haken, of om gericht toe te werken naar een toetsweek. Wiskunde A, wiskunde B, economie, bedrijfseconomie of geschiedenis.",
+     bevat: [
+-      "Individuele les, online of fysiek in Monnickendam en omgeving",
++      "Individuele les, online of fysiek in Monnickendam, Purmerend en omgeving",
+       "Uitleg net zolang tot het klopt — steeds op een andere manier",
+       "Oefenen met vragen in plaats van passief herlezen",
+       "Aandacht voor planning en aanpak, niet alleen voor de stof",
+@@ -135,8 +135,8 @@ export const dienstenJaar: Dienst[] = [
+       ],
+       praktisch: [
+         "Vier lessen tegoed die u zelf inplant, plus het intakeuur",
+-        "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
+-        "Buiten Monnickendam en Katwoude betaalt u alleen de kosten van het openbaar vervoer",
++        "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij uw kind thuis of in de bibliotheek",
++        "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
+         "Twee sprints voor twee verschillende vakken tegelijk kan",
+         "Factuur na het intakegesprek; betalen in één keer of in termijnen",
+         "Stopt u tussentijds, dan betaalt u alleen de sessies die zijn gegeven",
+@@ -327,8 +327,8 @@ export const dienstenExamen: Dienst[] = [
+       ],
+       praktisch: [
+         "Eén-op-één, zonder limiet op het aantal contactmomenten",
+-        "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
+-        "Buiten Monnickendam en Katwoude betaalt u alleen de kosten van het openbaar vervoer",
++        "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij uw kind thuis of in de bibliotheek",
++        "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
+         "WhatsApp-support zonder limiet; ik antwoord gemiddeld binnen drie uur, ook in het weekend",
+         "In een vakantieweek kan het rustiger zijn, maar bereikbaar blijf ik",
+         "Stopt u tussentijds, dan betaalt u alleen de periode die is geweest",
+@@ -420,8 +420,8 @@ export const dienstenExamen: Dienst[] = [
+       ],
+       praktisch: [
+         "Eén-op-één, zonder limiet op het aantal contactmomenten",
+-        "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
+-        "Buiten Monnickendam en Katwoude betaalt u alleen de kosten van het openbaar vervoer",
++        "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij uw kind thuis of in de bibliotheek",
++        "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
+         "WhatsApp-support zonder limiet; ik antwoord gemiddeld binnen drie uur, ook in het weekend",
+         "In een vakantieweek kan het rustiger zijn, maar bereikbaar blijf ik",
+         "€1.790 in één keer, of drie termijnen van €597",
+@@ -454,9 +454,13 @@ export const homeDiensten: Dienst[] = dienstenJaar;
+ /** Vakken waarin nu bijles wordt gegeven, met korte toelichting. */
+ export const bijlesVakken = [
+   {
+-    naam: "Wiskunde A",
++        naam: "Wiskunde A",
+     toelichting: "Van formules en grafieken tot statistiek en examenopgaven.",
+   },
++  {
++    naam: "Wiskunde B",
++    toelichting: "Van functies en meetkunde tot differentiëren en integreren.",
++  },
+   {
+     naam: "Economie",
+     toelichting: "Begrippen, verbanden en rekenopgaven, ook op examenniveau.",
+diff --git a/src/content/faq.ts b/src/content/faq.ts
+index 718e14c..3efc88d 100644
+--- a/src/content/faq.ts
++++ b/src/content/faq.ts
+@@ -39,13 +39,13 @@ export const faq: FaqCategorie[] = [
+       {
+         vraag: "Welke vakken geeft u precies?",
+         antwoord:
+-          "Bijles geef ik in wiskunde A, economie, bedrijfseconomie en geschiedenis. Het MasterSchool Leersysteem is niet vakgebonden: dat werkt voor het hele vakkenpakket.",
++          "Bijles geef ik in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Het MasterSchool Leersysteem is niet vakgebonden: dat werkt voor het hele vakkenpakket.",
+         opHome: true,
+       },
+       {
+-        vraag: "Geeft u ook wiskunde B? Vanaf wanneer?",
++        vraag: "Geeft u ook wiskunde B?",
+         antwoord:
+-          "Nog niet. Ik werk op dit moment aan een certificaat voor wiskunde B. Bijles in wiskunde B is beschikbaar vanaf januari 2027.",
++          "Ja. Bijles in wiskunde B is beschikbaar.",
+       },
+       {
+         vraag: "Geeft u ook online bijles?",
+@@ -55,7 +55,7 @@ export const faq: FaqCategorie[] = [
+       {
+         vraag: "Waar vinden de fysieke lessen plaats?",
+         antwoord:
+-          "Bij mij thuis in Monnickendam, bij de leerling thuis of in de bibliotheek van Monnickendam. Wat de leerling het prettigst vindt. Op een andere locatie kan ook, mits de reiskosten worden vergoed.",
++          "In Monnickendam en in Purmerend. In Monnickendam kan dat bij mij thuis, bij de leerling thuis of in de bibliotheek. Wat de leerling het prettigst vindt. Op een andere locatie kan ook, mits de reiskosten worden vergoed.",
+       },
+       {
+         vraag: "Hoe lang duurt een bijlesles?",
+@@ -129,7 +129,7 @@ export const faq: FaqCategorie[] = [
+       {
+         vraag: "Wat kost individuele bijles precies?",
+         antwoord:
+-          "€25 per uur, inclusief btw. Ik reken per werkelijk uur: duurt een les 90 minuten, dan betaalt u anderhalf uur. De minimale duur is één uur.",
++          "€32 per uur, inclusief btw. Ik reken per werkelijk uur: duurt een les 90 minuten, dan betaalt u anderhalf uur. De minimale duur is één uur.",
+         opHome: true,
+       },
+       {
+@@ -141,7 +141,7 @@ export const faq: FaqCategorie[] = [
+       {
+         vraag: "Zijn reiskosten inbegrepen?",
+         antwoord:
+-          "Binnen Monnickendam en Katwoude wel. Moet ik daarbuiten reizen, dan reken ik alleen de kosten van het openbaar vervoer door. Geen kilometervergoeding of uurtarief voor reistijd.",
++          "Binnen Monnickendam, Katwoude en Purmerend wel. Moet ik daarbuiten reizen, dan reken ik alleen de kosten van het openbaar vervoer door. Geen kilometervergoeding of uurtarief voor reistijd.",
+       },
+       {
+         vraag: "Zijn er pakketten of kortingen?",
+diff --git a/src/content/site.ts b/src/content/site.ts
+index c390e7a..1d43d82 100644
+--- a/src/content/site.ts
++++ b/src/content/site.ts
+@@ -33,8 +33,8 @@ export const site = {
+   actieveLeerlingen: 19,
+ 
+   // Regio
+-  regioZonderReiskosten: ["Monnickendam", "Katwoude"],
+-  regioOverig: ["Amsterdam", "Edam", "Volendam", "Purmerend", "Hoorn"],
++  regioZonderReiskosten: ["Monnickendam", "Katwoude", "Purmerend"],
++  regioOverig: ["Amsterdam", "Edam", "Volendam", "Hoorn"],
+ 
+   // Wordt gebruikt voor canonical URL's, sitemap en Open Graph.
+   // Zet NEXT_PUBLIC_SITE_URL in Vercel zodra het domein bekend is.
+@@ -42,8 +42,8 @@ export const site = {
+ } as const;
+ 
+ export const prijzen = {
+-  bijlesPerUur: 25,
+-  bijlesPerUurLabel: "€25 per uur",
++  bijlesPerUur: 32,
++  bijlesPerUurLabel: "€32 per uur",
+   leersysteem: 349,
+   leersysteemLabel: "€349 eenmalig",
+   leersysteemSupport: 15,
+@@ -51,17 +51,17 @@ export const prijzen = {
+   btwNotitie: "Alle genoemde prijzen zijn inclusief btw.",
+ } as const;
+ 
+-export const vakken = [
++export const vakken: readonly {
++  naam: string;
++  beschikbaar: boolean;
++  notitie?: string;
++}[] = [
+   { naam: "Wiskunde A", beschikbaar: true },
++  { naam: "Wiskunde B", beschikbaar: true },
+   { naam: "Economie", beschikbaar: true },
+   { naam: "Bedrijfseconomie", beschikbaar: true },
+   { naam: "Geschiedenis", beschikbaar: true },
+-  {
+-    naam: "Wiskunde B",
+-    beschikbaar: false,
+-    notitie: "beschikbaar vanaf januari 2027",
+-  },
+-] as const;
++  ]; 
+ 
+ export const niveaus =
+   "Havo en vwo, alle leerjaren. Mavo-leerlingen kan ik in principe in dezelfde vakken helpen.";
