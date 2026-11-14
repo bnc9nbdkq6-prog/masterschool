@@ -22,13 +22,14 @@ import { Reveal } from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/Icons";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import {
+  ActieveLeerlingen,
   CaseKaart,
   ReviewKaart,
   SlotCta,
   VerderLezen,
   Vink,
 } from "@/components/blokken";
-import { niveaus, site, vakken } from "@/content/site";
+import { niveaus, prijzen, site, vakken } from "@/content/site";
 import { dienstenExamen, homeDiensten } from "@/content/diensten";
 import { cases, eigenResultaten, resultatenDisclaimer, reviews } from "@/content/bewijs";
 import { faqPlat } from "@/content/faq";
@@ -36,7 +37,7 @@ import { faqPlat } from "@/content/faq";
 export const metadata: Metadata = {
   title: "Bijles en studiebegeleiding in Monnickendam — MasterSchool",
   description:
-    "Betere cijfers en minder stress op de middelbare school. Persoonlijke bijles in wiskunde A, economie, bedrijfseconomie en geschiedenis voor havo en vwo. Monnickendam en online, €25 per uur inclusief btw.",
+    "Betere cijfers en minder stress op de middelbare school. Persoonlijke bijles in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis voor havo en vwo. Monnickendam, Purmerend en online, €32 per uur inclusief btw.",
   alternates: { canonical: "/" },
 };
 
@@ -208,7 +209,7 @@ export default function Home() {
               </div>
 
               <ul className="mt-8 flex flex-col gap-y-2 text-sm text-slate-600 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-3">
-                <li>€25 per uur, inclusief btw</li>
+                <li>{prijzen.bijlesPerUurLabel}, inclusief btw</li>
                 <li
                   aria-hidden="true"
                   className="hidden h-4 w-px bg-line sm:block"
@@ -219,6 +220,14 @@ export default function Home() {
                   className="hidden h-4 w-px bg-line sm:block"
                 />
                 <li>Antwoord {site.reactietijd}</li>
+                <li
+                  aria-hidden="true"
+                  className="hidden h-4 w-px bg-line sm:block"
+                />
+                <li>
+                  Op dit moment {site.actieveLeerlingen} leerlingen in
+                  begeleiding
+                </li>
               </ul>
             </div>
 
@@ -354,6 +363,7 @@ export default function Home() {
                 over school, in plaats van andersom.
               </p>
             </div>
+            <ActieveLeerlingen className="mt-8" />
             <div className="mt-8">
               <VerderLezen
                 links={[{ href: "/over-mij", label: "Lees mijn hele verhaal" }]}
@@ -457,9 +467,7 @@ export default function Home() {
               </h3>
               <p className="mt-3 leading-relaxed text-slate-600">
                 Online via videobellen, of fysiek bij mij thuis in Monnickendam,
-                bij uw kind thuis of in de bibliotheek van Monnickendam. Binnen
-                Monnickendam en Katwoude reken ik geen reiskosten; daarbuiten
-                alleen de kosten van het openbaar vervoer.
+                bij uw kind thuis of in de bibliotheek van Monnickendam. Binnen Monnickendam, Katwoude en Purmerend reken ik geen reiskosten; daarbuiten alleen de kosten van het openbaar vervoer.
               </p>
             </div>
           </div>
@@ -532,6 +540,10 @@ export default function Home() {
           <p className="mt-3 text-sm text-muted">
             De eigen eindexamenresultaten van Oskar, vwo 2026.
           </p>
+        </Reveal>
+
+        <Reveal>
+          <ActieveLeerlingen className="mt-10" />
         </Reveal>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">

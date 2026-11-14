@@ -88,7 +88,7 @@ function adviesVoor(antwoorden: Antwoorden) {
       titel: "Aanbevolen dienst: Bijles",
       tekst:
         "Bijles past wanneer één vak blijft haken en persoonlijke uitleg en gerichte oefening nodig zijn.",
-      prijs: "€25 per uur, zonder abonnement",
+      prijs: "€32 per uur, zonder abonnement",
     };
   }
 
@@ -163,7 +163,7 @@ function adviesVoor(antwoorden: Antwoorden) {
     titel: "Aanbevolen start: Bijles",
     tekst:
       "Omdat u nog twijfelt, is losse bijles de laagdrempeligste start: u betaalt per gegeven uur. In de gratis kennismaking bekijken we of dit ook inhoudelijk de juiste dienst is.",
-    prijs: "€25 per uur, zonder abonnement",
+    prijs: "€32 per uur, zonder abonnement",
   };
 }
 

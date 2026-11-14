@@ -195,3 +195,32 @@ export function VerderLezen({
     </nav>
   );
 }
+
+/**
+ * Groot uitgelicht aantal actieve leerlingen.
+ * Het getal staat in `site.actieveLeerlingen` (src/content/site.ts).
+ */
+export function ActieveLeerlingen({ className = "" }: { className?: string }) {
+  return (
+    <div
+      role="group"
+      aria-label={`Aantal actieve leerlingen: ${site.actieveLeerlingen}`}
+      className={`on-navy flex items-center gap-5 rounded-[10px] bg-navy p-6 text-white sm:gap-8 sm:p-8 ${className}`}
+    >
+      <span
+        aria-hidden="true"
+        className="text-6xl leading-none font-bold tracking-tight sm:text-7xl"
+      >
+        {site.actieveLeerlingen}
+      </span>
+      <div aria-hidden="true">
+        <p className="text-xl font-semibold sm:text-2xl">
+          Aantal actieve leerlingen
+        </p>
+        <p className="mt-1 text-sm text-white/70">
+          Op dit moment in begeleiding bij MasterSchool.
+        </p>
+      </div>
+    </div>
+  );
+}
