@@ -6,13 +6,13 @@ import { PaginaKop, SlotCta, VerderLezen, Vink } from "@/components/blokken";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { WhatsAppIcon } from "@/components/Icons";
 import { bijlesVakken } from "@/content/diensten";
-import { niveaus, prijzen, site, vakken } from "@/content/site";
+import { niveaus, prijzen, site } from "@/content/site";
 import { faqPlat } from "@/content/faq";
 
 export const metadata: Metadata = {
   title: "Bijles wiskunde, economie, bedrijfseconomie en geschiedenis",
   description:
-    "Individuele bijles voor havo- en vwo-leerlingen in wiskunde A, economie, bedrijfseconomie en geschiedenis. €25 per uur inclusief btw, in Monnickendam of online.",
+    "Individuele bijles voor havo- en vwo-leerlingen in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. €32 per uur inclusief btw, in Monnickendam, Purmerend of online.",
   alternates: { canonical: "/diensten/bijles" },
 };
 
@@ -55,7 +55,7 @@ export default function BijlesPagina() {
       <PaginaKop
         eyebrow="Dienst · Bijles"
         titel="Bijles die verder gaat dan de volgende toets"
-        intro="Individuele begeleiding in wiskunde A, economie, bedrijfseconomie en geschiedenis. Uw kind begrijpt de stof, weet hoe de toets is opgebouwd en leert onderweg een manier van leren die ook bij andere vakken werkt."
+        intro="Individuele begeleiding in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Uw kind begrijpt de stof, weet hoe de toets is opgebouwd en leert onderweg een manier van leren die ook bij andere vakken werkt."
       />
 
       {/* Geen-risico-belofte, meteen in beeld */}
@@ -110,7 +110,7 @@ export default function BijlesPagina() {
               <h2 className="text-xl font-bold text-navy">In het kort</h2>
               <dl className="mt-5 space-y-4 text-sm">
                 {[
-                  ["Prijs", "€25 per uur, inclusief btw"],
+                  ["Prijs", `${prijzen.bijlesPerUurLabel}, inclusief btw`],
                   ["Afrekening", "Per werkelijk uur, minimaal één uur"],
                   ["Gebruikelijke duur", "Eén tot anderhalf uur per les"],
                   [
@@ -126,7 +126,7 @@ export default function BijlesPagina() {
                   ],
                   [
                     "Reiskosten",
-                    "Geen binnen Monnickendam en Katwoude; daarbuiten alleen de kosten van het openbaar vervoer",
+                    "Geen binnen Monnickendam, Katwoude en Purmerend; daarbuiten alleen de kosten van het openbaar vervoer",
                   ],
                   ["Starten", `Doorgaans binnen een week`],
                 ].map(([label, waarde]) => (
@@ -153,10 +153,10 @@ export default function BijlesPagina() {
           <SectionKop
             eyebrow="Vakken"
             titel="Waarin ik lesgeef"
-            intro="Dit zijn de vakken waarin ik zelf eindexamen deed en waarin ik nu bijles geef."
+            intro="Dit zijn de vakken waarin ik bijles geef."
           />
         </Reveal>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {bijlesVakken.map((vak, i) => (
             <Reveal key={vak.naam} delay={i * 45}>
               <Kaart className="h-full">
@@ -170,12 +170,7 @@ export default function BijlesPagina() {
         </div>
         <Reveal>
           <p className="mt-6 max-w-3xl leading-relaxed text-slate-600">
-            <strong className="font-semibold text-navy">Wiskunde B:</strong> ik
-            werk op dit moment aan een certificaat voor wiskunde B.{" "}
-            {vakken.find((v) => v.naam === "Wiskunde B")?.notitie
-              ? "Bijles in wiskunde B is beschikbaar vanaf januari 2027."
-              : null}{" "}
-            Tot die tijd geef ik er geen bijles in.
+            <strong className="font-semibold text-navy">Wiskunde B:</strong> hier geef ik nu ook bijles in.
           </p>
         </Reveal>
       </Section>

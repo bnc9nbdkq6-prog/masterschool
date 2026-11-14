@@ -262,7 +262,7 @@ export default function LeersysteemPagina() {
                     "Daarna optioneel",
                     "Doorlopende WhatsApp- en belsupport voor €15 per maand, maandelijks opzegbaar",
                   ],
-                  ["Extra bijles", "€25 per uur, altijd optioneel"],
+                  ["Extra bijles", "€32 per uur, altijd optioneel"],
                 ].map(([label, waarde]) => (
                   <div key={label}>
                     <dt className="font-medium text-muted">{label}</dt>

@@ -141,7 +141,7 @@ export default function WerkwijzePagina() {
               </p>
               <p>
                 <strong className="font-semibold text-navy">Reiskosten</strong>{" "}
-                reken ik niet binnen Monnickendam en Katwoude. Moet ik daarbuiten
+                reken ik niet binnen Monnickendam, Katwoude en Purmerend. Moet ik daarbuiten
                 reizen, dan betaalt u alleen de kosten van het openbaar vervoer.
               </p>
             </div>

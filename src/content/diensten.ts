@@ -59,11 +59,11 @@ export const dienstenJaar: Dienst[] = [
     naam: "Bijles",
     belofte:
       "Uw kind begrijpt de stof weer en weet hoe de volgende toets in elkaar zit.",
-    prijs: "€25",
+    prijs: "€32",
     prijsDetail: "per uur, inclusief btw",
     duur: "Per les, minimaal één uur. Meestal één tot anderhalf uur",
     voorWie:
-      "Voor één vak dat blijft haken, of om gericht toe te werken naar een toetsweek. Wiskunde A, economie, bedrijfseconomie of geschiedenis.",
+      "Voor één vak dat blijft haken, of om gericht toe te werken naar een toetsweek. Wiskunde A, wiskunde B, economie, bedrijfseconomie of geschiedenis.",
     bevat: [
       "Individuele les, online of fysiek in Monnickendam en omgeving",
       "Uitleg net zolang tot het klopt — steeds op een andere manier",
@@ -136,7 +136,7 @@ export const dienstenJaar: Dienst[] = [
       praktisch: [
         "Vier lessen tegoed die u zelf inplant, plus het intakeuur",
         "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
-        "Buiten Monnickendam en Katwoude betaalt u alleen de kosten van het openbaar vervoer",
+        "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
         "Twee sprints voor twee verschillende vakken tegelijk kan",
         "Factuur na het intakegesprek; betalen in één keer of in termijnen",
         "Stopt u tussentijds, dan betaalt u alleen de sessies die zijn gegeven",
@@ -328,7 +328,7 @@ export const dienstenExamen: Dienst[] = [
       praktisch: [
         "Eén-op-één, zonder limiet op het aantal contactmomenten",
         "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
-        "Buiten Monnickendam en Katwoude betaalt u alleen de kosten van het openbaar vervoer",
+        "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
         "WhatsApp-support zonder limiet; ik antwoord gemiddeld binnen drie uur, ook in het weekend",
         "In een vakantieweek kan het rustiger zijn, maar bereikbaar blijf ik",
         "Stopt u tussentijds, dan betaalt u alleen de periode die is geweest",
@@ -421,7 +421,7 @@ export const dienstenExamen: Dienst[] = [
       praktisch: [
         "Eén-op-één, zonder limiet op het aantal contactmomenten",
         "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
-        "Buiten Monnickendam en Katwoude betaalt u alleen de kosten van het openbaar vervoer",
+        "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
         "WhatsApp-support zonder limiet; ik antwoord gemiddeld binnen drie uur, ook in het weekend",
         "In een vakantieweek kan het rustiger zijn, maar bereikbaar blijf ik",
         "€1.790 in één keer, of drie termijnen van €597",
@@ -454,8 +454,12 @@ export const homeDiensten: Dienst[] = dienstenJaar;
 /** Vakken waarin nu bijles wordt gegeven, met korte toelichting. */
 export const bijlesVakken = [
   {
-    naam: "Wiskunde A",
+        naam: "Wiskunde A",
     toelichting: "Van formules en grafieken tot statistiek en examenopgaven.",
+  },
+  {
+    naam: "Wiskunde B",
+    toelichting: "Van functies en meetkunde tot differentiëren en integreren.",
   },
   {
     naam: "Economie",
