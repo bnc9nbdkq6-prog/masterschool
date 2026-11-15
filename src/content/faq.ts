@@ -55,7 +55,7 @@ export const faq: FaqCategorie[] = [
       {
         vraag: "Waar vinden de fysieke lessen plaats?",
         antwoord:
-          "Bij mij thuis in Monnickendam, bij de leerling thuis of in de bibliotheek van Monnickendam. Wat de leerling het prettigst vindt. Op een andere locatie kan ook, mits de reiskosten worden vergoed.",
+          "In Monnickendam en in Purmerend. In Monnickendam kan dat bij mij thuis, bij de leerling thuis of in de bibliotheek. Wat de leerling het prettigst vindt. Op een andere locatie kan ook, mits de reiskosten worden vergoed.",
       },
       {
         vraag: "Hoe lang duurt een bijlesles?",

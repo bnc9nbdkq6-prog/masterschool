@@ -122,7 +122,7 @@ export default function BijlesPagina() {
                   ["Online", "Ja, meestal via videobellen in WhatsApp"],
                   [
                     "Fysiek",
-                    "Bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek van Monnickendam",
+                    "In Monnickendam bij mij thuis, bij uw kind thuis of in de bibliotheek; ook fysiek in Purmerend",
                   ],
                   [
                     "Reiskosten",

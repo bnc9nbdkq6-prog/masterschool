@@ -253,7 +253,7 @@ export default function LeersysteemPagina() {
                     "Geschikt voor",
                     "Alle leerjaren, van de eerste toetsweek tot het examenjaar",
                   ],
-                  ["Vorm", "Online of fysiek in Monnickendam en omgeving"],
+                  ["Vorm", "Online of fysiek in Monnickendam, Purmerend en omgeving"],
                   [
                     "Tijdens het traject",
                     "WhatsApp-support inbegrepen. Antwoord gemiddeld binnen drie uur",

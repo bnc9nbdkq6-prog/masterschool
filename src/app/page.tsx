@@ -137,7 +137,7 @@ const stappen = [
 const keuzehulp = [
   {
     vraag: "Mijn kind loopt vast op één vak",
-    antwoord: "Individuele bijles in wiskunde A, economie, bedrijfseconomie of geschiedenis.",
+    antwoord: "Individuele bijles in wiskunde A, wiskunde B, economie, bedrijfseconomie of geschiedenis.",
     href: "/diensten/bijles",
     label: "Bekijk bijles",
   },
@@ -466,8 +466,7 @@ export default function Home() {
                 Waar de lessen plaatsvinden
               </h3>
               <p className="mt-3 leading-relaxed text-slate-600">
-                Online via videobellen, of fysiek bij mij thuis in Monnickendam,
-                bij uw kind thuis of in de bibliotheek van Monnickendam. Binnen Monnickendam, Katwoude en Purmerend reken ik geen reiskosten; daarbuiten alleen de kosten van het openbaar vervoer.
+                Online via videobellen, of fysiek in Monnickendam en Purmerend: bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek van Monnickendam. Binnen Monnickendam, Katwoude en Purmerend reken ik geen reiskosten; daarbuiten alleen de kosten van het openbaar vervoer.
               </p>
             </div>
           </div>

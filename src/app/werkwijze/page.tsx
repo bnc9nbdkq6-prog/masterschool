@@ -37,7 +37,7 @@ const stappen = [
     tekst:
       "We plannen een moment dat past, doorgaans binnen een week. Vooraf stuurt uw kind de stof op en legt de boeken klaar, zodat het lesuur volledig aan uitleg en oefenen opgaat.",
     details: [
-      "Online, bij mij thuis, bij u thuis of in de bibliotheek",
+      "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij u thuis of in de bibliotheek",
       "Minimaal een uur, meestal een tot anderhalf uur",
       "Bent u na de eerste bijles niet overtuigd, dan betaalt u die les niet",
     ],

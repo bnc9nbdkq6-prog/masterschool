@@ -69,7 +69,7 @@ const bedrijfsSchema = {
     "Waterland",
   ].map((plaats) => ({ "@type": "Place", name: plaats })),
   description:
-    "Bijles en studiebegeleiding voor havo- en vwo-leerlingen in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Fysiek in Monnickendam en omgeving, en online.",
+    "Bijles en studiebegeleiding voor havo- en vwo-leerlingen in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Fysiek in Monnickendam, Purmerend en omgeving, en online.",
 };
 
 export default function RootLayout({

@@ -30,7 +30,7 @@ export const site = {
   
   // Aantal leerlingen dat op dit moment actief wordt begeleid.
   // Werk dit getal bij wanneer het verandert (laatst gecontroleerd: november 2026).
-  actieveLeerlingen: 19,
+  actieveLeerlingen: 22,
 
   // Regio
   regioZonderReiskosten: ["Monnickendam", "Katwoude", "Purmerend"],

@@ -65,7 +65,7 @@ export const dienstenJaar: Dienst[] = [
     voorWie:
       "Voor één vak dat blijft haken, of om gericht toe te werken naar een toetsweek. Wiskunde A, wiskunde B, economie, bedrijfseconomie of geschiedenis.",
     bevat: [
-      "Individuele les, online of fysiek in Monnickendam en omgeving",
+      "Individuele les, online of fysiek in Monnickendam, Purmerend en omgeving",
       "Uitleg net zolang tot het klopt — steeds op een andere manier",
       "Oefenen met vragen in plaats van passief herlezen",
       "Aandacht voor planning en aanpak, niet alleen voor de stof",
@@ -135,7 +135,7 @@ export const dienstenJaar: Dienst[] = [
       ],
       praktisch: [
         "Vier lessen tegoed die u zelf inplant, plus het intakeuur",
-        "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
+        "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij uw kind thuis of in de bibliotheek",
         "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
         "Twee sprints voor twee verschillende vakken tegelijk kan",
         "Factuur na het intakegesprek; betalen in één keer of in termijnen",
@@ -327,7 +327,7 @@ export const dienstenExamen: Dienst[] = [
       ],
       praktisch: [
         "Eén-op-één, zonder limiet op het aantal contactmomenten",
-        "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
+        "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij uw kind thuis of in de bibliotheek",
         "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
         "WhatsApp-support zonder limiet; ik antwoord gemiddeld binnen drie uur, ook in het weekend",
         "In een vakantieweek kan het rustiger zijn, maar bereikbaar blijf ik",
@@ -420,7 +420,7 @@ export const dienstenExamen: Dienst[] = [
       ],
       praktisch: [
         "Eén-op-één, zonder limiet op het aantal contactmomenten",
-        "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
+        "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij uw kind thuis of in de bibliotheek",
         "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
         "WhatsApp-support zonder limiet; ik antwoord gemiddeld binnen drie uur, ook in het weekend",
         "In een vakantieweek kan het rustiger zijn, maar bereikbaar blijf ik",

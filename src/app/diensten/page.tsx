@@ -414,7 +414,7 @@ export default function DienstenPagina() {
             <div>
               <h2 className="font-semibold text-navy">Waar</h2>
               <p className="mt-3 leading-relaxed text-slate-600">
-                Online via videobellen, of fysiek in Monnickendam of Purmerend. Binnen Monnickendam, Katwoude en Purmerend zonder reiskosten; daarbuiten alleen
+                Online via videobellen, of fysiek in Monnickendam en Purmerend. Binnen Monnickendam, Katwoude en Purmerend zonder reiskosten; daarbuiten alleen
                 vergoeding van het openbaar vervoer.
               </p>
             </div>
