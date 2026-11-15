@@ -1,0 +1,168 @@
+diff --git a/src/app/contact/page.tsx b/src/app/contact/page.tsx
+index b7cb9e2..de194b4 100644
+--- a/src/app/contact/page.tsx
++++ b/src/app/contact/page.tsx
+@@ -141,8 +141,7 @@ export default function ContactPagina() {
+                   Waar ik lesgeef
+                 </h2>
+                 <p className="mt-3 leading-relaxed text-slate-600">
+-                  Fysiek in Monnickendam: bij mij thuis, bij uw kind thuis of in
+-                  de bibliotheek. Zonder reiskosten binnen Monnickendam, Katwoude en Purmerend; daarbuiten — bijvoorbeeld Edam, Volendam, Amsterdam of Hoorn — alleen de kosten van het openbaar vervoer.
++                  Fysiek in Monnickendam (bij mij thuis, bij uw kind thuis of in de bibliotheek) en in Purmerend. Zonder reiskosten binnen Monnickendam, Katwoude en Purmerend; daarbuiten — bijvoorbeeld Edam, Volendam, Amsterdam of Hoorn — alleen de kosten van het openbaar vervoer.
+                 </p>
+                 <p className="mt-3 leading-relaxed text-slate-600">
+                   Online lessen kunnen overal en gaan meestal via videobellen in
+diff --git a/src/app/diensten/bijles/page.tsx b/src/app/diensten/bijles/page.tsx
+index a05b011..e53c635 100644
+--- a/src/app/diensten/bijles/page.tsx
++++ b/src/app/diensten/bijles/page.tsx
+@@ -122,7 +122,7 @@ export default function BijlesPagina() {
+                   ["Online", "Ja, meestal via videobellen in WhatsApp"],
+                   [
+                     "Fysiek",
+-                    "Bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek van Monnickendam",
++                    "In Monnickendam bij mij thuis, bij uw kind thuis of in de bibliotheek; ook fysiek in Purmerend",
+                   ],
+                   [
+                     "Reiskosten",
+diff --git a/src/app/diensten/leersysteem/page.tsx b/src/app/diensten/leersysteem/page.tsx
+index 38a3ff2..5f7abcb 100644
+--- a/src/app/diensten/leersysteem/page.tsx
++++ b/src/app/diensten/leersysteem/page.tsx
+@@ -253,7 +253,7 @@ export default function LeersysteemPagina() {
+                     "Geschikt voor",
+                     "Alle leerjaren, van de eerste toetsweek tot het examenjaar",
+                   ],
+-                  ["Vorm", "Online of fysiek in Monnickendam en omgeving"],
++                  ["Vorm", "Online of fysiek in Monnickendam, Purmerend en omgeving"],
+                   [
+                     "Tijdens het traject",
+                     "WhatsApp-support inbegrepen. Antwoord gemiddeld binnen drie uur",
+diff --git a/src/app/diensten/page.tsx b/src/app/diensten/page.tsx
+index a6a1d27..10b2b77 100644
+--- a/src/app/diensten/page.tsx
++++ b/src/app/diensten/page.tsx
+@@ -414,7 +414,7 @@ export default function DienstenPagina() {
+             <div>
+               <h2 className="font-semibold text-navy">Waar</h2>
+               <p className="mt-3 leading-relaxed text-slate-600">
+-                Online via videobellen, of fysiek in Monnickendam of Purmerend. Binnen Monnickendam, Katwoude en Purmerend zonder reiskosten; daarbuiten alleen
++                Online via videobellen, of fysiek in Monnickendam en Purmerend. Binnen Monnickendam, Katwoude en Purmerend zonder reiskosten; daarbuiten alleen
+                 vergoeding van het openbaar vervoer.
+               </p>
+             </div>
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index a5f69b3..b43b92b 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -69,7 +69,7 @@ const bedrijfsSchema = {
+     "Waterland",
+   ].map((plaats) => ({ "@type": "Place", name: plaats })),
+   description:
+-    "Bijles en studiebegeleiding voor havo- en vwo-leerlingen in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Fysiek in Monnickendam en omgeving, en online.",
++    "Bijles en studiebegeleiding voor havo- en vwo-leerlingen in wiskunde A, wiskunde B, economie, bedrijfseconomie en geschiedenis. Fysiek in Monnickendam, Purmerend en omgeving, en online.",
+ };
+ 
+ export default function RootLayout({
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 6fbbe06..5e66808 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -137,7 +137,7 @@ const stappen = [
+ const keuzehulp = [
+   {
+     vraag: "Mijn kind loopt vast op één vak",
+-    antwoord: "Individuele bijles in wiskunde A, economie, bedrijfseconomie of geschiedenis.",
++    antwoord: "Individuele bijles in wiskunde A, wiskunde B, economie, bedrijfseconomie of geschiedenis.",
+     href: "/diensten/bijles",
+     label: "Bekijk bijles",
+   },
+@@ -466,8 +466,7 @@ export default function Home() {
+                 Waar de lessen plaatsvinden
+               </h3>
+               <p className="mt-3 leading-relaxed text-slate-600">
+-                Online via videobellen, of fysiek bij mij thuis in Monnickendam,
+-                bij uw kind thuis of in de bibliotheek van Monnickendam. Binnen Monnickendam, Katwoude en Purmerend reken ik geen reiskosten; daarbuiten alleen de kosten van het openbaar vervoer.
++                Online via videobellen, of fysiek in Monnickendam en Purmerend: bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek van Monnickendam. Binnen Monnickendam, Katwoude en Purmerend reken ik geen reiskosten; daarbuiten alleen de kosten van het openbaar vervoer.
+               </p>
+             </div>
+           </div>
+diff --git a/src/app/werkwijze/page.tsx b/src/app/werkwijze/page.tsx
+index 89eb081..719d79a 100644
+--- a/src/app/werkwijze/page.tsx
++++ b/src/app/werkwijze/page.tsx
+@@ -37,7 +37,7 @@ const stappen = [
+     tekst:
+       "We plannen een moment dat past, doorgaans binnen een week. Vooraf stuurt uw kind de stof op en legt de boeken klaar, zodat het lesuur volledig aan uitleg en oefenen opgaat.",
+     details: [
+-      "Online, bij mij thuis, bij u thuis of in de bibliotheek",
++      "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij u thuis of in de bibliotheek",
+       "Minimaal een uur, meestal een tot anderhalf uur",
+       "Bent u na de eerste bijles niet overtuigd, dan betaalt u die les niet",
+     ],
+diff --git a/src/content/diensten.ts b/src/content/diensten.ts
+index ee5ab46..52ffe9e 100644
+--- a/src/content/diensten.ts
++++ b/src/content/diensten.ts
+@@ -65,7 +65,7 @@ export const dienstenJaar: Dienst[] = [
+     voorWie:
+       "Voor één vak dat blijft haken, of om gericht toe te werken naar een toetsweek. Wiskunde A, wiskunde B, economie, bedrijfseconomie of geschiedenis.",
+     bevat: [
+-      "Individuele les, online of fysiek in Monnickendam en omgeving",
++      "Individuele les, online of fysiek in Monnickendam, Purmerend en omgeving",
+       "Uitleg net zolang tot het klopt — steeds op een andere manier",
+       "Oefenen met vragen in plaats van passief herlezen",
+       "Aandacht voor planning en aanpak, niet alleen voor de stof",
+@@ -135,7 +135,7 @@ export const dienstenJaar: Dienst[] = [
+       ],
+       praktisch: [
+         "Vier lessen tegoed die u zelf inplant, plus het intakeuur",
+-        "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
++        "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij uw kind thuis of in de bibliotheek",
+         "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
+         "Twee sprints voor twee verschillende vakken tegelijk kan",
+         "Factuur na het intakegesprek; betalen in één keer of in termijnen",
+@@ -327,7 +327,7 @@ export const dienstenExamen: Dienst[] = [
+       ],
+       praktisch: [
+         "Eén-op-één, zonder limiet op het aantal contactmomenten",
+-        "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
++        "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij uw kind thuis of in de bibliotheek",
+         "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
+         "WhatsApp-support zonder limiet; ik antwoord gemiddeld binnen drie uur, ook in het weekend",
+         "In een vakantieweek kan het rustiger zijn, maar bereikbaar blijf ik",
+@@ -420,7 +420,7 @@ export const dienstenExamen: Dienst[] = [
+       ],
+       praktisch: [
+         "Eén-op-één, zonder limiet op het aantal contactmomenten",
+-        "Online, bij mij thuis in Monnickendam, bij uw kind thuis of in de bibliotheek",
++        "Online, of fysiek in Monnickendam en Purmerend: bij mij thuis, bij uw kind thuis of in de bibliotheek",
+         "Buiten Monnickendam, Katwoude en Purmerend betaalt u alleen de kosten van het openbaar vervoer",
+         "WhatsApp-support zonder limiet; ik antwoord gemiddeld binnen drie uur, ook in het weekend",
+         "In een vakantieweek kan het rustiger zijn, maar bereikbaar blijf ik",
+diff --git a/src/content/faq.ts b/src/content/faq.ts
+index 1729760..3efc88d 100644
+--- a/src/content/faq.ts
++++ b/src/content/faq.ts
+@@ -55,7 +55,7 @@ export const faq: FaqCategorie[] = [
+       {
+         vraag: "Waar vinden de fysieke lessen plaats?",
+         antwoord:
+-          "Bij mij thuis in Monnickendam, bij de leerling thuis of in de bibliotheek van Monnickendam. Wat de leerling het prettigst vindt. Op een andere locatie kan ook, mits de reiskosten worden vergoed.",
++          "In Monnickendam en in Purmerend. In Monnickendam kan dat bij mij thuis, bij de leerling thuis of in de bibliotheek. Wat de leerling het prettigst vindt. Op een andere locatie kan ook, mits de reiskosten worden vergoed.",
+       },
+       {
+         vraag: "Hoe lang duurt een bijlesles?",
+diff --git a/src/content/site.ts b/src/content/site.ts
+index 1d43d82..151f132 100644
+--- a/src/content/site.ts
++++ b/src/content/site.ts
+@@ -30,7 +30,7 @@ export const site = {
+   
+   // Aantal leerlingen dat op dit moment actief wordt begeleid.
+   // Werk dit getal bij wanneer het verandert (laatst gecontroleerd: november 2026).
+-  actieveLeerlingen: 19,
++  actieveLeerlingen: 22,
+ 
+   // Regio
+   regioZonderReiskosten: ["Monnickendam", "Katwoude", "Purmerend"],
