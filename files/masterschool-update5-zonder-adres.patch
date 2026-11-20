@@ -1,0 +1,83 @@
+diff --git a/src/app/algemene-voorwaarden/page.tsx b/src/app/algemene-voorwaarden/page.tsx
+index 791336d..dce8c53 100644
+--- a/src/app/algemene-voorwaarden/page.tsx
++++ b/src/app/algemene-voorwaarden/page.tsx
+@@ -26,8 +26,8 @@ export default function VoorwaardenPagina() {
+         <JuridischeTekst>
+           <h2>1. Wie ik ben</h2>
+           <p>
+-            {site.naam} is een eenmanszaak van {site.eigenaar}, gevestigd aan{" "}
+-            {site.adres.straat} in {site.adres.postcodePlaats}. Bereikbaar via{" "}
++            {site.naam} is een eenmanszaak van {site.eigenaar}, gevestigd in{" "}
++            {site.adres.postcodePlaats}. Bereikbaar via{" "}
+             <a href={`mailto:${site.email}`}>{site.email}</a> en op {site.telefoon}.
+             In deze voorwaarden betekent &quot;ik&quot; MasterSchool en betekent
+             &quot;u&quot; de ouder, verzorger of andere opdrachtgever die de
+diff --git a/src/app/contact/page.tsx b/src/app/contact/page.tsx
+index de194b4..a9f15f8 100644
+--- a/src/app/contact/page.tsx
++++ b/src/app/contact/page.tsx
+@@ -150,7 +150,7 @@ export default function ContactPagina() {
+                 <p className="mt-4 border-t border-line pt-4 text-sm text-muted">
+                   {site.naam} · {site.eigenaar}
+                   <br />
+-                  {site.adres.straat}, {site.adres.postcodePlaats}
++                  {site.adres.postcodePlaats}
+                 </p>
+               </Kaart>
+             </div>
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index b43b92b..7a3cf05 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -59,7 +59,6 @@ const bedrijfsSchema = {
+   founder: { "@type": "Person", name: site.eigenaar },
+   address: {
+     "@type": "PostalAddress",
+-    streetAddress: site.adres.straat,
+     addressLocality: site.adres.postcodePlaats,
+     addressCountry: "NL",
+   },
+diff --git a/src/app/privacyverklaring/page.tsx b/src/app/privacyverklaring/page.tsx
+index db60772..d983034 100644
+--- a/src/app/privacyverklaring/page.tsx
++++ b/src/app/privacyverklaring/page.tsx
+@@ -27,8 +27,8 @@ export default function PrivacyPagina() {
+         <JuridischeTekst>
+           <h2>Wie is verantwoordelijk voor uw gegevens?</h2>
+           <p>
+-            {site.naam}, een eenmanszaak van {site.eigenaar}, gevestigd aan{" "}
+-            {site.adres.straat} in {site.adres.postcodePlaats}, is verantwoordelijk
++            {site.naam}, een eenmanszaak van {site.eigenaar}, gevestigd in{" "}
++            {site.adres.postcodePlaats}, is verantwoordelijk
+             voor de verwerking van persoonsgegevens zoals beschreven in deze
+             verklaring. U bereikt mij via{" "}
+             <a href={`mailto:${site.email}`}>{site.email}</a> of op{" "}
+diff --git a/src/components/Footer.tsx b/src/components/Footer.tsx
+index dd777f0..794dcd1 100644
+--- a/src/components/Footer.tsx
++++ b/src/components/Footer.tsx
+@@ -83,7 +83,7 @@ export function Footer() {
+               <li className="flex items-start gap-2.5 text-white/85">
+                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                 <span>
+-                  {site.adres.straat}, {site.adres.postcodePlaats}
++                  {site.adres.postcodePlaats}
+                 </span>
+               </li>
+             </ul>
+diff --git a/src/content/site.ts b/src/content/site.ts
+index 151f132..82876c6 100644
+--- a/src/content/site.ts
++++ b/src/content/site.ts
+@@ -17,9 +17,8 @@ export const site = {
+   email: "bijlesvanoskar@gmail.com",
+   whatsapp: "https://wa.me/message/CZG5BQHETJ6FI1",
+ 
+-  // Vestiging
++  // Vestiging: bewust zonder straat en huisnummer.
+   adres: {
+-    straat: "Dissel 51",
+     postcodePlaats: "Monnickendam",
+     land: "Nederland",
+   },
