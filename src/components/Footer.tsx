@@ -83,7 +83,7 @@ export function Footer() {
               <li className="flex items-start gap-2.5 text-white/85">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
                 <span>
-                  {site.adres.straat}, {site.adres.postcodePlaats}
+                  {site.adres.postcodePlaats}
                 </span>
               </li>
             </ul>
