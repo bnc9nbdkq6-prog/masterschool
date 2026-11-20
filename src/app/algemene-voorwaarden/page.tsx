@@ -26,8 +26,8 @@ export default function VoorwaardenPagina() {
         <JuridischeTekst>
           <h2>1. Wie ik ben</h2>
           <p>
-            {site.naam} is een eenmanszaak van {site.eigenaar}, gevestigd aan{" "}
-            {site.adres.straat} in {site.adres.postcodePlaats}. Bereikbaar via{" "}
+            {site.naam} is een eenmanszaak van {site.eigenaar}, gevestigd in{" "}
+            {site.adres.postcodePlaats}. Bereikbaar via{" "}
             <a href={`mailto:${site.email}`}>{site.email}</a> en op {site.telefoon}.
             In deze voorwaarden betekent &quot;ik&quot; MasterSchool en betekent
             &quot;u&quot; de ouder, verzorger of andere opdrachtgever die de
