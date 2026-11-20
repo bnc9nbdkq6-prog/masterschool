@@ -150,7 +150,7 @@ export default function ContactPagina() {
                 <p className="mt-4 border-t border-line pt-4 text-sm text-muted">
                   {site.naam} · {site.eigenaar}
                   <br />
-                  {site.adres.straat}, {site.adres.postcodePlaats}
+                  {site.adres.postcodePlaats}
                 </p>
               </Kaart>
             </div>
