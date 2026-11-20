@@ -27,8 +27,8 @@ export default function PrivacyPagina() {
         <JuridischeTekst>
           <h2>Wie is verantwoordelijk voor uw gegevens?</h2>
           <p>
-            {site.naam}, een eenmanszaak van {site.eigenaar}, gevestigd aan{" "}
-            {site.adres.straat} in {site.adres.postcodePlaats}, is verantwoordelijk
+            {site.naam}, een eenmanszaak van {site.eigenaar}, gevestigd in{" "}
+            {site.adres.postcodePlaats}, is verantwoordelijk.
             voor de verwerking van persoonsgegevens zoals beschreven in deze
             verklaring. U bereikt mij via{" "}
             <a href={`mailto:${site.email}`}>{site.email}</a> of op{" "}
