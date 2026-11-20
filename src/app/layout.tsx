@@ -59,7 +59,7 @@ const bedrijfsSchema = {
   founder: { "@type": "Person", name: site.eigenaar },
   address: {
     "@type": "PostalAddress",
-    streetAddress: site.adres.straat,
+   
     addressLocality: site.adres.postcodePlaats,
     addressCountry: "NL",
   },
