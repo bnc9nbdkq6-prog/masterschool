@@ -19,7 +19,7 @@ export const site = {
 
   // Vestiging
   adres: {
-    straat: "Dissel 51",
+    
     postcodePlaats: "Monnickendam",
     land: "Nederland",
   },
